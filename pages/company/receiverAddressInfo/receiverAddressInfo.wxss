@@ -1,0 +1,86 @@
+/* pages/company/receiverAddressInfo/receiverAddressInfo.wxss */
+page {
+    width: 100%;
+    height: 100vh;
+    background: #f2f2f7;
+}
+
+.add-user-info-container {
+    padding-top: 20rpx;
+}
+
+.item-view {
+    position: relative;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: white;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.left-txt {
+    position: absolute;
+    margin-left: 30rpx;
+}
+
+.left-txt-color-zise {
+    font-size: 30rpx;
+    color: #4d4d4d;
+}
+
+.placeholder-text {
+    font-size: 30rpx;
+    color: #b3b3b3;
+}
+
+.input-user-name {
+    text-align: right;
+    height: 100rpx;
+    display: block;
+    margin-left: 165rpx;
+    line-height: 100rpx;
+    padding-right: 30rpx;
+}
+
+.right-img {
+    width: 18rpx;
+    height: 36rpx;
+    position: absolute;
+    right: 30rpx;
+    margin-top: 32rpx;
+}
+
+.right-txt {
+    position: absolute;
+    right: 0;
+    margin-right: 58rpx;
+}
+
+.right-color-size {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.save-btn {
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    font-size: 36rpx;
+    color: #fff;
+    letter-spacing: 0;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-top: 82rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    line-height: 80rpx;
+}
+
+.save-btn::after {
+    border: 0;
+    outline: none;
+}
+
+.add-input-txt {
+    font-size: 30rpx;
+    color: #333;
+    letter-spacing: -0.36px;
+}

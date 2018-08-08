@@ -1,0 +1,173 @@
+/* pages/company/offerInfo/offerInfo.wxss */
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.top-red-view {
+    background: #eb3e2d;
+    height: 96rpx;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.top-offer-view {
+    position: fixed;
+    background: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    height: 142rpx;
+    left: 20rpx;
+    right: 20rpx;
+    top: 25rpx;
+    z-index: 2;
+}
+
+.publish-time-txt {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    margin-top: 25rpx;
+    margin-left: 24rpx;
+}
+
+.drug-offer-kind {
+    font-size: 36rpx;
+    color: #666;
+    text-align: center;
+    margin-top: 10rpx;
+}
+
+.drug-already-offer-num {
+    color: #eb3e2d;
+}
+
+.offer-content-view {
+    z-index: 0;
+    margin-bottom: 150rpx;
+}
+
+.offer-company-count {
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    position: relative;
+    margin-top: 200rpx;
+    margin-left: 56rpx;
+    margin-bottom: 18rpx;
+}
+
+.offer-company-count::before {
+    content: '';
+    position: absolute;
+    background: #eb3e2d;
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 50%;
+    margin-top: 16rpx;
+    margin-left: -24rpx;
+}
+
+.offer-info-item {
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    height: 212rpx;
+    margin-bottom: 20rpx;
+}
+
+.company-name {
+    height: 78rpx;
+    line-height: 78rpx;
+    font-size: 26rpx;
+    color: #666;
+    border-bottom: 1rpx solid #e5e5e5;
+    position: relative;
+}
+
+.company-name-txt{
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-flag-img {
+    height: 79rpx;
+    width: 79rpx;
+    position: absolute;
+    top: 0;
+}
+
+.company-name text {
+    padding-left: 42rpx;
+}
+
+.offer-drug-info-view {
+    display: flex;
+    width: 100%;
+    height: 133rpx;
+}
+
+.offer-kind {
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.offer-kind::after {
+    content: '';
+    background: #e5e5e5;
+    width: 1rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 0;
+    top: 40rpx;
+}
+
+.offer-amount {
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+.txt-gray {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+}
+
+.txt-red {
+    font-size: 36rpx;
+    color: #eb3e2d;
+    display: block;
+    padding-top: 25rpx;
+}
+
+.botton-view {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 40rpx;
+    margin-top: 30rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    color: white;
+    font-size: 36rpx;
+    line-height: 80rpx;
+}
+
+.botton-view::after {
+    border: 0;
+    outline: none;
+}

@@ -1,0 +1,28 @@
+<!--pages/AskPriceDetail/AskPriceDetail.wxml-->
+<import src="../../template/reload/reload.wxml" />
+  <import src="../../template/error/error.wxml" /> 
+<view wx:if="{{pageNum == 1}}" class="unusepage">
+    <template is="error" />
+</view> 
+<view wx:if="{{pageNum == 3}}" class="reload">
+    <template is="reload" />
+</view>
+<view wx:if="{{pageNum == 2}}" class="AskPriceDetail">
+    <view class="details">
+        <view class="clinic">
+            <view class="clinicName">
+                <image src="{{doctorImg}}"></image>
+                <text>询价药品（{{medicinalTypeNum}}）</text>
+            </view>
+        </view>
+        <block wx:for="{{drugList}}" wx:for-item="item" wx:key="item1" data-index="{{index}}" wx:for-index="index">
+            <view class='drug-info'>
+                <text>{{item.medicinalName}}</text>
+                <text class='drug-num'>x  {{item.num}}</text>
+            </view>
+        </block>
+    </view>
+    <button class="btn" type='primary' bindtap='onShare' open-type="share" >发给供货商</button>
+</view>
+
+    

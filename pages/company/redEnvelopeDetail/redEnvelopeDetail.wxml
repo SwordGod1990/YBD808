@@ -1,0 +1,21 @@
+<!--pages/company/redEnvelopeDetail/redEnvelopeDetail.wxml-->
+<view>
+    <text class='order-time-view'>04-02至04-08入库订单</text>
+    <block wx:for="{{orderList}}">
+        <view class='order-info-view'>
+            <text class='order-num'>订单编号：9887766555</text>
+            <view class='order-time-info'>
+                <text>采购时间：18-09-09  11:09:09</text>
+                <text>入库时间：18-09-09  11:09:09</text>
+            </view>
+            <view class='order-amount-view'>
+                <text>订单金额(元)：</text>
+                <text class='amount-txt'>28</text>
+            </view>
+        </view>
+    </block>
+    <view class='order-total-view'>
+            <text >累计订单金额(元)：</text>
+            <text class='amount-txt'>2888</text>
+        </view>
+</view>

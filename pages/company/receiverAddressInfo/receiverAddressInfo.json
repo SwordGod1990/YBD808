@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#EB3E2D",
+    "navigationBarTitleText": "填写用户信息",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "disableScroll": true
+}

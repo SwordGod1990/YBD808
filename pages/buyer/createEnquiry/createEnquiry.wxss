@@ -1,0 +1,265 @@
+/* pages/company/createEnquiry/createEnquiry.wxss */
+ @import "/template/toast/toast.wxss"; 
+
+ .toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+} 
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.search-view {
+    padding-left: 50%;
+}
+
+.enquiry-search-img {
+    height: 232rpx;
+    width: 232rpx;
+    margin-top: 48rpx;
+    margin-left: -116rpx;
+    display: block;
+}
+
+.scan-view {
+    margin-top: 50rpx;
+    padding-left: 50%;
+}
+
+.scan-img {
+    height: 272rpx;
+    width: 272rpx;
+    margin-top: 74rpx;
+    margin-left: -136rpx;
+}
+
+.search-txt {
+    margin-top: 20rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #666;
+    position: absolute;
+    width: 100%;
+}
+
+.manual-view {
+    margin-top: 148rpx;
+    margin-left: 122rpx;
+    margin-right: 122rpx;
+    height: 100rpx;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 50rpx;
+    text-align: center;
+    line-height: 100rpx;
+    position: relative;
+}
+
+.manual-view image {
+    height: 36rpx;
+    width: 32rpx;
+    padding-top: 32rpx;
+    position: absolute;
+}
+
+.manual-view text {
+    font-size: 30rpx;
+    color: #ff8275;
+    margin-left: 40rpx;
+}
+
+.bottom-view {
+    position: absolute;
+    height: 98rpx;
+    width: 100%;
+    border: 1rpx solid #e5e5e5;
+    bottom: 0;
+    display: flex;
+}
+
+.bottom-view-opacity {
+    opacity: 0.5;
+}
+
+.text-num-style {
+    font-size: 30rpx;
+    color: #eb3e2d;
+}
+
+.text-content-style {
+    font-size: 30rpx;
+    color: #666;
+}
+
+.bottom-text-view {
+    line-height: 98rpx;
+    flex: 2;
+    background: white;
+}
+
+.text-content2 {
+    font-size: 30rpx;
+    color: #999;
+    padding-left: 144rpx;
+}
+
+.bottom-btn-view {
+    flex: 1;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+    font-size: 36rpx;
+    color: white;
+    line-height: 98rpx;
+    text-align: center;
+}
+
+.bottom-view-cat {
+    background: #f9f9f9;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+    height: 104rpx;
+    width: 104rpx;
+    position: absolute;
+    bottom: 44rpx;
+    left: 30rpx;
+    border-radius: 52rpx;
+    z-index: 3;
+}
+
+.cat-img {
+    height: 42rpx;
+    width: 42rpx;
+    padding-left: 32rpx;
+    padding-top: 30rpx;
+}
+
+.cat-num-text {
+    background: #eb3e2d;
+    color: white;
+    font-size: 20rpx;
+    padding: 3rpx;
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+    border-radius: 20rpx;
+    position: absolute;
+    top: 10rpx;
+    left: 62rpx;
+}
+
+.cat-background {
+    background: rgba(0, 0, 0, 0.40);
+    height: 100vh;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.cat-view {
+    height: 788rpx;
+    width: 100%;
+    /* background: gold; */
+    position: fixed;
+    bottom: 0;
+}
+
+.cat-list-view {
+    height: 692rpx;
+    width: 100%;
+}
+
+.cat-title-txt {
+    font-size: 30rpx;
+    color: #333;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    background: #f6f6f6;
+}
+
+.cat-item {
+    width: 100%;
+    height: 594rpx;
+    background: white;
+    padding-left: 30rpx;
+    margin-bottom: 100rpx;
+}
+
+.cat-item-content {
+    height: 198rpx;
+    width: 100%;
+    border-bottom: 3rpx solid #e5e5e5;
+    position: relative;
+}
+
+.cat-item-img {
+    height: 47rpx;
+    width: 47rpx;
+    margin-top: 76rpx;
+    margin-left: -10rpx;
+}
+
+.cat-item-drug-view {
+    display: inline-block;
+    position: absolute;
+    margin-top: 20rpx;
+    /* margin-left: 20rpx; */
+}
+
+.cat-item-drug-name {
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    margin-right: 30rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-item-drug-standard {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 15rpx;
+    display: block;
+}
+
+.cat-item-drug-addr {
+    margin-top: 30rpx;
+}
+
+.cat-item-drug-num-edit {
+    position: absolute;
+    right: 58rpx;
+    top: 72rpx;
+}
+
+.cat-item-num-add-img {
+    height: 56rpx;
+    width: 56rpx;
+    border-radius: 28rpx;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.cat-item-num-minus-img {
+    height: 56rpx;
+    width: 56rpx;
+    border-radius: 28rpx;
+    vertical-align: text-bottom;
+    display: inline-block;
+}
+
+.cat-item-num-txt {
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+    height: 56rpx;
+    line-height: 40rpx;
+    vertical-align: text-top;
+}

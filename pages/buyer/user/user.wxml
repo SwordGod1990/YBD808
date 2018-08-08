@@ -1,0 +1,49 @@
+<!--pages/company/user/user.wxml-->
+<block wx:if='{{pageNum == 2}}'>
+    <view class='user-info-view'>
+        <image class='user-img' src='{{portraitImg}}'></image>
+        <view class='user-view'>
+            <text class='user-name'>{{realName}}</text>
+            <text class='user-mobile'>{{phone}}</text>
+        </view>
+    </view>
+    <view class='company-info-view'>
+        <view bindtap='companyInfoAction' class='current-company-view' style='border-bottom: 1rpx solid #e6e6e6;'>
+            <text class='left-txt'>所在企业</text>
+            <text class='right-txt company-name-txt'>{{companyName}}</text>
+            <image class='right-arrow-img' src='/Images/rightarrow.png'></image>
+        </view>
+        <view bindtap='shoppingMallScanAction' class='current-company-view'>
+            <text class='left-txt'>致医商城扫码购药</text>
+            <text class='right-txt company-name-txt'></text>
+            <image class='right-arrow-img' src='/Images/rightarrow.png'></image>
+        </view>
+        <view hidden='none' bindtap='distributionAreaAction' class='current-company-view' style='margin-top:1rpx;'>
+            <text class='left-txt'>配送区域</text>
+            <text class='right-txt'>{{deliverRegion}}</text>
+            <image class='right-arrow-img' src='/Images/rightarrow.png'></image>
+        </view>
+
+        <button hidden='none' class='quite-account-btn'>退出账号</button>
+    </view>
+    <view class='service-tel-view'>
+        <text>客服电话：</text>
+        <text bindtap='phoneCallAction' class='service-tel-txt'>400-666-9196</text>
+    </view>
+
+    <import src="/template/tabBar/tabBar.wxml" />
+    <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+</block>
+
+<view wx:if='{{pageNum == 1}}' class='check-in-view'>
+    <image class='check-in-background-img' src='/Images/background_icon.png'></image>
+    <text class='check-in-title-text'>致医药报单</text>
+    <image class='scan-image' src='/Images/scan_icon_1.png'>询价比价方便快捷</image>
+    <text class='immediately-check-in-txt'>现在立即入驻！</text>
+    <button catchtap='checkInAction' class='check-in-button'>立即入驻</button>
+</view>
+
+<import src="/template/error/error.wxml" />
+<view wx:if='{{pageNum == 3}}' class='unusepage'>
+    <template is="error4" data="{{errorImg, errorMsg}}" />
+</view>

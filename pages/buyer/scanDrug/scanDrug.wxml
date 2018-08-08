@@ -1,0 +1,103 @@
+<!--pages/buyer/scanDrug/scanDrug.wxml-->
+<import src="/template/toast/toast.wxml" />
+<view hidden='{{isScanToast}}' class='toast-view'>
+    <template is="scanDrugInfo" data="{{drugInfo}}" />
+</view>
+<view wx:if='{{drugList.length == 0}}' class='error-view'>
+    <image class='error-img' src='/Images/error_icon.png'></image>
+    <text class='error-hint-txt'>当前暂无药品，快去致医商城扫码采购吧！</text>
+    <view class='introduce-view'>
+        <image class='logo-img' src='/Images/logo_icon.png'></image>
+        <view class='introduce-info-txt'>
+            <text class='introduce-title-txt'>致医商城</text>
+            <text class='introduce-content-txt'>药品采购价格更优惠、服务更优质！</text>
+            <text class='introduce-link-txt'>商城地址：http://www.zhiyimall.com.cn</text>
+        </view>
+    </view>
+
+    <view catchtap='callServicePhoneAction' class='service-view'>
+        <text class='service-view-txt'>客服电话：</text>
+    </view>
+</view>
+
+<view wx:if='{{drugList.length > 0}}' class='drug-content-view'>
+    <view wx:for='{{drugList}}' wx:for-item='item' wx:key='{{item.activityNum}}' class='drug-view'>
+        <view class='delete-view'>
+            <image catchtap='deleteAction' id='{{index}}' class='delete-img' src='/Images/delete_icon.png'></image>
+        </view>
+        <view class='item-drug-info-view'>
+            <view class='drug-name-price-view'>
+                <text class='drug-name'>{{item.commodityName}}</text>
+            </view>
+            <text class='drug-address'>{{item.businessName}}</text>
+            <text class='drug-size'>规格*包装：{{item.norms}}*{{item.matrix}}{{item.minUnit}}／{{item.commonUnit}}</text>
+            <text class='drug-size'>效期：{{item.invalidTime}}</text>
+            <view style='margin-top:10rpx;'>
+                <text wx:if='{{item.activeType == 1}}' class='drug-price'>{{item.discountPrice}}</text>
+                <text wx:else class='drug-price'>{{item.price}}</text>
+                <text wx:if='{{item.activeType == 1}}' class='drug-price2'>{{item.price}}</text>
+                <view class='drug-num-edit-view'>
+                    <image catchtap='minusAction' id='{{index}}' class='minus-img' src='/Images/minus_icon.png'></image>
+                    <text class='drug-num'>{{item.num}}</text>
+                    <image catchtap='addAction' id='{{index}}' class='minus-img' src='/Images/add_icon.png'></image>
+                </view>
+            </view>
+
+        </view>
+        <view class='gift-view'>
+            <view class='discount-view'>
+                <view class='discount-left-view'>
+                    <text wx:if='{{item.activeType == 2}}' class='discount-type-txt'>满赠</text>
+                    <text wx:if='{{item.activeType == 1}}' class='discount-type-txt'>折扣</text>
+                    <text wx:if='{{item.activeType == 2 && item.giftType == 1}}' class='discount-content-txt'>满{{item.minNum}}件赠本品</text>
+                    <text wx:if='{{item.activeType == 2 && (item.giftType == 3 || item.giftType == 2)}}' class='discount-content-txt'>满{{item.minNum}}件赠{{item.giftName}}</text>
+                    <text wx:if='{{item.activeType == 1}}' class='discount-content-txt'>满{{item.minNum}}件打{{item.discounts}}折</text>
+                    <block wx:if='{{item.activeType == 2 && item.giftType == 2}}'>
+                        <image wx:if='{{!isShowgift}}' id='{{index}}' catchtap='isShowAction' class='down-arrow-img' src='/Images/downarrow.png'></image>
+                        <image wx:else catchtap='isShowAction' id='{{index}}' class='down-arrow-img' src='/Images/uparrow.png'></image>
+                    </block>
+                </view>
+                <text wx:if='{{item.activeType == 2}}' class='discount-num'>X{{item.giftNum}}</text>
+            </view>
+            <view wx:if='{{isShowgift && item.activeType == 2 && (item.giftType == 1 || item.giftType == 2)}}' class='gift-info-view'>
+                <!-- <block wx:if='{{item.giftType == 1}}'>
+                    <text class='gift-name'>{{item.commodityName}}</text>
+                    <text class='gift-info'>{{item.businessName}}</text>
+                    <text class='gift-info'>规格*包装：{{item.norms}}*{{item.matrix}}{{item.minUnit}}／{{item.commonUnit}}</text> -->
+                    <!-- <text class='gift-info'>效期：{{item.giftName}}</text> -->
+                <!-- </block> -->
+                <block wx:if='{{item.giftType == 2}}'>
+                    <text class='gift-name'>{{item.giftName}}</text>
+                    <text class='gift-info'>{{item.giftFactory}}</text>
+                    <text class='gift-info'>规格*包装：{{item.giftSpecifcations}}*{{item.giftMatrix}}{{item.giftMinUnit}}／{{item.giftCommonUnit}}</text>
+                    <!-- <text class='gift-info'>效期：{{item.giftName}}</text> -->
+                </block>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='bottom-view'>
+    <button catchtap='scanAction' hover-class='hover-button-border-css' class='scan-button'>扫一扫</button>
+    <button wx:if='{{drugList.length > 0}}' catchtap='purchaseAction' hover-class='hover-button-background-css' class='enquiry-button'>立即采购</button>
+    <button wx:else class='enquiry-button enquiry-button2 '>立即采购</button>
+</view>
+
+<import src="/template/toast/toast.wxml" />
+<view hidden='{{surePurchase}}' class='toast-view'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}" />
+</view>
+
+<!-- <view wx:if='{{pageNum==1 }} ' class='check-in-view '>
+    <image class='check-in-background-img ' src='/Images/background_icon.png '></image>
+    <text class='check-in-title-text '>致医药报单</text>
+    <text class='check-in-hint-text '>询价比价方便快捷</text>
+
+    <text class='immediately-check-in-txt '>现在立即入驻！</text>
+    <button catchtap='checkInAction ' class='check-in-button '>立即入驻</button>
+</view>
+
+<import src="/template/error/error.wxml" />
+<view wx:if='{{pageNum==3 }} ' class='unusepage '>
+    <template is="error4" data="{{errorImg, errorMsg}}" />
+</view> -->

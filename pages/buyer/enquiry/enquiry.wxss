@@ -1,0 +1,245 @@
+/* pages/company/enquiry/enquiry.wxss */
+@import "/template/tabBar/tabBar.wxss";
+@import "/template/toast/toast.wxss";
+
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.guide-img {
+    height: 276rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    margin-top: 42rpx;
+}
+
+.button-view {
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    font-size: 36rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 130rpx;
+}
+
+.button-view::after{
+    border: 0;
+    outline: none;
+}
+
+.create-enquiry-offer {
+    height: 138rpx;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 6rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 22rpx;
+    font-size: 40rpx;
+    color: #fd972d;
+    text-align: center;
+    line-height: 138rpx;
+    position: relative;
+}
+
+.create-enquiry-offer image {
+    height: 32rpx;
+    width: 32rpx;
+    display: inline-block;
+    position: absolute;
+    margin-top: 55rpx;
+}
+
+.create-enquiry-offer text {
+    margin-left: 40rpx;
+}
+
+.enquiry-content-view {
+    /* height: calc(100vh - 100rpx); */
+    width: 100%;
+    padding-bottom: 120rpx;
+}
+
+.enquiry-content-item {
+    height: 350rpx;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+}
+
+.item-time-view {
+    height: 86rpx;
+    line-height: 86rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.release-time {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.item-share-view {
+    width: 40rpx;
+    height: 86rpx;
+    float: right;
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.item-share-img {
+    width: 40rpx;
+    height: 36rpx;
+    margin-top: 25rpx;
+    position: absolute;
+    top: 0;
+}
+
+.item-share-view button {
+    width: 40rpx;
+    height: 36rpx;
+    opacity: 0;
+}
+
+.item-more-img {
+    width: 56rpx;
+    height: 10rpx;
+    float: right;
+    padding-top: 38rpx;
+    padding-right: 20rpx;
+    padding-bottom: 30rpx;
+    padding-left: 20rpx;
+}
+
+.more-view {
+    width: 220rpx;
+    height: 136rpx;
+    background: rgba(47, 47, 47, 0.70);
+    border-radius: 6px;
+    position: absolute;
+    right: 32rpx;
+    margin-top: -18rpx;
+}
+
+.more-view-box {
+    width: 0rpx;
+    height: 0rpx;
+    margin-right: 130rpx;
+    border-top: 10rpx solid rgba(47, 47, 47, 0);
+    border-right: 10rpx solid rgba(47, 47, 47, 0);
+    border-bottom: 10rpx solid rgba(47, 47, 47, 0.70);
+    border-left: 10rpx solid rgba(47, 47, 47, 0);
+    position: absolute;
+    right: 32rpx;
+    margin-top: -36rpx;
+}
+
+.more-edit {
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+    display: block;
+    height: 68rpx;
+    line-height: 68rpx;
+    border-bottom: 1rpx solid white;
+}
+
+.more-delete {
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+    display: block;
+    height: 68rpx;
+    line-height: 68rpx;
+}
+
+.item-content-view {
+    height: 165rpx;
+    /* line-height: 165rpx; */
+}
+
+.have-enquiry-drug-info {
+    font-size: 36rpx;
+    color: #151515;
+    text-align: center;
+    padding-top: 30rpx;
+}
+
+.drug-num {
+    color: #eb3e2d;
+}
+
+.not-enquiry-drug-info {
+    display: block;
+    font-size: 28rpx;
+    text-align: center;
+    padding-top: 10rpx;
+    color: #999;
+}
+
+.item-offerer-view {
+    clear: right;
+    height: 97rpx;
+    line-height: 97rpx;
+    padding-left: 23rpx;
+    border-top: 1rpx solid #e5e5e5;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.item-user-icon {
+    height: 54rpx;
+    width: 54rpx;
+    border-radius: 50%;
+    margin-left: 5rpx;
+    border: 1rpx solid #eb3e2d;
+    margin-top: 20rpx;
+    display: inline-block;
+}
+
+.company-num {
+    color: #eb3e2d;
+}
+
+.company-position {
+    float: right;
+}
+
+.float-action-button {
+    height: 104rpx;
+    width: 136rpx;
+    position: fixed;
+    background: #ff8275;
+    box-shadow: 0 2px 7px 0 rgba(192, 0, 0, 0.33);
+    margin-bottom: 116rpx;
+    margin-right: 30rpx;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 26rpx;
+    padding-top: 32rpx;
+}

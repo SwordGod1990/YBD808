@@ -1,0 +1,447 @@
+/* pages/myCheckSlip/myCheckSlip.wxss */
+@import "../../template/AccountUnuse.wxss";
+@import "../../template/reload/reload.wxss";
+@import "../../template/error/error.wxss";
+
+page {
+    background: rgb(242, 242, 247);
+    width: 100%;
+    height: 100%;
+}
+
+.menu-bar-view {
+    height: 198rpx;
+    width: 100%;
+    background: #eb3e2d;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+
+.menu-bar-item {
+    flex: 1;
+    padding-left: 100rpx;
+    position: relative;
+}
+
+.menu-bar-item2 {
+    flex: 1;
+    padding-left: 71rpx;
+    position: relative;
+}
+
+.menu-bar-item3 {
+    flex: 1;
+    padding-left: 71rpx;
+    padding-right: 22rpx;
+    position: relative;
+}
+
+.menu-bar-img {
+    display: block;
+    height: 78rpx;
+    width: 78rpx;
+    background: white;
+    border-radius: 39rpx;
+    margin-top: 35rpx;
+}
+
+.menu-bar-txt {
+    display: block;
+    font-size: 26rpx;
+    color: #fff;
+    margin-top: 15rpx;
+}
+
+.menu-bar-flag {
+    width: 0rpx;
+    height: 0rpx;
+    position: absolute;
+    bottom: 0rpx;
+    margin-left: 19rpx;
+    border-top: 20rpx solid #eb3e2d;
+    border-right: 20rpx solid #eb3e2d;
+    border-bottom: 20rpx solid #f2f2f7;
+    border-left: 20rpx solid #eb3e2d;
+}
+
+
+.unusepage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}
+
+.my-check-slip {
+    width: 100%;
+    height: calc(100vh - 100rpx);
+    background: rgb(242, 242, 247);
+}
+
+.refresh-view {
+    height: 100rpx;
+    width: 100%;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.top-view {
+    position: fixed;
+    top: 0;
+    height: 100rpx;
+    width: 100%;
+    background: red;
+    z-index: 9999;
+    /* overflow-y: hidden; */
+}
+
+.navbar {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    flex: none;
+    display: flex;
+    overflow-y: hidden;
+}
+
+.navbar .item {
+    position: relative;
+    flex: auto;
+    text-align: center;
+    line-height: 100rpx;
+    color: #4d4d4d;
+    font-size: 30rpx;
+}
+
+.navbar .item.active {
+    color: #eb3e2d;
+}
+
+.navbar .item.active:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    right: 25%;
+    height: 6rpx;
+    width: 98rpx;
+    background: #eb3e2d;
+}
+
+.nubCount {
+    position: absolute;
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    color: #fff;
+    letter-spacing: 0;
+    line-height: 24rpx;
+    width: 40rpx;
+    height: 24rpx;
+    border-radius: 20rpx;
+    top: 18rpx;
+    left: 160rpx;
+    background: #eb3e2d;
+    text-align: center;
+}
+
+.waitpriceview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 100rpx;
+    height: calc(100vh - 100rpx);
+    background: rgb(242, 242, 247);
+}
+
+.waititem {
+    margin-top: 0;
+    width: 100%;
+    background: #fff;
+}
+
+.itemgrayview {
+    margin-top: 0;
+    height: 20rpx;
+    width: 100%;
+    background: rgb(242, 242, 247);
+}
+
+.itemtopview {
+    margin-top: 0;
+    height: 79rpx;
+    width: 100%;
+    background: #fff;
+}
+
+.itemclinicimg {
+    position: absolute;
+    margin-top: 24rpx;
+    margin-left: 30rpx;
+    width: 32rpx;
+    height: 32rpx;
+    /* background: red; */
+}
+
+.itemclinicname {
+    position: absolute;
+    /* background: blue; */
+    margin-top: 27rpx;
+    margin-left: 74rpx;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 30rpx;
+    height: 30rpx;
+    /* width: 200rpx; */
+    text-align: center;
+}
+
+.itemtime {
+    margin-top: 28rpx;
+    margin-right: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #999;
+    line-height: 26rpx;
+    float: right;
+}
+
+.line {
+    margin-left: 30rpx;
+    width: 720rpx;
+    height: 1rpx;
+    background: #e5e5e5;
+}
+
+.drugitemview {
+    /* position: absolute; */
+    margin-top: 0;
+    /* max-height: 216rpx; *//* height: 216rpx;  */
+    width: 100%;
+    background: #fff;
+}
+
+.drugitem {
+    margin-left: 30rpx;
+    width: 92%;
+    background: #fff;
+    line-height: 32rpx;
+    margin-bottom: 25rpx;
+}
+
+.drugitem:nth-of-type(1) {
+    margin-top: 28rpx;
+}
+
+.drugitem-ellipsis{
+    margin-left: 30rpx;
+    width: 92%;
+    background: #fff;
+    line-height: 32rpx;
+    margin-bottom: 20rpx;
+    margin-top: -25rpx;
+}
+
+.itemdrugname {
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 32rpx;
+    text-align: left;
+}
+
+.alreadyimgtext {
+    position: absolute;
+    display: inline-block;
+    width: 40rpx;
+    height: 28rpx;
+    margin-top: 2rpx;
+    margin-left: 20rpx;
+    background: #eb3e2d;
+    color: #fff;
+    font-size: 20rpx;
+    line-height: 28rpx;
+    border-radius: 15rpx;
+    text-align: center;
+}
+
+.drugcount {
+    float: right;
+    margin-right: 0;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #333;
+    /* line-height: 32rpx; */
+}
+
+.itembottomview {
+    position: relative;
+    height: 86rpx;
+    width: 100%;
+    background: #fafafa;
+}
+
+.drugamount {
+    position: absolute;
+    margin-left: 30rpx;
+    margin-top: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #808080;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+.ignoretext {
+    position: absolute;
+    margin-left: 482rpx;
+    margin-top: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #808080;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+.offerbutton {
+    right: 5rpx;
+    top: 10rpx;
+    width: 148rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    color: #fff;
+    margin-right: 30rpx;
+    border-radius: 32rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    font-size: 30rpx;
+    position: absolute;
+}
+
+.offerbutton:after {
+    border: 0;
+}
+
+.alreadypriceview {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100rpx;
+    width: 100%;
+    height: calc(100vh - 100rpx);
+    background: rgb(242, 242, 247);
+}
+
+.ignoreview {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100rpx;
+    width: 100%;
+    height: calc(100vh - 100rpx);
+    background: rgb(242, 242, 247);
+}
+
+.to-comment-view {
+    border: 1rpx solid #5196fb;
+    right: 0;
+    width: 170rpx;
+    height: 62rpx;
+    text-align: center;
+    border-radius: 31rpx;
+    margin-right: 214rpx;
+    position: absolute;
+    margin-top: 14rpx;
+    line-height: 62rpx;
+    color: #5196fb;
+    font-size: 28rpx;
+}
+
+.look-comment-view {
+    border: 1rpx solid #999;
+    right: 0;
+    width: 170rpx;
+    height: 62rpx;
+    text-align: center;
+    border-radius: 31rpx;
+    margin-right: 214rpx;
+    position: absolute;
+    margin-top: 14rpx;
+    line-height: 62rpx;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.not-data-view {
+    text-align: center;
+    background: #f0f2f2;
+    overflow: hidden;
+    height: calc(100vh - 120rpx);
+}
+
+.not-data-view image {
+    padding-top: 240rpx;
+    width: 280rpx;
+    height: 280rpx;
+}
+
+.not-data-view view {
+    font-family: PingFangSC-Regular;
+    padding-top: 20rpx;
+    font-size: 30rpx;
+    color: #808080;
+    line-height: 30rpx;
+}
+
+.not-data-view button {
+    margin-top: 48rpx;
+    width: 680rpx;
+    border-radius: 40rpx;
+    height: 80rpx;
+    background: #5196fb;
+    font-size: 36rpx;
+    line-height: 80rpx;
+}
+
+.bottom-view {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-top: 38rpx;
+    padding-bottom: 38rpx;
+    background: #e5e5e5;
+    text-align: center;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.btnclick {
+    background: #e02e24;
+}
+
+.maxtoast {
+    position: absolute;
+    top: 500rpx;
+    height: 80rpx;
+    width: 460rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0.7;
+    background: #000;
+    border-radius: 100rpx;
+    z-index: 9999;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+}
+
+.reload {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}

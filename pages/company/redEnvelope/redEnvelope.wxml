@@ -1,0 +1,55 @@
+<!--pages/company/redEnvelope/redEnvelope.wxml-->
+<view class='red-envelope-container'>
+    <view class='active-content-view'>
+        <view class='red-envelope-amount-view'>
+            <text class='txt-small wait-amount-text'>待领取金额(元)</text>
+            <text class='txt-large amount-text'>1356.00</text>
+            <text class='txt-middle'>已领取金额(元)：234.5</text>
+            <view bindtap='activeExplainAction' class='active-view'>
+                <text class='txt-small'>活动说明</text>
+                <image class='right-arrow-img' src='/Images/back_2.png'></image>
+            </view>
+        </view>
+        <view class='active-time-view'>
+            <image src='/Images/add.png'></image>
+            <!-- <block wx:if="{{}}"> -->
+            <!-- <text>活动时间：</text> -->
+            <!-- <text class='active-time-txt'>05-09至07-09</text> -->
+            <!-- </block> -->
+            <!-- <block wx:if="{{}}"> -->
+            <text class='active-end-txt'>活动已结束</text>
+            <!-- </block>  -->
+        </view>
+    </view>
+
+
+    <view class='red-envelope-content-view'>
+        <text class='red-envelope-content-title'>获取红包记录</text>
+        <block wx:for='{{redEnvelopeList}}'>
+            <view class='red-envelope-content' bindtap='redEnvelopeAction'>
+                <text class='validity-time'>05-09至05-16</text>
+                <view class='red-envelope-amount'>
+                    <text class='amount-txt'>28.8</text>
+                    <text class='get-red-envelope'>获取红包(元)</text>
+                </view>
+                <view class='total-amount-view'>
+                    <block>
+                        <text class='txt-middle total-amount-txt'>累计订单金额(元)：2800</text>
+                        <view class='envelope-detail-view'>
+                            <text>详情</text>
+                            <image src='/Images/reddown_2.png'></image>
+                        </view>
+                    </block>
+                    <!-- <block>
+                        <text class='txt-middle total-amount-txt'>累计编号：12344555560</text>
+                        <text class='txt-middle total-amount-txt2'>累计订单金额(元)：2800</text>
+                    </block> -->
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class='botton-view'>
+        <button bindtap='receiveRedEnvelopeAction'>立即领取红包</button>
+    </view>
+</view>

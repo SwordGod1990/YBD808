@@ -1,0 +1,33 @@
+<!--pages/company/offerInfo/offerInfo.wxml-->
+<view class='top-red-view'></view>
+<view class='top-offer-view'>
+    <text class='publish-time-txt'>发布时间：{{offerInfoList.enquiry_date_created}}</text>
+    <view class='drug-offer-kind'>
+        <text>报价药品：</text>
+        <text class='drug-already-offer-num'>{{offerInfoList.offer_medicinal_num}}</text>
+        <text>/{{offerInfoList.medicinal_type_num}}</text>
+    </view>
+</view>
+<view class='offer-content-view'>
+    <text class='offer-company-count'>报价商家：{{offerInfoList.offer_company_num}}家</text>
+    <block wx:for="{{offerInfoList.dataArray}}">
+        <view class='offer-info-item' catchtap='offerAction' id='{{index}}'>
+            <view class='company-name'>
+                <image wx:if="{{item.isLowest == 1}}" class='item-flag-img' src='/Images/lowest_icon.png'></image>
+                <text class='company-name-txt' style='font-size:36rpx;'>{{item.companyName}}</text>
+            </view>
+            <view class='offer-drug-info-view'>
+                <view class='offer-kind'>
+                    <text class='txt-red'>{{item.medicinalTypeNum}}</text>
+                    <text class='txt-gray'>报价药品(种)</text>
+                </view>
+                <view class='offer-amount'>
+                    <text class='txt-red'>{{item.totalPrice}}</text>
+                    <text class='txt-gray'>价格合计(元)</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+
+<!-- <button bindtap='againOfferAction' class='botton-view'>没有合适的价格，继续询价</button> -->

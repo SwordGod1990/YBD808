@@ -1,0 +1,182 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.93",
+	"appid": "wxc4b7fd4330e66e88",
+	"projectname": "%E8%8D%AF%E6%8A%A5%E5%8D%95%E5%BC%80%E5%8F%91%E7%89%88",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "供货单",
+					"pathName": "pages/SupplyList/SupplyList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "供货单详情",
+					"pathName": "pages/SupplyDetail/SupplyDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "扫码页面",
+					"pathName": "pages/AskPriceDetail/AskPriceDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业信息页面",
+					"pathName": "pages/UserCenter/UserCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "初始填写企业信息页面",
+					"pathName": "pages/EmptyCompanyInfo/EmptyCompanyInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已报价详情",
+					"pathName": "pages/AlreadyPriceDetail/AlreadyPriceDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "配送区域",
+					"pathName": "pages/DistributionArea/DistributionArea",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "包装",
+					"pathName": "pages/PackageInfo/PackageInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "待报价",
+					"pathName": "pages/WaitPriceDetail/WaitPriceDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加药品（询价单）",
+					"pathName": "pages/branch/branch",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "绑定医药公司",
+					"pathName": "pages/bindCompany/bindCompany",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "我的",
+					"pathName": "pages/buyer/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/ShareSelectCompany/ShareSelectCompany",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享出去的页面",
+					"pathName": "pages/ShareSelectCompany/SharePage/SharePage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写业务员信息",
+					"pathName": "pages/company/addUserInfo/addUserInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加企业信息",
+					"pathName": "pages/buyer/addCompanyInfo/addCompanyInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "询价单详情",
+					"pathName": "pages/AskPriceDetail/AskPriceDetail",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "询价单详情",
+					"pathName": "pages/AlreadyPriceDetail/AlreadyPriceDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认报价",
+					"pathName": "pages/WaitPriceDetail/WaitPriceDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已收货详情",
+					"pathName": "pages/buyer/purchaseNoteDetail/purchaseNoteDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发送询价单",
+					"pathName": "pages/ShareSelectCompany/SendPricePage/SendPricePage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报价明细",
+					"pathName": "pages/buyer/offer/offer",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认询价单",
+					"pathName": "pages/buyer/sureEnquiry/sureEnquiry",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,66 @@
+<!--pages/buyer/purchaseNote/purchaseNote.wxml-->
+<import src="/template/error/error.wxml" />
+<import src="/template/tabBar/tabBar.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+
+<view class='menu-bar-view'>
+    <view class='menu-bar-item' bindtap='tabAction' id='0'>
+        <image wx:if="{{currentTab == 0}}" class='menu-bar-img' src='/Images/wait_receive_select_icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/wait_receive_icon.png'></image>
+        <text class='menu-bar-txt'>待发货</text>
+        <view wx:if="{{currentTab == 0}}" class='menu-bar-flag'></view>
+    </view>
+    <view class='menu-bar-item2' bindtap='tabAction' id='1'>
+        <image wx:if="{{currentTab == 1}}" class='menu-bar-img' src='/Images/wait_send_select_icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/wait_send_icon.png'></image>
+        <text class='menu-bar-txt'>待收货</text>
+        <view wx:if="{{currentTab == 1}}" class='menu-bar-flag'></view>
+    </view>
+    <view class='menu-bar-item3' bindtap='tabAction' id='2'>
+        <image wx:if="{{currentTab == 2}}" class='menu-bar-img' src='/Images/already_freight_select_icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/already_freight_icon.png'></image>
+        <text class='menu-bar-txt'>已收货</text>
+        <view wx:if="{{currentTab == 2}}" class='menu-bar-flag'></view>
+    </view>
+    <view class='menu-bar-item3' bindtap='tabAction' id='3'>
+        <image wx:if="{{currentTab == 3}}" class='menu-bar-img' src='/Images/turn-down-select-icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/turn-down-normal-icon.png'></image>
+        <text class='menu-bar-txt'>已取消</text>
+        <view wx:if="{{currentTab == 3}}" class='menu-bar-flag'></view>
+    </view>
+</view>
+
+<view class='content-view'>
+    <block wx:for="{{orderList}}">
+         <view class='item-view' catchtap='purchaseNoteItemAction' id='{{index}}'> 
+            <view class='company-info-view'>
+                <image class='company-img' src='/Images/company_icon.png'></image>
+                <text class='company-name'>{{item.companyName}}</text>
+                <text wx:if="{{currentTab == 0}}" class='freight-flag'>待发货</text>
+                <text wx:if="{{currentTab == 1}}" class='freight-flag'>待收货</text>
+                <text wx:if="{{currentTab == 2}}" class='freight-flag' style='color: #999999;'>已收货</text>
+                <text wx:if="{{currentTab == 3}}" class='freight-flag' >已驳回</text>
+            </view>
+            <block wx:for="{{item.value}}">
+                <view wx:if="{{index < 3}}" class='item-drug-view'>
+                    <text>{{item.medicinalName}}</text>
+                    <text class='drug-num'>x {{item.medicinalNum}}</text>
+                </view>
+            </block>
+            <view wx:if="{{drugList.length > 3}}" class='drug-more'>...</view>
+
+            <view class='drug-total'>
+                <text>共 {{item.medicinalTypeNum}} 种</text>
+                <button catchtap='sureFreightAction' wx:if="{{currentTab == 1}}" id='{{index}}'>确认收货</button>
+            </view>
+        </view>
+    </block>
+    <view wx:if="{{orderList.length == 0}}" class="unusepage">
+        <template is='error4' data="{{errorMsg, errorImg}}"></template>
+    </view>
+</view>
+
+<import src="/template/toast/toast.wxml" />
+<view hidden='{{surePurchase}}' class='toast-view'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}"/>
+</view>

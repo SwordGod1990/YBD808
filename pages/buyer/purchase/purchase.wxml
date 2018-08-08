@@ -1,0 +1,105 @@
+<!--pages/company/purchase/purchase.wxml-->
+<view class='receipt-information-view'>
+    <view class='consignee-info-view'>
+        <view class='consignee-txt'>
+            <text class='consignee-txt1'>收</text>
+            <text class='consignee-txt1'>货</text>
+            <text class='consignee-txt2'>人：</text>
+        </view>
+        <text class='name'>{{userInfo.consigneeName}}</text>
+        <text class='mobile'>{{userInfo.consigneePhone}}</text>
+    </view>
+    <view class='consignee-view'>
+        <text class='consignee-addr-txt'>收货地址：</text>
+        <text class='address'>{{userInfo.province}}{{userInfo.city}}{{userInfo.area}}{{userInfo.consigneeAddress}}</text>
+    </view>
+    <view class='consignee-message-view'>
+        <view class='consignee-message-txt'>
+            <text class='consignee-message-txt1'>留</text>
+            <text class='consignee-message-txt2'>言：</text>
+        </view>
+        <text class='message'>{{words}}</text>
+    </view>
+</view>
+<view class='purchase-content'>
+    <block wx:for="{{purchaseList}}">
+        <view class='purchase-item-view'>
+            <view class='company-view'>
+                <view class='company-name-view-txt'>
+                    <image class='company-img' src='/Images/company_icon.png'></image>
+                    <text class='company-name-txt'>{{item.company_name}}</text>
+                </view>
+                <view class='linkman-view'>
+                    <text>{{item.realName}}</text>
+                    <text class='linkman-mobile'>{{item.realPhone}}</text>
+                </view>
+            </view>
+            <block wx:for="{{item.dataArray}}">
+                <view class='durg-info-view'>
+                    <view class='drug-company-view'>
+                        <view class='drug-info-view'>
+                            <text class='drug-name'>{{item.medicinalName}}</text>
+                            <!-- <text class='drug-amount'>{{item.price}}</text> -->
+                        </view>
+                        <view class='drug-size-info-view'>
+                            <text class='drug-addr'>{{item.medicinalCompanyName}}</text>
+                        </view>
+                        <text class='drug-size-txt'>规格*包装：{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                        <text class='drug-size-txt'>效期：{{item.invalidTime}}</text>
+                        <view>
+                            <text wx:if='{{item.activeType == 1}}' class='drug-amount'>{{item.discountPrice}}</text>
+                            <text wx:else class='drug-amount'>{{item.price}}</text>
+                            <text wx:if='{{item.activeType == 1}}' class='drug-amount2'>{{item.price}}</text>
+                            <text class='drug-packge2'>x{{item.num}}</text>
+                        </view>
+                    </view>
+                    <view wx:if='{{item.activeType == 1 || item.activeType == 2}}' class='gift-view'>
+                        <view class='drug-info-view'>
+                            <text wx:if='{{item.activeType == 2 && item.giftType == 1}}' class='gift-name'>满{{item.minNum}}件赠本品</text>
+                            <text wx:if='{{item.activeType == 2 && (item.giftType == 3 || item.giftType == 2)}}' class='gift-name'>满{{item.minNum}}件赠{{item.giftName}}</text>
+                            <text wx:if='{{item.activeType == 1}}' class='gift-name2'>满{{item.minNum}}件打{{item.discounts}}折</text>
+                            <text wx:if='{{item.activeType == 2 && item.giftType == 1}}' class='drug-packge'>x{{item.giftNum}}{{item.unit}}</text>
+                            <text wx:if='{{item.activeType == 2 && item.giftType == 2}}' class='drug-packge'>x{{item.giftNum}}{{item.giftCommonUnit}}</text>
+                            <text wx:if='{{item.activeType == 2 && item.giftType == 3}}' class='drug-packge'>x{{item.giftNum}}{{item.giftUnit}}</text>
+                        </view>
+                        <block wx:if="{{item.activeType == 2}}">
+                            <!-- <block wx:if='{{item.giftType == 1}}'>
+                                <view class='drug-size-info-view'>
+                                    <text class='drug-addr'>{{item.medicinalCompanyName}}</text>
+                                </view>
+                                <text class='drug-size-txt'>规格*包装：{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                            </block> -->
+                            <block wx:if='{{item.giftType == 2}}'>
+                                <view class='drug-size-info-view'>
+                                    <text class='drug-addr'>{{item.giftFactory}}</text>
+                                </view>
+                                <text class='drug-size-txt'>规格*包装：{{item.giftSpecifcations}}*{{item.giftMatrix}}{{item.giftMinUnit}}/{{item.giftUnit}}</text>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+            </block>
+            <view class='feight-view'>
+                <text class='feight-txt'>运费</text>
+                <input bindblur='freightUpdateAction' class='feight-input' placeholder='请输入运费' id='{{index}}' placeholder-class='holder-txt' value='{{item.freight}}'></input>
+                <text class='feight-unit'>元</text>
+            </view>
+            <view class='order-view'>
+                <text>订单价格</text>
+                <text class='order-amount'>{{item.totalAmount2}}元</text>
+            </view>
+        </view>
+    </block>
+</view>
+
+<button class='botton-view' bindtap='surePurchaseAction'>确认采购</button>
+
+<import src="/template/toast/toast.wxml" />
+<view hidden='{{surePurchase}}' class='toast-view'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}" />
+</view>
+
+<import src="/template/toast/toast.wxml" />
+<view hidden='{{isSureToast}}' class='toast-view'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}" />
+</view>

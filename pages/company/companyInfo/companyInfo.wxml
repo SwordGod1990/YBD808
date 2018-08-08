@@ -1,0 +1,89 @@
+<!--pages/company/companyInfo/companyInfo.wxml-->
+<view class='fill-in-company-container'>
+    <view class='choose-company-view'>
+        <text>企业信息</text>
+    </view>
+    <view class='company-info-view'>
+        <view class='item-view'>
+            <text class='input-txt input-view-right'>{{merchandiserInfo.companyName}}</text>
+            <text class='left-txt'>企业名称</text>
+        </view>
+
+        <view class='item-view'>
+            <text class='input-txt input-view-right'>{{companyCode}}</text>
+            <text class='left-txt-after'>经营许可证编号</text>
+        </view>
+
+        <view class='item-view'>
+            <text class='input-txt input-view-right'>{{merchandiserInfo.provinceName}}  {{merchandiserInfo.cityName}}  {{merchandiserInfo.areaName}}</text>
+            <text class='left-txt'>所在地区</text>
+        </view>
+
+        <view class='item-view' style='border: 0;'>
+            <text class='input-txt input-view-right'>{{merchandiserInfo.address}}</text>
+            <text class='left-txt-after'>详细地址</text>
+        </view>
+    </view>
+    <view class='choose-company-view'>
+        <text>业务员信息</text>
+    </view>
+    <view class='company-info-view'>
+        <view class='item-view'>
+            <text class='input-txt input-view-right'>{{merchandiserInfo.realName}}</text>
+            <text class='left-txt'>姓名</text>
+        </view>
+
+        <view class='item-view'>
+            <text class='input-txt input-view-right'>{{merchandiserInfo.phone}}</text>
+            <text class='left-txt'>联系电话</text>
+        </view>
+
+        <view class='item-view'>
+            <text class='input-txt input-view-right'>{{merchandiserInfo.userProvinceName}}  {{merchandiserInfo.userCityName}}  {{merchandiserInfo.userAreaName}}</text>
+            <text class='left-txt'>所在地区</text>
+        </view>
+    </view>
+
+    <view class='company-img-view'>
+        <text>企业门头照</text>
+        <image wx:if="{{merchandiserInfo.pic != ''}}" src='{{merchandiserInfo.pic}}'></image>
+        <view class='not-img-view' wx:else>
+            <image src='/Images/no_photo_icon.png'></image>
+        </view>
+    </view>
+
+    <view class='service-txt-view'>
+        <text>如信息变更，请联系客服：</text>
+    </view>
+</view>
+
+<!-- <button class='button-view'>下一步</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class='container-view' hidden='none'>
+    <view class='content-view'></view>
+    <view class='circle-view'></view>
+    <view class='circle-view-right'></view>
+</view>

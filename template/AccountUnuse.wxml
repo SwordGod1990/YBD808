@@ -1,0 +1,51 @@
+<template name="accountunuse">
+    <view class='accountunuse-page'>
+        <image class='accountunuse-img' src='/Images/cannotuse.png' />
+        <view class='accountunuse-view'>
+            <text class='text'>该账号已被停用 !</text>
+
+        </view>
+        <view bindtap='serviceClick' class='serviceView'>
+            <text class='accountunuse-service'>客服电话 </text>
+            <text class='accountunuse-phoneNub'> 111-1111-1111</text>
+        </view>
+
+
+
+    </view>
+</template>
+
+<template name="NocompanyInfo">
+    <view class='accountunuse-page'>
+        <image class='accountunuse-img' src='/Images/cannotuse.png' />
+        <view class='accountunuse-view'>
+            <text class='text'>企业信息填写后，才可查看询价单 !</text>
+
+        </view>
+    </view>
+</template>
+
+<template name="error">
+    <view class='error-page'>
+        <image class='error-img' src='/Images/cannotuse.png' />
+        <view class='error-view'>
+            <text class='error-text'>{{error_msg}}</text>
+        </view>
+    </view>
+</template>
+
+
+<!-- 搜索不到数据 -->
+<template name="searchNoData">
+    <view class='search-no-data-view'>
+        <image class='search-img' src='/Images/che.png'></image>
+        <image class='search-delete-img' src='/Images/add.png'></image>
+        <view class='search-text-view'>
+            <text>未搜索到药品信息，请尝试以下操作</text>
+        </view>
+        <view class='search-btn-view'>
+            <text bindtap='searchAddDrugAction' id='1' class='search-btn-left'>搜索加药</text>
+            <text bindtap='manualAddDrugAction' id='2' class='search-btn-right'>手动加药</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,436 @@
+/* pages/buyer/scanDrug/scanDrug.wxss */
+@import "/template/toast/toast.wxss";
+@import "/template/toast/toast.wxss";
+@import "/template/error/error.wxss";
+
+
+.unusepage {
+    width: 100%;
+    background: rgb(242, 242, 247);
+    overflow-y: hidden;
+}
+
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #f2f2f7;
+}
+
+.error-view {
+    text-align: center;
+}
+
+.error-img {
+    width: 208rpx;
+    height: 256rpx;
+    margin-top: 180rpx;
+}
+
+.error-hint-txt {
+    font-size: 30rpx;
+    color: #666;
+    display: block;
+    margin-top: 20rpx;
+}
+
+.introduce-view {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    margin-top: 40rpx;
+    height: 248rpx;
+    background: white;
+    position: relative;
+    display: flex;
+    border-radius: 12rpx;
+}
+
+.logo-img {
+    height: 128rpx;
+    width: 128rpx;
+    margin-top: 60rpx;
+    margin-left: 28rpx;
+}
+
+.introduce-info-txt {
+    flex: 1;
+    text-align: left;
+    margin-left: 20rpx;
+    margin-top: 60rpx;
+}
+
+.introduce-title-txt {
+    font-size: 36rpx;
+    color: #333;
+    display: block;
+    margin: 0;
+}
+
+.introduce-content-txt {
+    font-size: 28rpx;
+    color: #4d4d4d;
+    display: block;
+    margin: 0;
+    padding-top: 4rpx;
+}
+
+.introduce-link-txt {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    margin: 0;
+    padding-top: 6rpx;
+}
+
+.service-view {
+    font-size: 26rpx;
+    color: #808080;
+    position: absolute;
+    bottom: 200rpx;
+    width: 100%;
+}
+
+.service-view-txt {
+    text-align: center;
+    display: block;
+}
+
+.service-view-txt::after {
+    content: '400-666-9196';
+    font-size: 26rpx;
+    color: #4a90e2;
+    text-align: center;
+}
+
+.bottom-view {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    height: 140rpx;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+.scan-button {
+    flex: 1;
+    border: 1px solid #eb3e2d;
+    border-radius: 40rpx;
+    height: 80rpx;
+    margin-top: 30rpx;
+    margin-left: 40rpx;
+    margin-right: 10rpx;
+    font-size: 36rpx;
+    color: #eb3e2d;
+    line-height: 80rpx;
+    background: white;
+}
+
+.scan-button::after {
+    border: 0;
+    outline: none;
+}
+
+.hover-button-border-css {
+    background: #ffe8e5;
+}
+
+.enquiry-button {
+    flex: 1;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+    border-radius: 40rpx;
+    height: 80rpx;
+    margin-top: 30rpx;
+    margin-right: 40rpx;
+    margin-left: 10rpx;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 80rpx;
+}
+
+.enquiry-button::after {
+    border: 0;
+    outline: none;
+}
+
+.hover-button-background-css {
+    background: #e02e24;
+}
+
+.enquiry-button2 {
+    opacity: 0.5;
+}
+
+.drug-content-view {
+    padding-bottom: 140rpx;
+}
+
+.drug-view {
+    border-bottom: 20rpx solid #f2f2f7;
+}
+
+.delete-view {
+    height: 70rpx;
+    line-height: 70rpx;
+    background: white;
+    text-align: right;
+}
+
+.delete-img {
+    height: 36rpx;
+    width: 36rpx;
+    padding-right: 40rpx;
+    padding-top: 15rpx;
+    padding-bottom: 10rpx;
+    padding-left: 30rpx;
+}
+
+.item-drug-info-view {
+    background: #fafafa;
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+    padding-top: 26rpx;
+    padding-bottom: 28rpx;
+    position: relative;
+}
+
+.drug-name-price-view {
+    display: flex;
+}
+
+.drug-name {
+    flex: 1;
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-price {
+    font-size: 36rpx;
+    color: #eb3e2d;
+    text-align: right;
+    width: 150rpx;
+}
+
+.drug-price::before {
+    content: '¥';
+    font-size: 28rpx;
+    color: #eb3e2d;
+}
+
+.drug-price2 {
+    font-size: 28rpx;
+    color: #999999;
+    text-align: right;
+    width: 150rpx;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+}
+
+.drug-price2::before {
+    content: '¥';
+    font-size: 28rpx;
+    color: #999999;
+}
+
+.drug-address {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    margin-top: 5rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-size {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 8rpx;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.minus-img {
+    height: 56rpx;
+    width: 56rpx;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.drug-num-edit-view {
+    /* display: inline-block; */
+    clear: right;
+    float: right;
+
+    /* position: absolute; */
+    /* right: 30rpx; */
+    /* top: 102rpx; */
+}
+
+.drug-num {
+    font-size: 36rpx;
+    color: #333;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    vertical-align: text-top;
+}
+
+.gift-view {
+}
+
+.discount-view {
+    height: 70rpx;
+    background: white;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    display: flex;
+    line-height: 70rpx;
+}
+
+.discount-left-view {
+    flex: 1;
+}
+
+.discount-type-txt {
+    font-size: 22rpx;
+    color: #fff;
+    background: #eb3e2d;
+    border-radius: 11px;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-top: 5rpx;
+    padding-bottom: 5rpx;
+    margin-right: 10rpx;
+}
+
+.discount-content-txt {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.down-arrow-img {
+    width: 32rpx;
+    height: 18rpx;
+    padding-left: 14rpx;
+    padding-top: 20rpx;
+    padding-right: 30rpx;
+}
+
+.discount-num {
+    width: 150rpx;
+    text-align: right;
+    display: inline-block;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.gift-info-view {
+    background: #fafafa;
+    padding-top: 26rpx;
+    padding-bottom: 32rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.gift-name {
+    font-size: 28rpx;
+    color: #333;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gift-info {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    margin-top: 8rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-in-view {
+    position: relative;
+}
+
+.check-in-background-img {
+    height: 539rpx;
+    width: 100%;
+    z-index: 1;
+}
+
+.check-in-title-img {
+    height: 60rpx;
+    width: 300rpx;
+    position: absolute;
+    top: 140rpx;
+    z-index: 2;
+    text-align: center;
+    left: 50%;
+    margin-left: -150rpx;
+}
+
+.check-in-title-text {
+    font-family: PingFang-SC-Medium;
+    font-size: 60rpx;
+    color: #fff;
+    position: absolute;
+    top: 140rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.check-in-hint-text {
+    font-family: PingFang-SC-Medium;
+    font-size: 70rpx;
+    color: #fff;
+    position: absolute;
+    top: 246rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.immediately-check-in-txt {
+    font-size: 30rpx;
+    color: #666;
+    display: block;
+    text-align: center;
+    margin-top: 109rpx;
+}
+
+.check-in-button {
+    margin-top: 30rpx;
+    height: 80rpx;
+    width: 328rpx;
+    line-height: 80rpx;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+    border-radius: 40rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.check-in-button::after {
+    border: 0;
+    outline: none;
+}

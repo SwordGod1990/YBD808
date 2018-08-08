@@ -1,0 +1,69 @@
+/* pages/ceshi/ceshi.wxss */
+
+.selectCompany {
+  font-family: PingFangSC-Regular;
+  margin-top: 84rpx;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: #b3b3b3;
+  font-size: 36rpx;
+}
+
+.item-title {
+  margin-top: -4rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.item-name {
+  margin-left: 24rpx;
+  color: #666;
+}
+
+.select-view {
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  justify-content: center;
+  -webkit-box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+  -moz-box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+  box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+}
+
+.select {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -160rpx;
+  left: -265rpx;
+}
+
+.zy_select {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -115rpx;
+  left: -80rpx;
+}
+
+.send {
+  width: 670rpx;
+  display: flex;
+  text-align: center;
+  position: fixed;
+  bottom: 40rpx;
+  background: red;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 60rpx;
+  margin-left: 40rpx;
+  height: 80rpx;
+  font-size: 36rpx;
+  color: #fff;
+}

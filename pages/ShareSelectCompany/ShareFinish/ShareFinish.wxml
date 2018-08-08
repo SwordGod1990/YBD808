@@ -1,0 +1,16 @@
+<!--pages/sendFinish/sendFinish.wxml-->
+<view class='send'>
+
+  <text class='send-title'>我认识的供应商</text>
+  <view class='send-view' style='width:640rpx;height:160rpx;background:#FFFFFF'>
+    <image mode='widthFix' src='/Images/finish_2x.png' style='width:80rpx;height:80rpx'></image>
+    <text class='send-view-txt'>完成</text>
+  </view>
+
+  <text class='send-company-title'>发布到致医商城</text>
+  <view class='send-company-view' style='width:640rpx;height:160rpx;background:#FBFBFB'>
+    <image mode='widthFix' src='{{imageUrl}}' style='width:80rpx;height:80rpx'></image>
+    <text class='send-company-view-txt'>已发布</text>
+  </view>
+
+</view>

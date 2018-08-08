@@ -1,0 +1,74 @@
+/* pages/company/redEnvelopeDetail/redEnvelopeDetail.wxss */
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.order-time-view {
+    background: #fff;
+    border-radius: 100px;
+    height: 90rpx;
+    margin-left: 42rpx;
+    margin-right: 42rpx;
+    margin-top: 20rpx;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 90rpx;
+    display: block;
+    text-align: center;
+}
+
+.order-info-view {
+    height: 280rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.order-num {
+    display: block;
+    height: 70rpx;
+    line-height: 70rpx;
+    padding-left: 30rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.order-time-info {
+    height: 117rpx;
+    font-size: 26rpx;
+    color: #999;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.order-time-info text {
+    display: block;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+}
+
+.order-amount-view {
+    line-height: 75rpx;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+}
+
+.amount-txt {
+    color: #eb3e2d;
+}
+
+.order-total-view {
+    line-height: 75rpx;
+    font-size: 28rpx;
+    color: #666;
+    text-align: right;
+    margin-right: 20rpx;
+    margin-top: 46rpx;
+    margin-bottom: 50rpx;
+}

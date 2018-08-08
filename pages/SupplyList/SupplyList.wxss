@@ -1,0 +1,192 @@
+/* pages/SupplyList/SupplyList.wxss */
+@import "../../template/toast/toast.wxss";
+@import "../../template/error/error.wxss";
+
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.menu-bar-view {
+    height: 198rpx;
+    width: 100%;
+    background: #eb3e2d;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    justify-content: space-between;
+    top: 0;
+}
+
+.menu-bar-item {
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+
+.menu-bar-item2 {
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+
+.menu-bar-item3 {
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+
+.menu-bar-img {
+    display: inline-block;
+    height: 78rpx;
+    width: 78rpx;
+    background: white;
+    border-radius: 39rpx;
+    margin-top: 35rpx;
+}
+
+.menu-bar-txt {
+    display: block;
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.menu-bar-flag {
+    width: 0rpx;
+    height: 0rpx;
+    left: 40%;
+    position: absolute;
+    bottom: 0;
+    border-top: 20rpx solid #eb3e2d;
+    border-right: 20rpx solid #eb3e2d;
+    border-bottom: 20rpx solid #f2f2f7;
+    border-left: 20rpx solid #eb3e2d;
+}
+
+.content-view {
+    position: relative;
+    margin-top: 218rpx;
+    padding-bottom: 130rpx;
+}
+
+.item-view {
+    background: white;
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.company-info-view {
+    position: relative;
+    height: 80rpx;
+    display: flex;
+    line-height: 80rpx;
+    padding-right: 30rpx;
+    margin-left: 30rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    margin-bottom: 10rpx;
+}
+
+.company-img {
+    height: 29rpx;
+    width: 30rpx;
+    margin-top: 25rpx;
+}
+
+.company-name {
+    font-size: 30rpx;
+    color: #333;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.order-time {
+    font-size: 30rpx;
+    color: #999999;
+    float: right;
+}
+
+.active-img{
+    height: 102rpx;
+    width: 102rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 0;
+}
+
+.item-drug-view {
+    font-size: 32rpx;
+    color: #333;
+    padding-top: 10rpx;
+    margin-left: 30rpx;
+    padding-bottom: 5rpx;
+    padding-right: 30rpx;
+}
+
+.drug-num {
+    clear: right;
+    float: right;
+}
+
+.drug-more {
+    font-size: 32rpx;
+    letter-spacing: 5rpx;
+    height: 12rpx;
+    line-height: 12rpx;
+    color: #333;
+    margin-top: 0rpx;
+    vertical-align: text-top;
+    margin-left: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+.drug-total {
+    height: 86rpx;
+    margin-top: 15rpx;
+    background: #fafafa;
+    font-size: 30rpx;
+    color: #808080;
+    line-height: 86rpx;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.drug-total button {
+    display: inline-block;
+    height: 64rpx;
+    width: 208rpx;
+    color: white;
+    line-height: 64rpx;
+    font-size: 30rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    border-radius: 32rpx;
+    position: absolute;
+    right: 30rpx;
+    margin-top: 11rpx;
+}
+
+.drug-total button::after {
+    border: 0;
+    outline: none;
+}
+
+.unusepage {
+    width: 100%;
+    height: calc(100vh - 398rpx);
+    background: rgb(242, 242, 247);
+    overflow-y: hidden;
+}

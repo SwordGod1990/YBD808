@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "药报单",
+  "navigationBarBackgroundColor": "#EB3E2D",
+  "navigationBarTextStyle": "white"
+}

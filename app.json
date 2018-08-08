@@ -1,0 +1,90 @@
+{
+    "pages": [
+        
+        "pages/impower/impower",
+        "pages/branch/branch",
+        "pages/buyer/purchaseNoteDetail/purchaseNoteDetail",
+        "pages/buyer/SendPricePage/SendPricePage",
+        "pages/buyer/enquiry/enquiry",
+        "pages/buyer/createEnquiry/createEnquiry",
+        "pages/buyer/search/search",
+        "pages/buyer/purchaseNote/purchaseNote",
+        "pages/buyer/user/user",
+        "pages/buyer/scanDrug/scanDrug",
+        "pages/buyer/sureEnquiry/sureEnquiry",
+        "pages/buyer/offerInfo/offerInfo",
+        "pages/buyer/offerInfoNo/offerInfoNo",
+        "pages/buyer/offer/offer",
+        "pages/buyer/purchase/purchase",
+        "pages/buyer/currentCompanyInfo/currentCompanyInfo",
+        "pages/buyer/fillInCompany/fillInCompany",
+        "pages/buyer/addDrug/addDrug",
+        "pages/buyer/addCompanyInfo/addCompanyInfo",
+        "pages/buyer/consigneeInfo/consigneeInfo",
+        "pages/UserCenter/UserCenter",
+        "pages/company/redEnvelope/redEnvelope",
+        "pages/company/user/user",
+        "pages/company/scanLogin/scanLogin",
+        "pages/company/redEnvelopeExplain/redEnvelopeExplain",
+        "pages/company/redEnvelopeDetail/redEnvelopeDetail",
+        "pages/company/addUserInfo/addUserInfo",
+        "pages/company/merchandiser/merchandiser",
+        "pages/company/companyInfo/companyInfo",
+        "pages/company/receiverAddressInfo/receiverAddressInfo",
+        "pages/company/fillInCompany/fillInCompany",
+        "pages/bindCompany/bindCompany",
+        "pages/register/register",
+        "pages/AskPriceList/AskPriceList",
+        "pages/DistributionArea/DistributionArea",
+        "pages/AskPriceDetail/AskPriceDetail",
+        "pages/EmptyCompanyInfo/EmptyCompanyInfo",
+        "pages/Disable/Disable",
+        "pages/WaitPriceDetail/WaitPriceDetail",
+        "pages/PackageInfo/PackageInfo",
+        "pages/AlreadyPriceDetail/AlreadyPriceDetail",
+        "pages/SupplyList/SupplyList",
+        "pages/SupplyDetail/SupplyDetail",
+        "pages/ShareSelectCompany/ShareSelectCompany",
+        "pages/ShareSelectCompany/ShareFinish/ShareFinish",
+        "pages/ShareSelectCompany/SharePage/SharePage"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "backgroundColor": "#f0f2f2",
+        "navigationBarTextStyle": "dark"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#EB3E2D",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/AskPriceList/AskPriceList",
+                "iconPath": "./Images/notselect.png",
+                "selectedIconPath": "./Images/selest.png",
+                "text": "询价单"
+            },
+            {
+                "pagePath": "pages/SupplyList/SupplyList",
+                "iconPath": "./Images/suplyNoselect.png",
+                "selectedIconPath": "./Images/supplySelect.png",
+                "text": "供货单"
+            },
+            {
+                "pagePath": "pages/company/user/user",
+                "iconPath": "./Images/my.png",
+                "selectedIconPath": "./Images/myselect.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 5000,
+        "connectSocket": 5000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}

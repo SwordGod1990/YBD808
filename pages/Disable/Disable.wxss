@@ -1,0 +1,16 @@
+/* pages/Disable/Disable.wxss */
+@import "../../template/error/error.wxss";
+
+page {
+    background: rgb(242, 242, 247);
+    width: 100%;
+    height: 100%;
+}
+
+.unusepage {
+    width: 100%;
+    height: 100%;
+    background: rgb(242, 242, 247);
+    overflow-y: hidden;
+  background: rgb(242, 242, 247);
+}

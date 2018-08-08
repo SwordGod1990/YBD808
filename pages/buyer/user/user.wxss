@@ -1,0 +1,203 @@
+/* pages/company/user/user.wxss */
+@import "/template/tabBar/tabBar.wxss";
+@import "/template/error/error.wxss";
+
+.unusepage {
+    width: 100%;
+    background: rgb(242, 242, 247);
+    overflow-y: hidden;
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #f2f2f7;
+}
+
+.user-info-view {
+    height: 260rpx;
+    width: 100%;
+    background-image: linear-gradient(180deg, #eb3e2d 0%, #ff7353 100%);
+    position: relative;
+}
+
+.company-name-txt {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 150rpx;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+.user-img {
+    height: 136rpx;
+    width: 136rpx;
+    border-radius: 50%;
+    margin-left: 48rpx;
+    margin-top: 62rpx;
+    background: white;
+}
+
+.user-view {
+    display: inline-block;
+    position: absolute;
+    margin-top: 84rpx;
+    margin-left: 36rpx;
+}
+
+.user-name {
+    font-size: 40rpx;
+    color: #fff;
+    display: block;
+}
+
+.user-mobile {
+    font-size: 32rpx;
+    color: #fff;
+    display: block;
+    margin-top: 15rpx;
+}
+
+.company-info-view {
+    margin-top: 22rpx;
+}
+
+.current-company-view {
+    height: 100rpx;
+    background: white;
+    position: relative;
+    line-height: 100rpx;
+}
+
+.left-txt {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 30rpx;
+}
+
+.right-txt {
+    font-size: 30rpx;
+    color: #333;
+    position: absolute;
+    right: 60rpx;
+    width: 450rpx;
+}
+
+.right-arrow-img {
+    width: 18rpx;
+    height: 36rpx;
+    position: absolute;
+    right: 30rpx;
+    margin-top: 32rpx;
+}
+
+.service-tel-view {
+    position: absolute;
+    bottom: 170rpx;
+    font-size: 26rpx;
+    color: #808080;
+    text-align: center;
+    width: 100%;
+}
+
+.service-tel-txt {
+    color: #4a90e2;
+}
+
+.quite-account-btn {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: #333;
+    background: white;
+    margin-top: 22rpx;
+}
+
+.quite-account-btn::after {
+    border: 0;
+    outline: none;
+}
+
+.check-in-view {
+    position: relative;
+}
+
+.check-in-background-img {
+    height: 539rpx;
+    width: 100%;
+    z-index: 1;
+}
+
+.check-in-title-img {
+    height: 60rpx;
+    width: 300rpx;
+    position: absolute;
+    top: 140rpx;
+    z-index: 2;
+    text-align: center;
+    left: 50%;
+    margin-left: -150rpx;
+}
+
+.check-in-title-text {
+    font-size: 60rpx;
+    color: #fff;
+    position: absolute;
+    top: 140rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+
+.check-in-hint-text {
+    font-family: PingFang-SC-Medium;
+    font-size: 70rpx;
+    color: #fff;
+    position: absolute;
+    top: 246rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.immediately-check-in-txt {
+    font-size: 30rpx;
+    color: #666;
+    display: block;
+    text-align: center;
+    margin-top: 109rpx;
+}
+
+.check-in-button {
+    margin-top: 30rpx;
+    height: 80rpx;
+    width: 328rpx;
+    line-height: 80rpx;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+    border-radius: 40rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.check-in-button::after {
+    border: 0;
+    outline: none;
+}
+
+.scan-image{
+    width: 619rpx;
+    height: 97rpx;
+    font-size: 70rpx;
+    color: #fff;
+    position: absolute;
+    top: 246rpx;
+    left: 50%;
+    margin-left: -310rpx;
+    z-index: 2;
+    display: block;
+    text-align: center;
+}

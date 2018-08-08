@@ -1,0 +1,87 @@
+.time-view {
+    position: absolute;
+    bottom: -300px;
+    height: 210px;
+    background: white;
+    width: 100%;
+}
+
+.time-picker {
+    height: 170px;
+    width: 100%;
+}
+
+.picker-view-column {
+    line-height: 50px;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.button-view {
+    height: 50px;
+    width: 100%;
+    background: white;
+    border-bottom: 1rpx solid #e5e5e5;
+    border-top: 1rpx solid #e5e5e5;
+}
+
+.button-cancel {
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 0px;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    color: gray;
+    background: white;
+}
+
+.choosetext {
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 0px;
+    font-size: 36rpx;
+    margin-left: 170rpx;
+    background: white;
+    font-family: PingFangSC-Regular;
+    color: #333;
+}
+
+.choosetext:after {
+    border: 0;
+    outline: none;
+}
+
+.button-cancel:after {
+    border: 0;
+    outline: none;
+}
+
+.button-sure {
+    display: inline-block;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 0px;
+    position: absolute;
+    right: 0;
+    color: #eb3e2d;
+    background: white;
+}
+
+.button-sure:after {
+    border: 0;
+    outline: none;
+}
+
+.time-picker-view-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+}

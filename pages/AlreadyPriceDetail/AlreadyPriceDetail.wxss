@@ -1,0 +1,476 @@
+@import "../../template/AccountUnuse.wxss";
+@import "../../template/reload/reload.wxss";
+
+page {
+    background: rgb(242, 242, 247);
+    width: 100%;
+    height: 100%;
+}
+
+.unusepage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}
+
+.AskPriceDetail {
+    width: 100%;
+    height: 100%;
+}
+
+.details {
+    width: 100%;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.clinic {
+    margin-left: 30rpx;
+    height: 80rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    position: relative;
+}
+
+.clinicName {
+    float: left;
+}
+
+.clinicName image {
+    width: 32rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.clinicName text {
+    color: #333;
+    font-size: 30rpx;
+    margin-left: 42rpx;
+    line-height: 86rpx;
+}
+
+.time {
+    float: right;
+    margin-right: 30rpx;
+    color: #999;
+    font-size: 26rpx;
+    line-height: 82rpx;
+}
+
+.infoview {
+    background: #fff;
+    padding-bottom: 20rpx;
+}
+
+.Consignee {
+    margin-left: 30rpx;
+    padding-top: 10rpx;
+}
+
+.Consignee text {
+    font-size: 30rpx;
+}
+
+.ConsigneeName {
+    display: inline-block;
+    color: #4d4d4d;
+    width: 150rpx;
+}
+
+.ConsigneeName2 {
+    color: #333;
+    /* margin-left:9rpx; */
+}
+
+.ConsigneeTell {
+    color: #4a90e2;
+    margin-left: 20rpx;
+}
+
+.name2 {
+    margin-left: 17rpx;
+}
+
+.address {
+    position: relative;
+    margin-top: 14rpx;
+}
+
+.Receiving-address, .Receiving-address2 {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #4d4d4d;
+}
+
+.Receiving-address {
+    margin-left: 30rpx;
+    width: 150rpx;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    position: absolute;
+    top: 0;
+    text-align: justify;
+}
+
+.Receiving-address2 {
+    margin-left: 180rpx;
+    margin-right: 30rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.message {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    font-size: 28rpx;
+    color: #808080;
+    margin-top: 14rpx;
+    padding-top: 28rpx;
+    padding-bottom: 28rpx;
+    background: #fafafa;
+    position: relative;
+}
+
+.Leaving-message {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    margin-top: 28rpx;
+    width: 150rpx;
+    text-align: justify;
+}
+
+.Leaving-message text, .Receiving-address text {
+    display: inline-block /* Opera */;
+    padding-left: 100%;
+}
+
+.Leaving-message2 {
+    display: inline-block;
+    margin-left: 152rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.Drug-details {
+    width: 100%;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.Drug {
+    margin-left: 30rpx;
+    height: 80rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    position: relative;
+}
+
+.Drug image {
+    width: 32rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.Drug text {
+    color: #4d4d4d;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    margin-left: 42rpx;
+}
+
+.DrugDetails {
+    padding-top: 25rpx;
+    border-bottom: 12rpx solid rgb(242, 242, 247);
+}
+
+.DrugDetails:last-child {
+    border: 0;
+}
+
+.DrugName2, .DrugName3 {
+    margin-left: 30rpx;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.DrugName3 {
+    float: right;
+    margin-right: 30rpx;
+}
+
+.Total, .location {
+    margin-left: 30rpx;
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.location {
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.drug-particular-view {
+    background: #fafafa;
+    padding-top: 22rpx;
+    padding-bottom: 20rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.DrugParticulars, .Specifications {
+    /* margin-left:30rpx; */
+}
+
+.DrugParticulars {
+    /* margin-top:22rpx; */
+}
+
+.Validity, .Validity2, .univalent {
+    font-size: 26rpx;
+    color: #333;
+}
+
+.Validity, .Validity2 {
+    float: left;
+}
+
+.univalent {
+    float: right;
+    /* margin-right:30rpx; */
+}
+
+.Specifications {
+    clear: both;
+    color: #333;
+    font-size: 26rpx;
+    padding-top: 15rpx;
+    /* padding-bottom:20rpx; */
+}
+
+.Cost {
+    width: 100%;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.ExpectedSales {
+    margin-left: 30rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    line-height: 100rpx;
+    color: #4d4d4d;
+    font-size: 30rpx;
+}
+
+.ExpectedSales2 {
+    float: left;
+}
+
+.money {
+    float: right;
+    margin-right: 30rpx;
+}
+
+.money1 {
+    color: #eb3e2d;
+    font-size: 36rpx;
+}
+
+.money2 {
+    margin-left: 10rpx;
+    color: #808080;
+    font-size: 30rpx;
+}
+
+.freight {
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    width: 100%;
+}
+
+.freight1 {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    padding-left: 30rpx;
+    flex: 1;
+    display: inline-block;
+}
+
+.freight2 {
+    padding-right: 30rpx;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    display: inline-block;
+    flex: 1;
+    text-align: right;
+}
+
+.freight2::after {
+    content: " 元";
+    color: #808080;
+    font-size: 30rpx;
+}
+
+.leavemessage {
+    margin-top: 20rpx;
+    width: 100%;
+    background: #fff;
+}
+
+.Leavetext {
+    /* background: blue; */
+    margin-left: 30rpx;
+    border-bottom: 1px solid #e5e5e5;
+    height: 82rpx;
+}
+
+.Leavetext text {
+    font-size: 30rpx;
+    color: #4c4c4c;
+    line-height: 82rpx;
+}
+
+.Discount {
+    width: 100%;
+    background: #fff;
+    color: #999;
+    font-size: 26rpx;
+    padding-bottom: 22rpx;
+}
+
+.Discount text {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    display: block;
+    padding: 28rpx 0;
+}
+
+.check, .check2 {
+    text-align: center;
+    margin-top: 60rpx;
+    color: #eb3e2d;
+    font-size: 28rpx;
+}
+
+.check {
+    padding-bottom: 56rpx;
+}
+
+.check image, .check2 image {
+    width: 36rpx;
+    height: 18rpx;
+    margin-left: 10rpx;
+}
+
+.check2 {
+    padding-bottom: 30rpx;
+}
+
+.Not-quoted, .Not-quoted2 {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 44rpx;
+}
+
+.NotQuoted {
+    height: 80rpx;
+    margin-left: 30rpx;
+    position: relative;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.NotQuoted image {
+    width: 32rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.NotQuotedText {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    line-height: 80rpx;
+    margin-left: 42rpx;
+}
+
+.Not-quoted {
+    display: none;
+}
+
+.Not-quoted2 {
+    display: block;
+}
+
+.NotQuoted-details {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    border-bottom: 10rpx solid rgb(242, 242, 247);
+}
+
+.NotQuoted-details:last-child {
+    border: 0;
+}
+
+.NotQuotedName1 {
+    float: left;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.NotQuotedNumber {
+    float: right;
+    font-size: 32rpx;
+    color: #333;
+    margin-right: 30rpx;
+}
+
+.NotQuotedTotal {
+    font-size: 24rpx;
+    color: #999;
+    padding-top: 10rpx;
+    clear: both;
+}
+
+.NotQuotedAddress {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 15rpx;
+}
+
+/* 适配iPhone6、iPhone7 */
+
+@media screen and (min-width:375px) and (max-width:380px) {
+    .name2 {
+        margin-left: 15.99rpx;
+    }
+}
+
+/* 适配iPhone5 */
+
+@media screen and (min-width:320px) and (max-width:325px) {
+    .name2 {
+        margin-left: 20rpx;
+    }
+}
+
+.reload {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}

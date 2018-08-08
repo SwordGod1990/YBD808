@@ -1,0 +1,38 @@
+<!--pages/company/bindCompany/bindCompany.wxml-->
+<view hidden='{{isShwoSearch}}' class='search-company-view'>
+    <input class='search-company-input' placeholder='{{hintText}}' placeholder-class='holder-input-txt' bindinput='inputAction'></input>
+    <image class='search-img' src='/Images/search_mini_icon.png'></image>
+    <text catchtap='searchAction' class='search-txt'>搜索</text>
+</view>
+
+<view wx:if="{{companyList.length != 0}}" class='search-content'>
+    <block wx:for="{{companyList}}">
+        <view class='company-item-view' catchtap='itemAction' id='{{index}}'>
+            <text wx:if="{{item.is_use == 1}}" class='company-name-txt' style='color: #999999;'>{{item.companyName}}（被占用）</text>
+            <text wx:else class='company-name-txt'>{{item.companyName}}</text>
+            <text class='compang-addr-txt'>{{provinceName}}   {{item.cityName}}   {{item.address}}</text>
+        </view>
+    </block>
+</view>
+
+<view wx:if='{{!isShwoSearch && isSearchNo}}' class='no-search-view'>
+    <text>未搜到，您的公司已经比别人慢了，快来入驻吧</text>
+    <button catchtap='addCompanyAction' class='button-view'>立即入驻</button>
+</view>
+
+ <view hidden='{{!isShwoSearch}}' class='default-page-view'>
+    <view class='bind-container-view'>
+        <image class='drug-img' src='{{imgUrl}}'></image>
+        <text class='hint-txt1'>{{markedWords1}}</text>
+        <text class='hint-txt2'>{{markedWords2}}</text>
+        <button bindtap='bindCompanyAction' class='bind-button'>{{bottonTxt}}</button>
+    </view>
+</view>
+
+<view hidden='{{isSearchNo}}' class='default-page-view'>
+    <view class='bind-container-view'>
+        <image class='error-img' src='/Images/error_icon.png'></image>
+        <text class='error-txt'>{{errorTxt}}</text>
+        <button catchtap='addCompanyAction' class='bind-button'>立即入驻</button>
+    </view>
+</view>

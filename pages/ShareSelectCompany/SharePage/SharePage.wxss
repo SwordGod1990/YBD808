@@ -1,0 +1,122 @@
+/* pages/ShareSelectCompany/SharePage/SharePage.wxss */
+
+.share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  background: #f2f2f7;
+}
+
+.share_view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.share_view_txt {
+  position: absolute;
+  top: 70rpx;
+}
+
+.share_view_border {
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 190rpx;
+  background: white;
+  -webkit-box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+  -moz-box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+  box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+}
+
+.share_view_border_title {
+  font-size: 30rpx;
+  color: #151515;
+  margin-left: 21rpx;
+  margin-top: 30rpx;
+}
+
+.share_view_border_txt {
+  font-size: 30rpx;
+  color: #777;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+
+.share_view_zhong {
+  border-radius: 12rpx;
+  position: absolute;
+  top: 500rpx;
+  -webkit-box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+  -moz-box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+  box-shadow: 0 0 20px rgba(0, 10, 10, 0.1);
+}
+
+.share_view_zhong_title {
+  display: flex;
+  justify-content: center;
+  font-size: 36rpx;
+  color: #f4741c;
+  margin-top: 34rpx;
+}
+
+.share_view_zhong view {
+  display: flex;
+  width: 640rpx;
+  height: 30rpx;
+  margin-top: 34rpx;
+  margin-left: 20rpx;
+}
+
+.share_view_zhong_left {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.share_view_zhong_right {
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  color: #151515;
+}
+
+.share_view_xia {
+  position: absolute;
+  top: 1118rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+}
+
+.share_view_xia_join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1rpx #fd553c;
+  border-radius: 116rpx;
+  margin-right: 17rpx;
+}
+
+.share_view_xia_join text {
+  color: #fb533b;
+  font: 36rpx;
+}
+
+.share_view_xia_ask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1rpx #ff583e;
+  border-radius: 116rpx;
+  margin-left: 17rpx;
+}
+
+.share_view_xia_ask {
+  color: #fff;
+  font: 36rpx;
+}

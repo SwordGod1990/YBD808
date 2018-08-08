@@ -1,0 +1,19 @@
+<!--pages/company/register/register.wxml-->
+<view>
+  <view class='register'>
+    <view class='{{userStatus != 2 ? "register-view2" : "register-view"}}'>
+      <image class='register-img' src='{{imgUrl}}'></image>
+    </view>
+  </view>
+  <form bindsubmit='registerAction'>
+    <input class='user-input' maxlength='13' type='number' bindinput='mobileNumberAction' placeholder-class='holder-txt' placeholder='请输入手机号' value='{{mobileNumber}}' name="cellNumber"></input>
+    <view class='auth-code-view'>
+      <input maxlength='4' type='number' bindinput='codeInputAction' class='pass-input' placeholder-class='holder-txt' placeholder='请输入验证码' value='{{authCode}}' name="code"></input>
+      <text catchtap='arginAuthCodeAction' class='auth-code'>{{authSecond == 0 ? '获取验证码': authSecond+'s后重新获取'}}</text>
+      <image wx:if="{{authSecond != 0}}" catchtap='deleteAuthCodeAction' class='delete-img' src='/Images/close_icon.png'></image>
+    </view>
+    <button form-type='submit' class="register-btn {{mobileNumber != '' && authCode != '' ? '' : 'register-opacity'}}">立即注册</button>
+  </form>
+</view>
+
+<text class='register-hint'>{{hintTxt}}</text>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "企业信息",
+    "navigationBarBackgroundColor": "#EB3E2D",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "#dark",
+    "enablePullDownRefresh": true
+}

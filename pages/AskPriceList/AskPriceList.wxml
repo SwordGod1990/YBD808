@@ -1,0 +1,179 @@
+<!--账号禁用页面-->
+<import src="../../template/AccountUnuse.wxml" />
+<import src="../../template/error/error.wxml" />
+<import src="../../template/reload/reload.wxml" />
+
+<!--有数据页面-->
+<view>
+    <loading wx:if="{{showLoading}}">加载中</loading>
+</view>
+<view class='top-view'>
+<view class='menu-bar-view'>
+    <view class='menu-bar-item' bindtap='navbarTab' id='0'>
+        <image wx:if="{{currentTab == 0}}" class='menu-bar-img' src='/Images/wait_offer_select_icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/wait_offer_icon.png'></image>
+        <text class='menu-bar-txt'>待报价</text>
+        <view wx:if="{{currentTab == 0}}" class='menu-bar-flag'></view>
+    </view>
+    <view class='menu-bar-item2' bindtap='navbarTab' id='1'>
+        <image wx:if="{{currentTab == 1}}" class='menu-bar-img' src='/Images/already_offer_select_icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/already_offer_icon.png'></image>
+        <text class='menu-bar-txt'>已报价</text>
+        <view wx:if="{{currentTab == 1}}" class='menu-bar-flag'></view>
+    </view>
+    <view class='menu-bar-item3' bindtap='navbarTab' id='2'>
+        <image wx:if="{{currentTab == 2}}" class='menu-bar-img' src='/Images/already_ignore_select_icon.png'></image>
+        <image wx:else class='menu-bar-img' src='/Images/already_ignore_icon.png'></image>
+        <text class='menu-bar-txt'>已忽略</text>
+        <view wx:if="{{currentTab == 2}}" class='menu-bar-flag'></view>
+    </view>
+</view>
+
+    <!-- <view class="navbar">
+        <text wx:for="{{navbar}}" wx:key="unique" id="{{index}}" class="item {{currentTab == index ? 'active' : 'after'}}" bindtap="navbarTab">{{item}}</text>
+        <label wx:if="{{nubCount != 0}}" class='nubCount'>{{nubCount}}</label>
+    </view> -->
+</view>
+<view class='my-check-slip'>
+    <view class='refresh-view'>
+        <text style='color:#888; font-size:26rpx;'>正在加载...</text>
+    </view>
+    <!--Tab1-->
+    <view wx:if="{{pageNo != 1}}" hidden="{{currentTab != 0}}">
+        <scroll-view wx:if="{{offerWaitList.length > 0}}" class='waitpriceview' scroll-y="true" upper-threshold="100" style="height:100%" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+            <view catchtap='offerAction' wx:for="{{offerWaitList}}" wx:for-item="item" wx:key="item1" data-index="{{index}}" wx:for-index="index" class='waititem'>
+                <view class='itemgrayview'></view>
+                <view class='itemtopview'>
+                    <image class='itemclinicimg' src='/Images/clinic.png'></image>
+                    <text class='itemclinicname'>{{item.clinicName}}</text>
+                    <text class='itemtime'>{{item.publishDate}}</text>
+                </view>
+                <view class='line'></view>
+                <view class='drugitemview'>
+                    <view class='drugitem' wx:for="{{item.offderInfoDetail}}" wx:for-item="item1" data-index="{{index}}" wx:for-index="index">
+                        <block wx:if="{{index < 3}}">
+                            <text class='itemdrugname'>{{item1.medicinalName}}</text>
+                            <text class='drugcount'>x {{item1.num}}</text>
+                        </block>
+                    </view>
+                    <view class='drugitem-ellipsis' wx:if="{{item.offderInfoDetail.length > 3}}">
+                        ...
+                    </view>
+                </view>
+                <view class='itembottomview'>
+                    <text class='drugamount'>共 {{item.medicinalTypeNum}} 种</text>
+                    <text class='ignoretext' data-index="{{index}}" catchtap='ignoreAction'>忽略</text>
+                    <button hover-class='btnclick' class='offerbutton' data-index="{{index}}" catchtap='offerAction'>报价</button>
+                </view>
+            </view>
+        </scroll-view>
+        <!--商家到达上限提示框-->
+        <text hidden='{{maxtoastHidden}}' class='maxtoast'>{{Toasttext}}</text>
+        <!--待报价空页面-->
+        <view wx:if="{{offerWaitList.length == 0 && tabPage1 != 2}}" class="not-data-view">
+            <image class="drug-info-img" src="/Images/nodata.png"></image>
+            <view>
+                <text>暂无待报价单</text>
+            </view>
+        </view>
+        <!--加载失败重新加载-->
+        <view wx:if="{{offerWaitList.length == 0 && tabPage1 == 2}}" class="reload">
+            <template is="reload" />
+        </view>
+    </view>
+
+
+    <!--Tab2-->
+    <view wx:if="{{pageNo != 1}}" hidden="{{currentTab != 1}}">
+        <scroll-view wx:if="{{offerCompleteList.length > 0}}" class='alreadypriceview' scroll-y="true" upper-threshold="200" style="height:100%" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+            <view catchtap='offerCompleteAction' wx:for="{{offerCompleteList}}" wx:for-item="item" wx:key="item1" data-index="{{index}}" wx:for-index="index" class='waititem'>
+                <view class='itemgrayview'></view>
+                <view class='itemtopview'>
+                    <image class='itemclinicimg' src='/Images/clinic.png'></image>
+                    <text class='itemclinicname'>{{item.clinicName}}</text>
+                    <text class='itemtime'>{{item.publishDate}}</text>
+                </view>
+                <view class='line'></view>
+
+                <view class='drugitemview'>
+                    <view class='drugitem' wx:for="{{item.offderInfoDetail}}" wx:for-item="item1" data-index="{{index}}" wx:for-index="index">
+                        <block wx:if="{{index < 3}}">
+                            <text class='itemdrugname'>{{item1.medicinalName}}</text>
+                            <text wx:if="{{item1.isOffer == 1}}" class='alreadyimgtext'>报</text>
+                            <text class='drugcount'>x {{item1.num}}</text>
+                        </block>
+                    </view>
+                    <view class='drugitem-ellipsis' wx:if="{{item.offderInfoDetail.length > 3}}">
+                        ...
+                    </view>
+                </view>
+                <view class='itembottomview'>
+                    <text class='drugamount'>共 {{item.medicinalTypeNum}} 种, {{item.isOfferNum}} 种报价</text>
+                </view>
+            </view>
+        </scroll-view>
+        <!--已报价空数据页面-->
+        <view wx:if="{{offerCompleteList.length==0 && tabPage2 != 2}}" class="not-data-view">
+            <image class="drug-info-img" src="/Images/nodata.png"></image>
+            <view>
+                <text>暂无已报价单</text>
+            </view>
+        </view>
+
+        <!--加载失败重新加载-->
+        <view wx:if="{{offerCompleteList.length==0 && tabPage2 == 2}}" class="reload">
+            <template is="reload" />
+        </view>
+    </view>
+
+    <!--Tab3-->
+    <view wx:if="{{pageNo != 1}}" hidden="{{currentTab != 2}}">
+        <scroll-view wx:if="{{offerIgnoreList.length > 0}}" class='ignoreview' scroll-y="true" style="height:100%" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+            <view catchtap='ignoreofferAction' wx:for="{{offerIgnoreList}}" wx:for-item="item" wx:key="item1" data-index="{{index}}" wx:for-index="index" class='waititem'>
+                <view class='itemgrayview'></view>
+                <view class='itemtopview'>
+                    <image class='itemclinicimg' src='/Images/clinic.png'></image>
+                    <text class='itemclinicname'>{{item.clinicName}}</text>
+                    <text class='itemtime'>{{item.publishDate}}</text>
+                </view>
+                <view class='line'></view>
+
+                <view class='drugitemview'>
+                    <view class='drugitem' wx:for="{{item.offderInfoDetail}}" wx:for-item="item1" data-index="{{index}}" wx:for-index="index">
+                        <block wx:if="{{index < 3}}">
+                            <text class='itemdrugname'>{{item1.medicinalName}}</text>
+                            <text class='drugcount'>x {{item1.num}}</text>
+                        </block>
+                    </view>
+                </view>
+                <view class='drugitem-ellipsis' wx:if="{{item.offderInfoDetail.length > 3}}">
+                    ...
+                </view>
+                <view class='itembottomview'>
+                    <text class='drugamount'>共 {{item.medicinalTypeNum}} 种</text>
+                    <button hover-class='btnclick' class='offerbutton' data-index="{{index}}" catchtap='ignoreofferAction'>报价</button>
+                </view>
+            </view>
+        </scroll-view>
+        <!--商家到达上限提示框-->
+        <text hidden='{{maxtoastHidden}}' class='maxtoast'>{{Toasttext}}</text>
+
+        <!--已忽略页面-->
+        <view wx:if="{{offerIgnoreList.length == 0 && tabPage3 != 2}}" class="not-data-view">
+            <image class="drug-info-img" src="/Images/nodata.png"></image>
+            <view>
+                <text>暂无已忽略报价单</text>
+            </view>
+        </view>
+        <!--加载失败重新加载-->
+        <view wx:if="{{offerIgnoreList.length == 0 && tabPage3 == 2}}" class="reload">
+            <template is="reload" />
+        </view>
+    </view>
+
+
+    <view wx:if="{{pageNo == 1}}" class="unusepage">
+        <template is='error2' data="{{errorMsg, errorImg}}"></template>
+    </view>
+
+</view>

@@ -1,0 +1,83 @@
+<!--pages/company/fillInCompany/fillInCompany.wxml-->
+<form bindsubmit='nextAction'>
+    <view class='fill-in-company-container'>
+        <view wx:if="{{jumpType == 2}}" bindtap='chooseCompanyAction' class='choose-company-view'>
+            <text>重新绑定商业公司</text>
+            <image src='/Images/right_blue_icon.png'></image>
+        </view>
+
+        <view class='company-info-view'>
+            <view class='item-view'>
+                <input name="companyName" wx:if="{{jumpType == 2}}" class='input-txt input-view-right' placeholder='请选择企业名称' placeholder-class='holder-txt' value='{{companyName}}'></input>
+
+                <input wx:else maxlength='30' bindtap='chooseCompanyAction' class='input-txt input-view' disabled='true' placeholder='请选择企业名称' placeholder-class='holder-txt' value='{{companyName}}'></input>
+
+                <text class='left-txt'>企业名称</text>
+                <image wx:if="{{jumpType != 2}}" class='arrow-img' src='/Images/rightarrow.png'></image>
+            </view>
+
+            <view class='item-view'>
+                <input wx:if="{{companyCode != ''}}" disabled='true' class='input-txt input-view-right' placeholder='请输入经营许可证编号' placeholder-class='holder-txt' value='{{companyCode}}'></input>
+
+                <input wx:else maxlength='30' name="companyCode" class='input-txt input-view-right' placeholder='请输入经营许可证编号' placeholder-class='holder-txt' value='{{companyCode}}'></input>
+
+                <text class='left-txt-after'>经营许可证编号</text>
+            </view>
+
+            <view wx:if="{{jumpType == 2}}" class='item-view' catchtap='areaChooseAction'>
+                <text class='input-txt input-view {{areaValue == "" ? "holder-txt" : ""}}'>{{areaValue == '' ? '请选择' : areaValue}}</text>
+                <text class='left-txt'>所在地区</text>
+                <image class='arrow-img' src='/Images/rightarrow.png'></image>
+            </view>
+
+            <view wx:else class='item-view'>
+                <input class='input-txt input-view-right' value='{{areaValue}}' disabled='true'></input>
+                <text class='left-txt'>所在地区</text>
+            </view>
+
+            <view class='item-view' style='border: 0;'>
+                <input wx:if="{{address != ''}}" disabled='true' class='input-txt input-view-right' placeholder='请输入详细地址' placeholder-class='holder-txt' value='{{address}}'></input>
+
+                <input wx:else maxlength='30' name="address" class='input-txt input-view-right' placeholder='请输入详细地址' placeholder-class='holder-txt' value='{{address}}'></input>
+
+                <text class='left-txt'>详细地址</text>
+            </view>
+        </view>
+
+        <view class='company-img-view'>
+            <text>企业门头照{{companyInfo.pic}}</text>
+            <image wx:if='{{pic != ""}}' src='{{companyInfo.pic}}'></image>
+            <!-- <image wx:else src='/Images/no_photo_icon.png'></image> -->
+            <view class='not-img-view' wx:else>
+                <image src='/Images/no_photo_icon.png'></image>
+            </view>
+        </view>
+
+        <view class='service-txt-view'>
+            <text>如信息变更，请联系客服：</text>
+        </view>
+    </view>
+
+    <button form-type='submit' class='button-view1'>下一步</button>
+</form>
+<view class='time-picker-view-bg' wx:if='{{!isDisplay}}'>
+    <view animation="{{animationData}}" class='time-view'>
+        <view class='button-view'>
+            <button class='button-cancel' bindtap='cancelAction'>取消</button>
+            <button class='choosetext'>请选择</button>
+
+            <button class='button-sure' bindtap='sureAction'>确定</button>
+        </view>
+        <picker-view indicator-style="height: 50px;" class='time-picker' bindchange="bindChange" value="{{areaItemValue}}" catchtap='blankAction'>
+            <picker-view-column>
+                <view wx:for="{{provinces}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{areas}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

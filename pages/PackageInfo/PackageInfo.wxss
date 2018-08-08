@@ -1,0 +1,207 @@
+/* pages/usageAndDosage/usageAndDosage.wxss */
+@import "../../template/AccountUnuse.wxss";
+@import "../../template/reload/reload.wxss";
+
+page {
+    background: rgb(242, 242, 247);
+    width: 100%;
+    height: 100%;
+}
+
+.reload {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}
+
+.unusepage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}
+
+.useBox {
+    margin-top: 20rpx;
+    background: #fff;
+}
+
+.useTitle {
+    width: 100%;
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 18px;
+}
+
+.xin {
+    width: 16rpx;
+    height: 16rpx;
+    vertical-align: middle;
+}
+
+.input {
+    height: 60rpx;
+    line-height: 60rpx;
+    display: inline-block;
+    background: #fff;
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.useBox label {
+    background: url(../../image/searchLogo.png) no-repeat 0 center;
+    background-size: 38rpx 38rpx;
+    padding: 0 0 0 40rpx;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.useBox .is_checked {
+    background: url(../../image/searchLogo.png) no-repeat 0 center;
+    background-size: 38rpx 38rpx;
+}
+
+.usage {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #333;
+}
+
+.orally {
+    font-family: PingFangSC-Regular;
+    color: #e02e24;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.view-list {
+    height: 31px;
+    width: 28.26%;
+    display: inline-block;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin-left: 3.73%;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 31px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.active {
+    /* border: 1px solid #e02e24;  */
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    /* box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50); */
+    color: #fff;
+}
+
+.mod_a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 90rpx;
+    padding: 0 20rpx;
+}
+
+/*弹框1*/
+
+.show-btn {
+    margin-top: 100rpx;
+    color: #2c2;
+}
+
+text {
+    font-family: PingFangSC-Regular;
+    color: #333;
+}
+
+input {
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: #3f3f3f;
+    line-height: 21px;
+    /* text-align: right;  *//* float: left */
+}
+
+/* 库存中的数字框 */
+
+.numBox {
+    width: 90rpx;
+    height: 60rpx;
+    border: 1px solid red;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/*底部的确定按钮*/
+
+.sureBtnWrap {
+    /* position: absolute; */
+    padding-bottom: 34rpx;
+    margin-top: 34rpx;
+    width: 100%;
+}
+
+.sureBtn {
+    width: 89.3%;
+    height: 40px;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    border-radius: 67px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 40px;
+    font-family: PingFangSC-Regular;
+    color: #fff;
+    border: 0 !important;
+}
+
+button::after {
+    border: 0 !important;
+}
+
+.drug-quantity-view {
+    height: 100rpx;
+    margin-top: 20rpx;
+    background: white;
+    line-height: 100rpx;
+    position: relative;
+    font-size: 30rpx;
+    color: #333;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.drug-quantity-view input {
+    height: 100rpx;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 30rpx;
+    display: block;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.holder-txt {
+    font-size: 30rpx;
+    color: #b3b3b3;
+}
+
+.drug-quantity-view text {
+    display: inline-block;
+}
+
+.drug-quantity-text::after {
+    content: "*";
+    color: #eb3e2d;
+    font-size: 30rpx;
+}

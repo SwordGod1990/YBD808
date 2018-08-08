@@ -1,0 +1,115 @@
+/* pages/ShareSelectCompany/SendPricePage/SendPricePage.wxss */
+
+.container {
+    height: 100%;
+    width: 100%;
+    background: #eee;
+    position: absolute;
+}
+
+.page_title {
+    height: 106rpx;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #ff6c07;
+}
+
+.page_list {
+    display: flex;
+    /* height: 80rpx; */
+    padding-top: 20rpx;
+    /* padding-bottom: 20rpx; */
+    background: white;
+    flex-direction: row;
+    align-items: center;
+}
+
+.page_list_left {
+    display: flex;
+    flex-direction: column;
+    /* height: 50rpx; */
+    /* line-height: 50rpx; */
+    /* margin-bottom: 21.8rpx; */
+    /* margin-top: 21.8rpx; */
+    margin-left: 30rpx;
+}
+
+.page_list_right {
+    position: absolute;
+    right: 0;
+}
+
+.page_list_name {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.page_list_unit {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.page_list_company {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.page_list_num {
+    font-size: 32rpx;
+    color: #333;
+    margin-right: 30rpx;
+}
+
+.page_btn {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 130rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+}
+
+.page_btn_left {
+    height: 80rpx;
+    width: 328rpx;
+    line-height: 80rpx;
+    border: solid 2rpx #eb3e2d;
+    border-radius: 45rpx;
+    color: #fb533b;
+    font-size: 36rpx;
+    background: white;
+    flex: 1;
+    margin-left: 30rpx;
+}
+
+.page_btn_left::after{
+    border: 0;
+    outline: none;
+}
+
+.page_btn_right {
+    height: 80rpx;
+    width: 328rpx;
+    line-height: 80rpx;
+    flex: 1;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+    border: solid 1rpx #eb3e2d;
+    border-radius: 45rpx;
+    color: #fff;
+    font-size: 36rpx;
+    margin-left: 20rpx;
+    margin-right: 30rpx;
+}
+
+.page_btn_right::after {
+    border: 0;
+    outline: none;
+}

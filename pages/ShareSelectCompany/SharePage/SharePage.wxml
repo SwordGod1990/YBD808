@@ -1,0 +1,58 @@
+<!--pages/ShareSelectCompany/SharePage/SharePage.wxml-->
+<view class='share'>
+  <!-- 上部分 -->
+  <view class='share_view'>
+    <image class='share_view_txt' mode='widthFix' src='/Images/Bitmap_2x.png' style='width:484rpx;height:48rpx;'></image>
+    <image src='/Images/Rectangle2x.png' mode='widthFix' style='width:750rpx;height:358rpx;'></image>
+    <view class='share_view_border' wx:for="{{items}}" style='width:690rpx;height:294rpx;'>
+      <text class='share_view_border_title'>{{item.name}}</text>
+      <text class='share_view_border_txt'>{{item.name1}}</text>
+      <text class='share_view_border_txt'>{{item.name2}}</text>
+      <text class='share_view_border_txt'>{{item.name3}}</text>
+    </view>
+  </view>
+
+
+  <!-- 中部分 -->
+  <view class='share_view_zhong' style='width:690rpx;height:556rpx;'>
+    <text class='share_view_zhong_title'>—— 请确认您的信息 ——</text>
+    <view>
+      <text class='share_view_zhong_left'>诊所名称</text>
+      <text class='share_view_zhong_right'>小红诊所{{clinicName}}</text>
+    </view>
+    <view>
+      <text class='share_view_zhong_left'>诊所类型</text>
+      <text class='share_view_zhong_right'>诊所{{clinicType}}</text>
+    </view>
+    <view>
+      <text class='share_view_zhong_left'>经营许可证编号</text>
+      <text class='share_view_zhong_right'>123456777789{{licenceNo}}</text>
+    </view>
+    <view>
+      <text class='share_view_zhong_left'>所在地区</text>
+      <text class='share_view_zhong_right'> 辽宁省 大连市 甘井子区{{provinceName}}{{cityName}}{{areaName}}</text>
+    </view>
+    <view>
+      <text class='share_view_zhong_left'>详细地址</text>
+      <text class='share_view_zhong_right'>万年花城三期6号楼7单元103{{address}}</text>
+    </view>
+    <view>
+      <text class='share_view_zhong_left'>姓名</text>
+      <text class='share_view_zhong_right'>宋清{{contactsPerson}}</text>
+    </view>
+    <view>
+      <text class='share_view_zhong_left'>联系电话</text>
+      <text class='share_view_zhong_right'>137889876556{{contactsPhone}}</text>
+    </view>
+  </view>
+
+  <!-- 下部分 -->
+  <view class='share_view_xia'>
+    <view class='share_view_xia_join' style='width:328rpx;height:80rpx;background:#FFFFFF' bindtap='newJoin'>
+      <text>我要新加入</text>
+    </view>
+    <view class='share_view_xia_ask' style='width:328rpx;height:80rpx;background:#FF583E' bindtap='askPrice'>
+      <text>确认开始询价</text>
+    </view>
+  </view>
+</view>

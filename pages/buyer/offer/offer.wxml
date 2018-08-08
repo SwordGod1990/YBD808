@@ -1,0 +1,148 @@
+<!--pages/company/offer/offer.wxml-->
+<view class='offer-container'>
+    <view class='tab-bar-view'>
+        <text catchtap='companyOfferAction' class='{{currentTab == 0 ? "select-txt":""}}' style='font-size:36rpx;'>看医药公司报价</text>
+        <text catchtap='drugOfferAction' class='{{currentTab == 1 ? "select-txt":""}}' style='font-size:36rpx;'>看单个药品报价</text>
+    </view>
+    <view class='content-view'>
+        <scroll-view class='left-view' scroll-y="true">
+            <view class='left-view-content'>
+                <block wx:if="{{currentTab == 0}}" wx:for="{{companyList}}">
+                    <view catchtap='companyAction' id='{{index}}' class='left-item-view {{index == companyIndex ? "left-item-select" : ""}} '>
+                        <text class='company-name' style='font-size:30rpx;'>{{item.company_name}}</text>
+                        <text class='mount-txt' style='font-size:30rpx;'>¥{{item.total_price}}</text>
+                        <image wx:if="{{index == 0}}" src='/Images/lowest_mini_icon.png'></image>
+                    </view>
+                </block>
+                <block wx:if="{{currentTab != 0}}" wx:for="{{drugList}}">
+                    <view catchtap='drugAction' id='{{index}}' class='left-item-view2 {{index == drugIndex ? "left-item-select" : ""}} '>
+                        <text class='company-name2' style='font-size:30rpx; padding-top:15rpx; padding-bottom:5rpx;'>{{item.medicinalName}}</text>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+        <scroll-view scroll-y="true" class='right-view'>
+            <view class='left-view-content'>
+                <view wx:if="{{currentTab == 0}}" class='freight'>
+                    <text>运费：{{freight == "" ? "0" : freight}}元</text>
+                    <text>{{leaveMessage}}</text>
+                </view>
+                <block wx:for="{{offerList}}" wx:for-item="item" wx:key="companyName">
+                    <view class='drug-item-view'>
+                        <view class='drug-price'>
+                            <text class='price'>{{item.price}}</text>
+                            <text class='unit'>／{{item.unit}}</text>
+                            <text wx:if="{{currentTab == 1 && index == 0}}" class='right-flag'>最低</text>
+                            <text wx:if="{{currentTab == 0 && item.isLowest == 1}}" class='right-flag'>最低</text>
+                        </view>
+                        <view class='drug-addr'>
+                            <view class='drug-name'>
+                                <text class='medicina-name-txt'>{{item.medicinalName}}</text>
+                                <text class='drug-num'>x{{item.num}}</text>
+                            </view>
+                            <text class='addr'>{{item.medicinalCompanyName}}</text>
+                        </view>
+                        <view class='drug-info'>
+                            <view class='drug-size medicina-name-txt' wx:if="{{currentTab == 1}}">
+                                <text class='left-txt'>商家：</text>
+                                <text class='right-txt'>{{item.companyName}}</text>
+                            </view>
+                            <view class='drug-size'>
+                                <text class='left-txt'>规格：</text>
+                                <text class='right-txt'>{{item.norms}}</text>
+                            </view>
+                            <view class='drug-size'>
+                                <text class='left-txt'>包装：</text>
+                                <text class='right-txt'>{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                            </view>
+                            <view class='drug-size'>
+                                <text class='left-txt'>效期：</text>
+                                <text class='right-txt'>{{item.invalidTime}}</text>
+                            </view>
+                            <button catchtap='addPurchaseAction' id='{{index}}' class='purchase-btn'>添加采购</button>
+                        </view>
+                        <view class='circle-view-left'></view>
+                        <view class='circle-view-right'></view>
+                        <block wx:if="{{currentTab == 1}}">
+                            <view class='feight-view'>
+                                <text>运费：{{item.freight}}元</text>
+                                <text>{{item.words}}</text>
+                            </view>
+                            <view class='circle-view-left2'></view>
+                            <view class='circle-view-right2'></view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view>
+    <view hidden='{{isShoppingClick}}' class='bottom-view {{drugCatList.length > 0 ? "" : "bottom-view-opacity"}}'>
+        <view class='bottom-text-view'>
+            <text class='text-content-style' style='padding-left:144rpx;'>已选择</text>
+            <text class='text-num-style'>{{drugCatList.length}}</text>
+            <text class='text-content-style'>个商家，共</text>
+            <text class='text-num-style'>{{drugNum}}</text>
+            <text class='text-content-style'>件</text>
+        </view>
+        <view bindtap='sureChooseActionD' class='bottom-btn-view'>
+            <text>选好了,采购</text>
+        </view>
+    </view>
+    <view wx:if="{{!isShoppingClick}}" bindtap='shoppingCatAction' class='bottom-view-cat {{drugCatList.length > 0 ? "" : "bottom-view-opacity"}}'>
+        <image wx:if="{{drugCatList.length == 0}}" class='cat-img' src='/Images/shopping_icon.png'></image>
+        <image wx:else class='cat-img' src='/Images/shopping_select_icon.png'></image>
+        <text wx:if="{{drugCatList.length > 0}}" class='cat-num-text'>{{drugType.length}}</text>
+    </view>
+</view>
+
+<view hidden='{{!isShoppingClick}}' class='cat-background' catchtap='closeAction'>
+    <view class='cat-view' catchtap='closeAction2'>
+        <view class='cat-list-view'>
+            <view class='cat-title-txt'>采购的药品信息</view>
+            <scroll-view scroll-y class='cat-item'>
+
+                <block wx:for="{{drugCatList}}" wx:for-item="drugItem" wx:key="companyName" wx:for-index="drugIndex">
+                    <view class='company-name-view'>
+                        <text class='company-name-txt'>{{drugItem.company_name}}</text>
+                        <text class='company-salesman-txt'>{{drugItem.realName}}</text>
+                    </view>
+                    <view class='cat-item-content' wx:for="{{drugItem.dataArray}}" wx:for-item="item" wx:key="companyName" wx:for-index="index">
+                        <view class='cat-item-drug-view'>
+                            <text class='cat-item-drug-name'>{{item.medicinalName}}</text>
+                            <text class='cat-item-drug-standard'>{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                            <text class='cat-item-drug-standard cat-item-drug-addr'>{{item.medicinalCompanyName}}</text>
+                        </view>
+                        <view class='cat-item-drug-num-edit'>
+                            <image catchtap='minusAction' id='{{index}}' data-drugIndex='{{drugIndex}}' class='cat-item-num-add-img' src='/Images/minus_icon.png'></image>
+                            <text class='cat-item-num-txt'>{{item.num}}</text>
+                            <image catchtap='addAction' id='{{index}}' data-drugIndex='{{drugIndex}}' class='cat-item-num-minus-img' src='/Images/add_icon.png'></image>
+                        </view>
+                        <view class='cat-item-drug-unit'>
+                            <text>{{item.price}}元</text>
+                            <text class='cat-item-size'>/盒</text>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+        <view class='bottom-view2 {{drugCatList.length > 0 ? "" : "bottom-view-opacity"}}'>
+            <view class='bottom-text-view2'>
+                <text class='text-content-style' style='padding-left:30rpx;'>已选择</text>
+                <text class='text-num-style'>{{drugCatList.length}}</text>
+                <text class='text-content-style'>个商家，</text>
+                <text class='text-num-style'>{{drugType.length}}</text>
+                <text class='text-content-style'>种药品，共</text>
+                <text class='text-num-style'>{{drugNum}}</text>
+                <text class='text-content-style'>件</text>
+            </view>
+            <button catchtap='sureChooseAction' class='bottom-btn-view2'>确定</button>
+        </view>
+    </view>
+</view>
+
+<import src="/template/toast/toast.wxml" />
+<view wx:if="{{toastView == 1}}" class='toast-view'>
+    <template is="deleteDrug" data="{{drugName, drugSpecs, drugCompany, drugNum}}" />
+</view>

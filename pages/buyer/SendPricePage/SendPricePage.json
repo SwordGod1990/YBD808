@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "发送询价单",
+  "navigationBarBackgroundColor": "#EB3E2D",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,84 @@
+/* pages/impower/impower.wxss */
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.text {
+    display: block;
+    text-align: center;
+    margin-top: 300rpx;
+    font-size: 32rpx;
+    color: #666;
+}
+
+.button-view {
+    height: 80rpx;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+    margin-top: 150rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.seller-view {
+    height: 200rpx;
+    margin-left: 56rpx;
+    margin-right: 56rpx;
+    background: white;
+    margin-top: 220rpx;
+    display: flex;
+    line-height: 200rpx;
+    box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+}
+
+.left-img {
+    height: 115rpx;
+    width: 134rpx;
+    display: inline-block;
+    margin-left: 48rpx;
+    margin-top: 42rpx;
+}
+
+.arrow-img {
+    width: 18rpx;
+    height: 32rpx;
+    float: right;
+    margin-top: 84rpx;
+    margin-right: 39rpx;
+}
+
+.txt {
+    font-size: 40rpx;
+    color: #333;
+    flex: 1;
+    text-align: center;
+    line-height: 200rpx;
+}
+
+.buyer-view {
+    height: 200rpx;
+    margin-left: 56rpx;
+    margin-right: 56rpx;
+    background: white;
+    margin-top: 110rpx;
+    display: flex;
+    line-height: 200rpx;
+    box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+}
+
+.login-txt {
+    font-size: 30rpx;
+    color: #4a90e2;
+    display: block;
+    position: absolute;
+    bottom: 80rpx;
+    text-align: center;
+    width: 100%;
+}

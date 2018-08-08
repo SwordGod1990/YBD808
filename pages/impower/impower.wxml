@@ -1,0 +1,22 @@
+<!--pages/impower/impower.wxml-->
+<view hidden='{{isImpowerPage}}'>
+    <text class='text'>用户信息和位置信息授权之后才可报价</text>
+    <button bindgetuserinfo='getUserInfoAction' open-type='getUserInfo' class='button-view'>去授权</button>
+</view>
+<view hidden='{{isShowPage}}'>
+    <view bindtap='sellerAction' class='seller-view'>
+        <image class='left-img' src='/Images/seller_icon.png'></image>
+        <text class='txt'>我要卖药</text>
+        <image class='arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+
+    <view bindtap='buyerAction' class='buyer-view'>
+        <image class='left-img' src='/Images/buyer_icon.png'></image>
+        <text class='txt'>我要买药</text>
+        <image class='arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+
+    <view hidden='none'>
+        <text class='login-txt'>已有账号立即登录</text>
+    </view>
+</view>

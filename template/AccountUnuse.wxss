@@ -1,0 +1,147 @@
+.accountunuse-page {
+    width: 100%;
+    height: 100%;
+    background: rgb(242, 242, 247);
+}
+
+.accountunuse-page1 {
+    width: 100%;
+    height: calc(100vh - 100rpx);
+    background: rgb(242, 242, 247);
+    background: red;
+}
+
+.accountunuse-img {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 340rpx;
+    margin-left: 236rpx;
+    width: 280rpx;
+    height: 280rpx;
+}
+
+.accountunuse-view {
+    text-align: center;
+    margin-top: 640rpx;
+}
+
+.text {
+    color: #808080;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    height: 30rpx;
+}
+
+.serviceView {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 910rpx;
+    font-size: 26rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+}
+
+.accountunuse-service {
+    color: #808080;
+}
+
+.accountunuse-phoneNub {
+    color: #4a90e2;
+}
+
+.error-page {
+    width: 100%;
+    height: 100vh;
+    background: rgb(242, 242, 247, 1);
+    /* background: red; */
+}
+
+.error-img {
+    margin-top: 340rpx;
+    margin-left: 236rpx;
+    width: 280rpx;
+    height: 280rpx;
+}
+
+.error-view {
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.error-text {
+    color: #808080;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+}
+
+/* 搜索不到数据 */
+
+.search-no-data-view {
+    width: 560rpx;
+    height: 388rpx;
+    background: rgba(252, 252, 252, 1);
+    border-radius: 12px;
+    position: absolute;
+    margin-top: 40%;
+    left: 50%;
+    margin-left: -280rpx;
+}
+
+.search-img {
+    height: 208rpx;
+    width: 256rpx;
+    margin-left: 154rpx;
+    position: absolute;
+    margin-top: -128rpx;
+    background: red;
+}
+
+.search-delete-img{
+    height: 58rpx;
+    width: 58rpx;
+    position: absolute;
+    right: 0;
+    margin-right: -27rpx;
+    margin-top: -27rpx;
+    border-radius: 29rpx;
+    background: white;
+}
+
+.search-text-view {
+    font-size: 28rpx;
+    color: #666;
+    letter-spacing: -0.34px;
+    text-align: center;
+    margin-top: 168rpx;
+}
+
+.search-btn-view {
+    height: 99rpx;
+    border-top: 1rpx solid #c7c7c7;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 17px;
+    letter-spacing: -0.41px;
+    display: flex;
+    text-align: center;
+    line-height: 99rpx;
+}
+
+.search-btn-left{
+    color: #333333;
+    flex: 1;
+    border-right: 1rpx solid #c7c7c7;
+}
+
+.search-btn-right{
+    color: #eb3e2d;
+    flex: 1;
+}

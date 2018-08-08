@@ -1,0 +1,40 @@
+<!--template/error/error.wxml-->
+<template name="error">
+    <view class='error-page'>
+        <image class='error-error-img' src='/Images/cannotuse.png' />
+        <view class='error-view'>
+            <text class='error-text'>{{errortxt}}</text>
+        </view>
+    </view>
+</template>
+
+<template name="error2">
+    <view class='error-page'>
+        <image class='error-error-img' src='{{errorImg}}' />
+        <view class='error-view'>
+            <text class='error-text'>{{errorMsg}}</text>
+        </view>
+    </view>
+</template>
+
+<template name="error3">
+    <view class='error-page'>
+        <image class='error-error-img' src='{{errorImg}}' />
+        <view class='error-view'>
+            <text class='error-text'>{{errorMsg}}</text>
+        </view>
+        <view bindtap='callPhoneAction' class='error-view'>
+            <text class='error-text2'>客服电话：</text>
+            <text class='error-text3'>400-666-9196</text>
+        </view>
+    </view>
+</template>
+
+<template name="error4">
+    <view class='error-page'>
+        <image class='error-img4' src='{{errorImg}}' />
+        <view class='error-view'>
+            <text class='error-text'>{{errorMsg}}</text>
+        </view>
+    </view>
+</template>

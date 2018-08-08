@@ -1,0 +1,407 @@
+/* pages/company/purchase/purchase.wxss */
+@import "/template/toast/toast.wxss";
+@import "/template/tabBar/tabBar.wxss";
+
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #f2f2f7;
+}
+
+.receipt-information-view {
+    background: white;
+    padding-bottom: 20rpx;
+}
+
+.consignee-info-view {
+    font-size: 30rpx;
+    position: relative;
+    display: flex;
+    padding: 20rpx 30rpx 0rpx 30rpx;
+}
+
+.consignee-txt {
+    color: #4d4d4d;
+    text-align: justify;
+    display: flex;
+    width: 150rpx;
+}
+
+.consignee-txt1 {
+    color: #4d4d4d;
+    flex: 1;
+    text-align: justify;
+    display: inline-block;
+}
+
+.consignee-txt2 {
+    color: #4d4d4d;
+    text-align: right;
+    flex: 1;
+    display: inline-block;
+}
+
+.name {
+    color: #333;
+}
+
+.mobile {
+    color: #4a90e2;
+    margin-left: 20rpx;
+}
+
+.consignee-view {
+    font-size: 30rpx;
+    position: relative;
+    display: flex;
+    margin: 10rpx 30rpx 0rpx 30rpx;
+}
+
+.consignee-addr-txt {
+    color: #4d4d4d;
+    width: 150rpx;
+}
+
+.address {
+    display: block;
+    flex: 1;
+}
+
+.consignee-message-view {
+    background: #fafafa;
+    position: relative;
+    display: flex;
+    margin: 10rpx 20rpx 0rpx 20rpx;
+    padding: 28rpx 10rpx 28rpx 10rpx;
+}
+
+.consignee-message-txt {
+    font-size: 28rpx;
+    color: #808080;
+    display: flex;
+    width: 150rpx;
+}
+
+.consignee-message-txt1 {
+    display: inline-block;
+    flex: 1;
+}
+
+.consignee-message-txt2 {
+    flex: 1;
+    display: inline-block;
+    text-align: right;
+}
+
+.message {
+    font-size: 28rpx;
+    color: #808080;
+    flex: 1;
+}
+
+.company-view {
+    height: 108rpx;
+    font-size: 30rpx;
+    color: #333;
+    /* border-bottom: 1rpx solid #e5e5e5; */
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 20rpx;
+    background: #fff4f4;
+}
+
+.company-name-view-txt {
+    display: flex;
+}
+
+.company-name-txt {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1;
+    text-overflow: ellipsis;
+    margin-left: 10rpx;
+}
+
+.company-img {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 12rpx;
+}
+
+.linkman-view {
+    font-size: 30rpx;
+    color: #666;
+    margin-left: 42rpx;
+    margin-top: 10rpx;
+}
+
+.linkman-mobile {
+    margin-left: 30rpx;
+}
+
+.purchase-content {
+    padding-bottom: 200rpx;
+}
+
+.purchase-item-view {
+    background: white;
+    margin-top: 20rpx;
+}
+
+.durg-info-view {
+    border-bottom: 10rpx solid #f2f2f7;
+}
+
+.drug-company-view {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.drug-info-view {
+    display: flex;
+}
+
+.drug-name {
+    font-size: 30rpx;
+    color: #333;
+    flex: 1;
+    display: inline-block;
+    padding-top: 10rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-amount {
+    font-size: 36rpx;
+    color: #eb3e2d;
+    text-align: right;
+    /* width: 200rpx; */
+}
+
+.drug-amount::before {
+    content: '¥';
+    color: #eb3e2d;
+    font-size: 24rpx;
+}
+
+.drug-amount2 {
+    font-size: 24rpx;
+    color: #999999;
+    text-align: right;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+    /* width: 200rpx; */
+}
+
+.drug-amount2::before {
+    content: '¥';
+    color: #999999;
+    font-size: 24rpx;
+}
+
+.drug-addr {
+    display: block;
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 5rpx;
+}
+
+.gift-view {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 16rpx;
+    padding-top: 20rpx;
+    background: #fafafa;
+}
+
+.gift-name {
+    position: relative;
+    font-size: 30rpx;
+    color: #333;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 86rpx;
+    padding-bottom: 10rpx;
+}
+
+.gift-name::before {
+    content: '[赠品]';
+    position: absolute;
+    color: #eb3e2d;
+    font-size: 30rpx;
+    margin-left: -86rpx;
+    width: 90rpx;
+}
+
+.gift-name2 {
+    position: relative;
+    font-size: 30rpx;
+    color: #333;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 85rpx;
+    padding-bottom: 10rpx;
+}
+
+.gift-name2::before {
+    content: '[折扣]';
+    position: absolute;
+    color: #eb3e2d;
+    font-size: 30rpx;
+    margin-left: -85rpx;
+    width: 90rpx;
+}
+
+.drug-size-view {
+    height: 124rpx;
+    background: #fafafa;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-bottom: 10rpx solid #f2f2f7;
+}
+
+.drug-size {
+    font-size: 26rpx;
+    color: #666;
+    padding-top: 15rpx;
+    display: block;
+    /* display: inline-block; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-size-info-view {
+    display: flex;
+    /* margin-top: 15rpx; */
+}
+
+.drug-validity {
+    font-size: 26rpx;
+    color: #666;
+    flex: 1;
+}
+
+.drug-size-txt {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+    display: block;
+}
+
+.drug-packge {
+    font-size: 28rpx;
+    color: #333;
+    flex: 1;
+    text-align: right;
+}
+
+.drug-packge2 {
+    font-size: 28rpx;
+    color: #333;
+    float: right;
+    text-align: right;
+}
+
+.feight-view {
+    font-size: 30rpx;
+    color: #333;
+    display: flex;
+    height: 70rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    line-height: 70rpx;
+    padding-left: 30rpx;
+}
+
+.feight-txt {
+    width: 120rxp;
+}
+
+.feight-input {
+    flex: 1;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10rpx;
+    line-height: 70rpx;
+    height: 70rpx;
+    vertical-align: text-bottom;
+}
+
+.holder-txt {
+    font-size: 30rpx;
+    color: #b3b3b3;
+}
+
+.feight-unit {
+    font-size: 30rpx;
+    color: #333;
+    margin-right: 30rpx;
+}
+
+.order-view {
+    font-size: 30rpx;
+    color: #333;
+    display: flex;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 30rpx;
+    /* padding-top: 30rpx; */
+}
+
+.order-amount {
+    font-size: 36rpx;
+    color: #eb3e2d;
+    flex: 1;
+    display: inline-block;
+    text-align: right;
+    margin-right: 30rpx;
+}
+
+.order-amount::before {
+    content: '¥';
+    font-size: 24rpx;
+    color: #eb3e2d;
+}
+
+.botton-view {
+    position: fixed;
+    bottom: 60rpx;
+    left: 0;
+    right: 0;
+    margin-top: 30rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    color: white;
+    font-size: 36rpx;
+    line-height: 80rpx;
+    z-index: 2;
+}
+
+.botton-view::after {
+    border: 0;
+    outline: none;
+}

@@ -1,0 +1,23 @@
+<template name="areaSelector">
+    <view class='time-picker-view-bg' wx:if='{{!isDisplay}}'>
+        <view animation="{{animationData}}" class='time-view'>
+            <view class='button-view'>
+                <button class='button-cancel' bindtap='cancelAction'>取消</button>
+                <button class='choosetext'>请选择</button>
+
+                <button class='button-sure' bindtap='sureAction'>确定</button>
+            </view>
+            <picker-view indicator-style="height: 50px;" class='time-picker' bindchange="bindChange" value="{{areaItemValue}}" catchtap='blankAction'>
+                <picker-view-column>
+                    <view wx:for="{{provinces}}" class='picker-view-column'>{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{citys}}" class='picker-view-column'>{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{areas}}" class='picker-view-column'>{{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</template>

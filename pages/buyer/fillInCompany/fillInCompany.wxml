@@ -1,0 +1,77 @@
+<!--pages/buyer/addCompanyInfo/addCompanyInfo.wxml-->
+<form bindsubmit='submitAction'>
+    <view class='company-info-view'>
+        <view catchtap='chooseClinicAction' class='item-view'>
+            <text class='input-txt input-view'>{{clinicName}}</text>
+            <text class='left-txt'>企业名称</text>
+            <image class='arrow-img' src='/Images/rightarrow.png'></image>
+        </view>
+
+        <view class='item-view'>
+            <!-- <input wx:if='{{clinicType != ""}}' disabled='true' name="clinicType" class='input-txt input-view-right' placeholder='请输入企业类型' placeholder-class='holder-txt' value='{{clinicType}}'></input>
+            <input wx:else name="clinicType" class='input-txt input-view-right' placeholder='请输入企业类型' placeholder-class='holder-txt' value='{{clinicType}}'></input> -->
+            <text class='left-txt'>企业类型</text>
+            <picker bindchange="bindPickerChange" class='picker-txt' value="{{index}}" range="{{clinicTypeArray}}">
+                <text class='input-txt input-view {{clinicTypeTxt == "请选择" ? "holder-txt" : ""}}'>{{clinicTypeTxt}}</text>
+            </picker>
+            <image class='arrow-img' src='/Images/rightarrow.png'></image>
+        </view>
+
+        <view class='item-view'>
+            <input wx:if='{{licenceNo != ""}}' disabled='true' name="clinicNumber" class='input-txt input-view-right' placeholder='请输入经营许可证编号' placeholder-class='holder-txt' value='{{licenceNo}}'></input>
+            <input maxlength='30' wx:else name="clinicNumber" class='input-txt input-view-right' placeholder='请输入经营许可证编号' placeholder-class='holder-txt' value='{{licenceNo}}'></input>
+            <text class='left-txt-after'>经营许可证编号</text>
+        </view>
+
+        <view class='item-view' catchtap='areaChooseAction'>
+            <text class='input-txt input-view {{areaValue == "请选择" ? "holder-txt" : ""}}'>{{areaValue}}</text>
+            <text class='left-txt'>所在地区</text>
+            <image class='arrow-img' src='/Images/rightarrow.png'></image>
+        </view>
+
+        <view class='item-view'>
+            <input wx:if='{{address != ""}}' disabled='true' name="clinicAddr" class='input-txt input-view-right' placeholder='请输入详细地址' placeholder-class='holder-txt' value='{{address}}'></input>
+            <input maxlength='30' wx:else name="clinicAddr" class='input-txt input-view-right' placeholder='请输入详细地址' placeholder-class='holder-txt' value='{{address}}'></input>
+            <text class='left-txt'>详细地址</text>
+        </view>
+
+        <view class='item-view'>
+            <input wx:if='{{contactsPerson != ""}}' disabled='true' name="clinicLinkman" class='input-txt input-view-right' placeholder='请输入联系人姓名' placeholder-class='holder-txt' value='{{contactsPerson}}'></input>
+            <input maxlength='20' wx:else name="clinicLinkman" class='input-txt input-view-right' placeholder='请输入联系人姓名' placeholder-class='holder-txt' value='{{contactsPerson}}'></input>
+            <text class='left-txt'>联系人</text>
+        </view>
+
+        <view class='item-view' style='border: 0;'>
+            <input maxlength='11' wx:if='{{contactsPhone != ""}}' disabled='true' class='input-txt input-view-right' placeholder='请输入联系电话' placeholder-class='holder-txt' value='{{contactsPhone}}'></input>
+            <input type='number' name="clinicPhone" maxlength='11' wx:else class='input-txt input-view-right' placeholder='请输入联系电话' placeholder-class='holder-txt'></input>
+            <text class='left-txt'>联系电话</text>
+        </view>
+    </view>
+
+    <view class='service-view'>信息变更，请联系客服：
+        <text>400-666-9196</text>
+    </view>
+    <button class='btn-view' form-type='submit'>提交</button>
+
+</form>
+<view class='time-picker-view-bg' wx:if='{{!isDisplay}}'>
+    <view animation="{{animationData}}" class='time-view'>
+        <view class='button-view'>
+            <button class='button-cancel' bindtap='cancelAction'>取消</button>
+            <button class='choosetext'>请选择</button>
+
+            <button class='button-sure' bindtap='sureAction'>确定</button>
+        </view>
+        <picker-view indicator-style="height: 50px;" class='time-picker' bindchange="bindChange" value="{{areaItemValue}}" catchtap='blankAction'>
+            <picker-view-column>
+                <view wx:for="{{provinces}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{areas}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

@@ -1,0 +1,64 @@
+<!--pages/buyer/sureEnquiry/sureEnquiry.wxml-->
+<view class='user-info-container'>
+    <view class='user-info-view'>
+        <view class='left-view'>
+            <text class='freight-person-txt'>收货</text>
+            <text>人：</text>
+        </view>
+        <view class='right-view'>
+            <text>{{userInfo.consigneeName}}</text>
+            <text class='user-phone'>{{userInfo.consigneePhone}}</text>
+            <image catchtap='editUserInfoAction' class='eidt-img' src='/Images/edit_icon.png'></image>
+        </view>
+    </view>
+    <view class='user-info-view'>
+        <view class='left-view'>
+            <text>收货地址：</text>
+        </view>
+        <view class='right-view'>
+            <text>{{userInfo.province}}{{userInfo.city}}{{userInfo.area}}{{userInfo.consigneeAddress}}</text>
+        </view>
+    </view>
+    <view class='msg-view'>
+        <view class='left-view' style='margin-left:0rpx; margin-top:10rpx;'>
+            <text class='msg-txt'>留</text>
+            <text>言：</text>
+        </view>
+        <textarea maxlength='200' focus='false' bindinput='wordsAction' class='textarea-view' placeholder-class='holder-txt' placeholder='请输入留言'></textarea>
+    </view>
+</view>
+
+<view class='drug-content-view'>
+    <view class='item-view' wx:for="{{drugList}}" style='border-bottom: {{drugList.length-1 == index ? 0 : ""}}'>
+        <text class='drug-name-txt'>{{item.medicinalName}}</text>
+        <view class='drug-unit-txt'>
+            <text>{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+            <text class='drug-num-txt'>x {{item.num}}</text>
+        </view>
+        <text class='drug-company-txt'>{{item.medicinalCompanyName}}</text>
+    </view>
+</view>
+
+
+<view class='bottom-view'>
+    <view class='sync-shopping-view'>
+        <image catchtap='shareShoppingMallAction' id='0' wx:if='{{syncShopping == 0}}' src='/Images/tick_unselected_icon.png'></image>
+        <image catchtap='shareShoppingMallAction' id='1' wx:if='{{syncShopping == 1}}' src='/Images/tick_selected_icon.png'></image>
+        <text>发布本询价单到致医商城</text>
+    </view>
+    <view class='next-view'>
+        <view class='drug-amount-view'>
+            <text>共</text>
+            <text class='drug-amount-txt'>{{drugList.length}}</text>
+            <text>种药品，共</text>
+            <text class='drug-amount-txt'>{{drugNum}}</text>
+            <text>件</text>
+        </view>
+        <text catchtap='saveEnquiryAction' class='next-btn'>下一步</text>
+    </view>
+</view>
+
+<import src="/template/toast/toast.wxml" />
+<view hidden='{{isSureToast}}' class='toast-view'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}" />
+</view>

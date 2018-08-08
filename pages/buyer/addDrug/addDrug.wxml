@@ -1,0 +1,37 @@
+<!--pages/company/addDrug/addDrug.wxml-->
+<!-- <import src="/template/AccountUnuse.wxml" />
+<view class='toast-view'>
+    <template is="searchNoData" />
+</view> -->
+
+<form bindsubmit='addDrugInfoAction'>
+  <view class='add-drug-container'>
+    <view class='drug-name-view'>
+      <input maxlength='30' class='drug-name-input' placeholder='请输入药品名称' placeholder-class='hint-style' name="drugName"></input>
+      <text class='drug-name-text'>药品名称</text>
+    </view>
+    <view class='drug-name-view'>
+      <input maxlength='15' class='drug-name-input' placeholder='请输入药品规格' placeholder-class='hint-style' name="drugSize"></input>
+      <text class='drug-size-text'>药品规格</text>
+    </view>
+    <view catchtap='drugPackingUnitAction' class='drug-name-view'>
+      <text class='drug-size-text'>药品包装数量</text>
+      <text class='drug-num-text {{drugNum == 0 ? "hint-style" : "drug-num"}}'>{{drugNum == 0 ? "请填写药品包装数量" : drugNum}}</text>
+      <image class='drug-num-img' src='/Images/rightarrow.png'></image>
+    </view>
+    <view class='drug-name-view drug-company-view'>
+      <input maxlength='30' name="drugCompany" class='drug-name-input' placeholder='请填写生产厂家' placeholder-class='hint-style'></input>
+      <text class='drug-name-text'>生产厂家</text>
+    </view>
+    <view class='drug-purchase-view'>
+      <view class='drug-name-input'>
+        <image catchtap='minusAction' class='purchase-num-minus' src='/Images/minus_icon.png'></image>
+        <text class='purchase-num'>{{purchaseAmonut}}</text>
+        <image catchtap='addAction' class='purchase-num-minus' src='/Images/add_icon.png'></image>
+      </view>
+      <text class='drug-size-text'>采购数量</text>
+    </view>
+
+    <button class='add-drug-btn' form-type='submit'>加入询价单</button>
+  </view>
+</form>

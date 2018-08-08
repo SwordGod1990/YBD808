@@ -1,0 +1,114 @@
+<!-- 搜索不到数据 -->
+<template name="searchNoData">
+    <view class='search-no-data-view'>
+        <image class='search-img' src='/Images/che.png'></image>
+        <image class='search-delete-img' src='/Images/add.png'></image>
+        <view class='search-text-view'>
+            <text>未搜索到药品信息，请尝试以下操作</text>
+        </view>
+        <view class='search-btn-view'>
+            <text bindtap='searchAddDrugAction' id='1' class='search-btn-left'>搜索加药</text>
+            <text bindtap='manualAddDrugAction' id='2' class='search-btn-right'>手动加药</text>
+        </view>
+    </view>
+</template>
+
+<template name="addDrug">
+    <view class='toast-container-view'>
+        <image catchtap='closeAction' class='search-delete-img' src='/Images/close_icon_2.png'></image>
+        <text class='toast-title-txt'>{{drugName}}</text>
+        <text class='toast-content1-txt'>{{drugSpecs}}</text>
+        <text class='toast-content2-txt'>{{drugCompany}}</text>
+        <view class='toast-edit-view'>
+            <image catchtap='minusAction' class='add-img' src='/Images/minus_icon.png'></image>
+            <text class='num-txt'>{{srarchDrugNum}}</text>
+            <image catchtap='addAction' class='add-img' src='/Images/add_icon.png'></image>
+        </view>
+        <view class='search-btn-view'>
+            <button bindtap='addDrugAction' id='1' class='search-btn-left' style='font-size:30rpx;'>{{cancelTxt}}</button>
+            <button bindtap='addEnquiryAction' id='2' class='search-btn-right' style='font-size:30rpx;'>{{sureTxt}}</button>
+        </view>
+    </view>
+</template>
+
+<template name="addInput">
+    <form bindsubmit='sureAction' bindreset='cancelAction'>
+        <view class='toast-container-view2'>
+            <view class='content-view2'>
+                <text class='add-input-txt'>小单位:</text>
+                <input class='toast-input' placeholder-class='input-placeholder' name='inputContent' placeholder='请输入小单位' value='{{inputValue}}'></input>
+            </view>
+            <view class='search-btn-view'>
+                <button form-type='reset' id='1' class='search-btn-left'>取消</button>
+                <button form-type='submit' id='2' class='search-btn-right'>确定</button>
+            </view>
+        </view>
+    </form>
+</template>
+
+<template name="sure">
+    <view class='sure-data-view'>
+        <view class='sure-text-view'>
+            <text>{{toastContent}}</text>
+        </view>
+        <view class='search-btn-view'>
+            <text wx:if='{{toastCancel != ""}}' bindtap='cancelAction' id='1' class='search-btn-left'>{{toastCancel}}</text>
+            <text bindtap='sureAction' id='2' class='search-btn-right' style='color: #EB3E2D;'>{{toastSure}}</text>
+        </view>
+    </view>
+</template>
+
+<template name="deleteDrug">
+    <view class='toast-delete-container-view'>
+        <text class='toast-delete-title-txt'>{{drugName}}</text>
+        <text class='toast-delete-content1-txt'>{{drugSpecs}}</text>
+        <text class='toast-delete-content1-txt'>{{drugCompany}}</text>
+        <text class='toast-delete-content2-txt'>确认删除此药品吗？</text>
+        <view class='botton-delete-view'>
+            <button bindtap='cancelAction' id='1' class='search-btn-left'>取消</button>
+            <button bindtap='deleteAction' id='2' class='search-btn-right'>删除</button>
+        </view>
+    </view>
+</template>
+
+<!-- 驳回 -->
+<template name="reject">
+    <view class='reject-container-view'>
+        <text class='reject-title-txt'>请填写驳回原因</text>
+        <textarea bindinput='rejectChangeAction' maxlength='30' class='reject-content-textarea' placeholder='请输入原因' placeholder-class='reject-holder-text'></textarea>
+        <text hidden='{{isEmptyRefuseReason}}' class='reject-hint-text'>驳回原因不能为空哦</text>
+        <view class='reject-bottom-view'>
+            <button bindtap='cancelRejectAction' class='reject-cancel'>取消</button>
+            <button bindtap='sureRejectAction' class='reject-sure'>确定</button>
+        </view>
+    </view>
+</template>
+
+<!-- 扫码药品信息 -->
+<template name="scanDrugInfo">
+    <view class='scanDrugInfo-container-view'>
+        <view class='scanDrugInfo-drug-name-num'>
+            <text class='scanDrugInfo-durg-name'>{{drugInfo.commodityName}}</text>
+            <text wx:if='{{drugInfo.activeType == 1}}' class='scanDrugInfo-durg-num'>{{drugInfo.discountPrice}}</text>
+            <text wx:else class='scanDrugInfo-durg-num'>{{drugInfo.price}}</text>
+        </view>
+        <text class='scanDrugInfo-drug-size'>规格*包装：{{drugInfo.norms}}*{{drugInfo.matrix}}{{drugInfo.minUnit}}／{{drugInfo.commonUnit}}</text>
+        <text class='scanDrugInfo-drug-size'>效期：{{drugInfo.invalidTime}}</text>
+        <text class='scanDrugInfo-drug-size'>厂家：{{drugInfo.factory}}</text>
+        <text class='scanDrugInfo-drug-size'>商家：{{drugInfo.businessName}}</text>
+        <view class='scanDrugInfo-discount-view'>
+            <view class='scanDrugInfo-discount-info-view'>
+                <text wx:if='{{drugInfo.activeType == 2}}' class='scanDrugInfo-discount-type-text'>满赠</text>
+                <text wx:if='{{drugInfo.activeType == 1}}' class='scanDrugInfo-discount-type-text'>折扣</text>
+                <text wx:if='{{drugInfo.activeType == 2 && drugInfo.giftType == 1}}' class='scanDrugInfo-discount-info-text'>满{{drugInfo.num}}件赠本品</text>
+                <text wx:if='{{drugInfo.activeType == 2 && (drugInfo.giftType == 3 || drugInfo.giftType == 2)}}' class='scanDrugInfo-discount-info-text'>满{{drugInfo.num}}件赠{{drugInfo.giftName}}</text>
+                <text wx:if='{{drugInfo.activeType == 1}}' class='scanDrugInfo-discount-info-text'>满{{drugInfo.num}}件打{{drugInfo.discounts}}折</text>
+            </view>
+            <text wx:if='{{drugInfo.activeType == 2}}' class='scanDrugInfo-discount-num-text'>x{{drugInfo.giftNum}}</text>
+        </view>
+        <view class='scanDrugInfo-bottom-view'>
+            <button bindtap='cancelAction' class='reject-cancel'>取消</button>
+            <button bindtap='addEnquiryAction' class='reject-sure'>加入到询价单</button>
+        </view>
+    </view>
+</template>

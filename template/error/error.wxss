@@ -1,0 +1,45 @@
+/* template/error/error.wxss */
+
+.error-page {
+    width: 100%;
+    height: 100vh;
+    background: rgb(242, 242, 247, 1);
+    text-align: center;
+}
+
+.error-error-img {
+    margin-top: 300rpx;
+    vertical-align: middle;
+    width: 280rpx;
+    height: 280rpx;
+}
+
+.error-img4 {
+    margin-top: 300rpx;
+    vertical-align: middle;
+    width: 216rpx;
+    height: 260rpx;
+}
+
+.error-view {
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.error-text {
+    color: #808080;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+}
+
+.error-text2 {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #808080;
+}
+
+.error-text3 {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #4A90E2;
+}

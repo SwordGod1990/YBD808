@@ -1,0 +1,227 @@
+/* pages/DistributionArea/DistributionArea.wxss */
+
+page {
+}
+
+.container-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+    height: 100vh;
+}
+
+.scorll-view-left {
+    flex-shrink: 0;
+    width: 43%;
+    display: inline-block;
+    height: 100vh;
+}
+
+.scorll-view-right {
+    width: 56%;
+    height: 100vh;
+    display: inline-block;
+    flex: 1;
+}
+
+.province-view {
+    height: 100rpx;
+    width: 97%;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    position: relative;
+    background: #fff;
+    box-shadow: 4rpx 0 10rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.city-view {
+    height: 100rpx;
+    width: 100%;
+    line-height: 100rpx;
+    position: relative;
+}
+
+.city-view-line {
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.bottom-line {
+    background: white;
+}
+
+.bottom-line::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 70rpx;
+    right: 0%;
+    height: 1rpx;
+    width: auto;
+    background: #e5e5e5;
+}
+
+.right-line {
+    background: white;
+}
+
+.right-line::after {
+    content: "";
+    background-color: #eb3e2d;
+    color: red;
+    width: 10rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+}
+
+.check-img {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 10rpx;
+    line-height: 100rpx;
+    position: absolute;
+    margin-top: 15rpx;
+    padding: 20rpx;
+      /* background: red;    */
+}
+
+.check-text {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 80rpx;
+    line-height: 100rpx;
+    display: inline-block;
+}
+
+.check-text-num {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    line-height: 100rpx;
+    /* width: 20%; */
+    display: inline-block;
+    /* background: red; *//* white-space: nowrap; *//* overflow: hidden; *//* text-overflow: ellipsis; */
+}
+
+.check-text-ellipsis {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 80rpx;
+    line-height: 100rpx;
+    width: 50%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-text-ellipsis2 {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 90rpx;
+    line-height: 100rpx;
+    width: 70%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-text-num-ellipsis {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    line-height: 100rpx;
+    width: 20%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.down-img {
+    width: 32rpx;
+    height: 18rpx;
+    padding-top: 30rpx;
+    padding-right: 10rpx;
+    padding-left: 50rpx;
+}
+
+.right-down-view {
+    display: inline-block;
+    position: absolute;
+    top: 0rpx;
+    right: 0rpx;
+    margin-right: 10rpx;
+}
+
+.city-view-checked {
+    height: 99rpx;
+    width: 100%;
+    line-height: 100rpx;
+    position: relative;
+}
+
+.line {
+    height: 1rpx;
+    width: 100%;
+    background: #e5e5e5;
+    margin-left: 70rpx;
+}
+
+.area-view {
+    height: 100rpx;
+    width: 100%;
+    /* background: gold; */
+    position: relative;
+}
+
+.area-view-line {
+    line-height: 100rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    margin-left: 70rpx;
+}
+
+.check-area-img {
+    width: 32rpx;
+    height: 32rpx;
+     margin-left: -6rpx; 
+    line-height: 100rpx;
+    position: absolute;
+    margin-top: 15rpx;
+     /* background: red;  */
+    padding: 20rpx;
+}
+
+.check-area-text {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    width: 68%;
+    padding-left: 70rpx;
+    line-height: 100rpx;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-view {
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    position: absolute;
+    bottom: 0;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    height: 80rpx;
+    width: 89.3%;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    color: #fff;
+    letter-spacing: 0;
+    margin-bottom: 28rpx;
+}

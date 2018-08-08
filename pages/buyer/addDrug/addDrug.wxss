@@ -1,0 +1,140 @@
+/* pages/company/addDrug/addDrug.wxss */
+@import "/template/AccountUnuse.wxss";
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #f2f2f7;
+}
+
+.add-drug-container {
+    margin-top: 20rpx;
+    height: 100%;
+    width: 100%;
+}
+
+.drug-name-view {
+    height: 100rpx;
+    position: relative;
+    background: white;
+    line-height: 100rpx;
+    padding-left: 30rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.drug-name-text {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    position: absolute;
+    top: 0;
+}
+
+.drug-name-text::after {
+    content: '*';
+    color: #eb3e2d;
+}
+
+.drug-name-input {
+    height: 100rpx;
+    display: block;
+    padding-left: 165rpx;
+    padding-right: 30rpx;
+    line-height: 100rpx;
+    text-align: right;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.drug-size-text {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    position: absolute;
+    top: 0;
+}
+
+.hint-style {
+    font-size: 30rpx;
+    color: #b3b3b3;
+}
+
+.drug-num-img {
+    width: 18rpx;
+    height: 36rpx;
+    position: absolute;
+    right: 30rpx;
+    margin-top: 32rpx;
+}
+
+.drug-num-text {
+    height: 100rpx;
+    display: inline-block;
+    padding-left: 165rpx;
+    line-height: 100rpx;
+    text-align: right;
+    position: absolute;
+    right: 68rpx;
+}
+
+.drug-num {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.drug-company-view {
+    border-bottom: 0rpx solid #e6e6e6;
+}
+
+.drug-purchase-view {
+    height: 100rpx;
+    position: relative;
+    background: white;
+    line-height: 100rpx;
+    padding-left: 30rpx;
+    margin-top: 22rpx;
+    padding-right: 56rpx;
+}
+
+.purchase-num-minus {
+    width: 56rpx;
+    height: 56rpx;
+    position: absolute;
+    margin-top: 22rpx;
+    top: 0;
+}
+
+.purchase-num {
+    font-size: 36rpx;
+    color: #333;
+    margin-left: 76rpx;
+    margin-right: 20rpx;
+    line-height: 100rpx;
+}
+
+.add-drug-btn {
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    font-size: 36rpx;
+    color: #fff;
+    letter-spacing: 0;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-top: 82rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    line-height: 80rpx;
+}
+
+.add-drug-btn::after {
+    border: 0;
+    outline: none;
+}
+
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}

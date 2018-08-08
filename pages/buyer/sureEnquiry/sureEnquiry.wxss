@@ -1,0 +1,248 @@
+/* pages/buyer/sureEnquiry/sureEnquiry.wxss */
+@import "/template/toast/toast.wxss";
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.user-info-container {
+    background: white;
+    padding-bottom: 20rpx;
+}
+
+.user-info-view {
+    display: flex;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    padding-top: 20rpx;
+}
+
+.left-view {
+    width: 150rpx;
+    display: inline-block;
+    margin-left: 30rpx;
+}
+
+.right-view {
+    flex: 1;
+    display: inline-block;
+    margin-right: 30rpx;
+    position: relative;
+}
+
+.user-phone {
+    font-size: 30rpx;
+    color: #4a90e2;
+    margin-left: 20rpx;
+}
+
+.eidt-img {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 0rpx;
+    padding-left: 30rpx;
+    padding-bottom: 30rpx;
+    padding-top: 5rpx;
+}
+
+.freight-person-txt {
+    letter-spacing: 14rpx;
+}
+
+.msg-view {
+    background: #fafafa;
+    display: flex;
+    margin-top: 14rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    padding-top: 26rpx;
+    padding-bottom: 28rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    font-size: 28rpx;
+    color: #808080;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.msg-txt {
+    letter-spacing: 58rpx;
+}
+
+.drug-content-view {
+    margin-top: 22rpx;
+    background: white;
+    margin-bottom: 220rpx;
+}
+
+.item-view {
+    padding-top: 28rpx;
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.drug-name-txt {
+    font-size: 30rpx;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.drug-unit-txt {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+    display: flex;
+}
+
+.drug-company-txt {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    margin-top: 5rpx;
+}
+
+.drug-num-txt {
+    flex: 1;
+    text-align: right;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.bottom-view {
+    position: fixed;
+    bottom: 0;
+    height: 180rpx;
+    width: 100%;
+    background: white;
+}
+
+.sync-shopping-view {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    background: #fafafa;
+}
+
+.sync-shopping-view image {
+    height: 40rpx;
+    width: 40rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sync-shopping-view text {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #666;
+    margin-left: 10rpx;
+    vertical-align: middle;
+}
+
+.next-view {
+    display: flex;
+}
+
+.drug-amount-view {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 30rpx;
+    color: #666;
+    flex: 1;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    background: #fff;
+}
+
+.drug-amount-txt {
+    color: #fb533b;
+}
+
+.next-btn {
+    display: inline-block;
+    height: 100rpx;
+    width: 256rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+}
+
+.next-btn::after {
+    border: none;
+    outline: none;
+}
+
+.botton-view {
+    display: flex;
+}
+
+.save-botton {
+    font-size: 36rpx;
+    color: #fb533b;
+    flex: 1;
+    margin-left: 30rpx;
+    margin-right: 17rpx;
+    height: 80rpx;
+    margin-top: 24rpx;
+    border-radius: 45rpx;
+    line-height: 80rpx;
+    border: 1px solid #fd553c;
+}
+
+.save-botton::after {
+    border: 0;
+    outline: none;
+}
+
+.send-botton {
+    font-size: 36rpx;
+    color: white;
+    flex: 1;
+    margin-right: 30rpx;
+    margin-left: 17rpx;
+    height: 80rpx;
+    margin-top: 24rpx;
+    border-radius: 45rpx;
+    line-height: 80rpx;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+}
+
+.send-botton::after {
+    border: 0;
+    outline: none;
+}
+
+.textarea-view {
+    height: 84rpx;
+    width: 550rpx;
+    font-size: 28rpx;
+    color: #808080;
+    padding: 5rpx;
+    padding-top: 0rpx;
+    display: inline-block;
+    border: 1rpx solid #cbcbcb;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-radius: 4rpx;
+}
+
+.holder-txt {
+    font-size: 28rpx;
+    color: #b3b3b3;
+}

@@ -1,0 +1,487 @@
+@import "../../template/toast/toast.wxss";
+
+.toast-view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background: #f2f2f7;
+}
+
+.send-out-state-view {
+    height: 110rpx;
+    width: 100%;
+    background-image: linear-gradient(1deg, #ff7859 0%, #ff4e40 100%);
+}
+
+.send-out-state-text {
+    font-family: PingFangSC-Regular;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 110rpx;
+    margin-left: 60rpx;
+}
+
+.send-out-img {
+    height: 63rpx;
+    width: 141rpx;
+    position: absolute;
+    right: 60rpx;
+    top: 29rpx;
+}
+
+.active-status-img {
+    height: 102rpx;
+    width: 102rpx;
+    position: absolute;
+    left: 194rpx;
+    top: 6rpx;
+}
+
+.turn-down-img {
+    height: 96rpx;
+    width: 138rpx;
+    position: absolute;
+    right: 60rpx;
+    top: 0rpx;
+}
+
+.receipt-information-view {
+    background: white;
+    padding-bottom: 20rpx;
+}
+
+.consignee-info-view {
+    font-size: 30rpx;
+    position: relative;
+    display: flex;
+    padding: 20rpx 30rpx 0rpx 30rpx;
+}
+
+.consignee-txt {
+    color: #4d4d4d;
+    text-align: justify;
+    display: flex;
+    width: 150rpx;
+}
+
+.consignee-txt1 {
+    color: #4d4d4d;
+    flex: 1;
+    text-align: justify;
+    display: inline-block;
+}
+
+.consignee-txt2 {
+    color: #4d4d4d;
+    text-align: right;
+    flex: 1;
+    display: inline-block;
+}
+
+.name {
+    color: #333;
+}
+
+.mobile {
+    color: #4a90e2;
+    margin-left: 20rpx;
+}
+
+.consignee-view {
+    font-size: 30rpx;
+    position: relative;
+    display: flex;
+    margin: 10rpx 30rpx 0rpx 30rpx;
+}
+
+.consignee-addr-txt {
+    color: #4d4d4d;
+    width: 150rpx;
+}
+
+.address {
+    display: block;
+    flex: 1;
+}
+
+.consignee-message-view {
+    background: #fafafa;
+    position: relative;
+    display: flex;
+    margin: 10rpx 20rpx 0rpx 20rpx;
+    padding: 28rpx 10rpx 28rpx 10rpx;
+}
+
+.consignee-message-txt {
+    font-size: 28rpx;
+    color: #808080;
+    display: flex;
+    width: 150rpx;
+}
+
+.consignee-message-txt1 {
+    display: inline-block;
+    flex: 1;
+}
+
+.consignee-message-txt2 {
+    flex: 1;
+    display: inline-block;
+    text-align: right;
+}
+
+.message {
+    font-size: 28rpx;
+    color: #808080;
+    flex: 1;
+}
+
+.company-view {
+    height: 60rpx;
+    font-size: 30rpx;
+    color: #333;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 20rpx;
+    border-bottom: 2rpx solid #f2f2f7;
+    position: relative;
+}
+
+.company-view text {
+    margin-left: 40rpx;
+}
+
+.company-img {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 12rpx;
+    position: absolute;
+    margin-top: 5rpx;
+}
+
+.purchase-content {
+    padding-bottom: 200rpx;
+}
+
+.purchase-item-view {
+    background: white;
+    margin-top: 20rpx;
+}
+
+.durg-info-view {
+    border-bottom: 20rpx solid #f2f2f7;
+}
+
+.drug-company-view {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 20rpx;
+    padding-bottom: 16rpx;
+}
+
+.drug-info-view {
+    display: flex;
+}
+
+.drug-name {
+    font-size: 30rpx;
+    color: #333;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-amount {
+    font-size: 36rpx;
+    color: #eb3e2d;
+    text-align: right;
+    width: 120rpx;
+}
+
+.drug-amount::before {
+    content: '¥';
+    color: #eb3e2d;
+    font-size: 24rpx;
+}
+
+.drug-amount2 {
+    font-size: 24rpx;
+    color: #999999;
+    text-align: right;
+    width: 120rpx;
+    text-decoration: line-through;
+}
+
+.drug-amount2::before {
+    content: '¥';
+    color: #999999;
+    font-size: 24rpx;
+}
+
+.drug-size-info-view {
+    display: flex;
+}
+
+.drug-addr {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 5rpx;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-packge {
+    font-size: 28rpx;
+    color: #333;
+    width: 120rpx;
+    text-align: right;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-packge2 {
+    font-size: 28rpx;
+    color: #333;
+    width: 120rpx;
+    float: right;
+    text-align: right;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-size-txt {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+    display: block;
+}
+
+.gift-view {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 16rpx;
+    padding-top: 20rpx;
+    background: #fafafa;
+}
+
+.gift-name {
+    position: relative;
+    font-size: 30rpx;
+    color: #333;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 85rpx;
+    padding-bottom: 10rpx;
+}
+
+.gift-name::before {
+    content: '[赠品]';
+    position: absolute;
+    color: #eb3e2d;
+    font-size: 30rpx;
+    margin-left: -85rpx;
+    width: 90rpx;
+}
+
+.gift-name2 {
+    position: relative;
+    font-size: 30rpx;
+    color: #333;
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 85rpx;
+    padding-bottom: 10rpx;
+}
+
+.gift-name2::before {
+    content: '[折扣]';
+    position: absolute;
+    color: #eb3e2d;
+    font-size: 30rpx;
+    margin-left: -85rpx;
+    width: 90rpx;
+}
+
+.drug-size-view {
+    height: 124rpx;
+    background: #fafafa;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-bottom: 10rpx solid #f2f2f7;
+}
+
+.drug-size {
+    font-size: 26rpx;
+    color: #666;
+    padding-top: 15rpx;
+    display: block;
+    /* display: inline-block; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drug-validity {
+    font-size: 26rpx;
+    color: #666;
+    flex: 1;
+}
+
+.freight-amount-view {
+    /* border-top: 10rpx solid #f2f2f7; */
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}
+
+.feight-view {
+    font-size: 26rpx;
+    color: #666;
+    display: flex;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding-left: 30rpx;
+}
+
+.feight-txt {
+    width: 120rxp;
+    flex: 1;
+}
+
+.holder-txt {
+    font-size: 30rpx;
+    color: #b3b3b3;
+}
+
+.feight-unit {
+    font-size: 26rpx;
+    color: #666;
+    flex: 1;
+    text-align: right;
+    margin-right: 30rpx;
+}
+
+.order-view {
+    font-size: 30rpx;
+    color: #333;
+    display: flex;
+    height: 62rpx;
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+}
+
+.order-amount {
+    font-size: 36rpx;
+    color: #eb3e2d;
+    flex: 1;
+    display: inline-block;
+    text-align: right;
+    margin-right: 30rpx;
+}
+
+.order-amount::before {
+    content: '¥';
+    font-size: 24rpx;
+    color: #eb3e2d;
+}
+
+.manifest-info {
+    background: white;
+    font-size: 26rpx;
+    color: #999;
+    padding-left: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.order-num {
+    padding-top: 20rpx;
+    display: block;
+}
+
+.order-time {
+    margin-top: 15rpx;
+    display: block;
+}
+
+.bottom-view{
+    position: fixed;
+    border-top: 1px solid #e5e5e5;
+    bottom: 0;
+    background: white;
+    display: flex;
+    height: 110rpx;
+    width: 100%;
+    padding-top: 40rpx;
+}
+
+.reject-botton {
+    height: 80rpx;
+    line-height: 80rpx;
+    border: 1px solid #fd553c;
+    border-radius: 40rpx;
+    font-size: 36rpx;
+    color: #fb533b;
+    flex: 1;
+    margin-left: 30rpx;
+    margin-right: 15rpx;
+    background: white;
+}
+
+.reject-botton::after {
+    border: 0;
+    outline: none;
+}
+
+.sure-botton {
+    bottom: 30rpx;
+    flex: 1;
+    margin-top: 30rpx;
+    height: 80rpx;
+    margin-right: 30rpx;
+    margin-left: 15rpx;
+    border-radius: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    color: white;
+    font-size: 36rpx;
+    line-height: 80rpx;
+    z-index: 2;
+}
+
+.sure-botton::after {
+    border: 0;
+    outline: none;
+}
+
+.turn-down-view {
+    margin-top: 20rpx;
+    height: 78rpx;
+    background: white;
+    padding-left: 30rpx;
+    line-height: 78rpx;
+    font-size: 26rpx;
+    color: #666;
+}

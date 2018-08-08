@@ -1,0 +1,122 @@
+/* pages/company/offerInfoNo/offerInfoNo.wxss */
+@import "/template/error/error.wxss";
+
+.unusepage {
+    width: 100%;
+    background: rgb(242, 242, 247);
+    overflow-y: hidden;
+}
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.offer-info-no-container {
+    padding-bottom: 150rpx;
+}
+
+.top-view {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 22rpx;
+}
+
+.img {
+    width: 115rpx;
+    height: 142rpx;
+    margin-top: 40rpx;
+}
+
+.hint-txt {
+    font-size: 30rpx;
+    color: #666;
+    letter-spacing: 0;
+    margin-top: 30rpx;
+    display: block;
+}
+
+.goods-num {
+    font-size: 30rpx;
+    color: #333;
+    margin-top: 60rpx;
+    display: inline-block;
+    position: relative;
+}
+
+.goods-num::after {
+    content: "";
+    height: 1rpx;
+    width: 100rpx;
+    background: #999;
+    position: absolute;
+    top: 22rpx;
+    margin-left: 40rpx;
+}
+
+.goods-num::before {
+    content: "";
+    height: 1rpx;
+    width: 100rpx;
+    background: #999;
+    position: absolute;
+    top: 22rpx;
+    margin-left: -140rpx;
+}
+
+.drug-item-view {
+    background: white;
+    padding-left: 30rpx;
+    padding-top: 28rpx;
+}
+
+.drug-name {
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    padding-right: 30rpx;
+}
+
+.drug-unit {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.drug-num {
+    font-size: 32rpx;
+    color: #333;
+    float: right;
+    padding-right: 30rpx;
+}
+
+.drug-addr {
+    font-size: 26rpx;
+    color: #999;
+    display: block;
+    margin-top: 10rpx;
+    padding-bottom: 20rpx;
+    padding-right: 30rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.botton-view {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 40rpx;
+    margin-top: 30rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    color: white;
+    font-size: 36rpx;
+    line-height: 80rpx;
+}
+
+.botton-view::after {
+    border: 0;
+    outline: none;
+}

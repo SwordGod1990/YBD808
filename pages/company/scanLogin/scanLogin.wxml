@@ -1,0 +1,24 @@
+<!--pages/company/scanLogin/scanLogin.wxml-->
+<view wx:if='{{pageNum == 1}}' class='login-view'>
+    <image class='logo-img' src='/Images/logo_icon.png'></image>
+    <text class='logo-title'>致医商城</text>
+    <view class='line'></view>
+    <text class='logo-describe'>即将登录致医商城，请确认是本人操作</text>
+    <button catchtap='loginAction' hover-class='btnclick' class='sure-login-button'>确认登录</button>
+    <button catchtap='cancelAction' hover-class='hover-canle-login-button' class='cancel-login-button'>取消</button>
+</view>
+
+<view wx:if='{{pageNum == 2}}' class='check-in-view'>
+    <image class='check-in-background-img' src='/Images/background_icon.png'></image>
+    <image class='check-in-logo-img' src='/Images/check_in_icon.png'></image>
+    <text class='check-in-logo-text'>致医商城</text>
+    <image class='login-img-1' src='/Images/login_icon_1.png'></image>
+    <image class='login-img-2' src='/Images/login_icon_2.png'></image>
+    <text class='immediately-check-in-txt'>现在立即入驻致医商城，快人一步！</text>
+    <button bindtap='checkInAction' hover-class='btnclick' class='check-in-button'>立即入驻</button>
+</view>
+
+<import src="/template/error/error.wxml" />
+<view wx:if='{{pageNum == 3}}' class='unusepage'>
+    <template is="error4" data="{{errorImg, errorMsg}}" />
+</view>

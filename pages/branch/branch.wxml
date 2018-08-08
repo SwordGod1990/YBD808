@@ -1,0 +1,18 @@
+<!--pages/branch/branch.wxml-->
+<view >
+    <view bindtap='sellerAction' class='seller-view'>
+        <image class='left-img' src='/Images/seller_icon.png'></image>
+        <text class='txt'>我要卖药</text>
+        <image class='arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+
+    <view bindtap='buyerAction' class='buyer-view'>
+        <image class='left-img' src='/Images/buyer_icon.png'></image>
+        <text class='txt'>我要买药</text>
+        <image class='arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+
+    <view hidden='none'>
+        <text class='login-txt'>已有账号立即登录</text>
+    </view>
+</view>

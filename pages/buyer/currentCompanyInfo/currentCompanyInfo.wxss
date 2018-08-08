@@ -1,0 +1,72 @@
+/* pages/buyer/currentCompanyInfo/currentCompanyInfo.wxss */
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.company-info-view {
+    background: white;
+}
+
+.item-view {
+    height: 100rpx;
+    margin-left: 30rpx;
+    padding-right: 30rpx;
+    line-height: 100rpx;
+    position: relative;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.left-txt {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    position: absolute;
+    top: 0;
+}
+
+.left-txt-after {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    position: absolute;
+    top: 0;
+}
+
+.left-txt::after {
+    content: '*';
+    font-size: 30rpx;
+    color: #eb3e2d;
+}
+
+.input-txt {
+    font-size: 30rpx;
+    color: #333;
+    height: 100rpx;
+    display: block;
+}
+
+.holder-txt {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.input-view-right {
+    padding-left: 175rpx;
+    text-align: right;
+}
+
+.service-view {
+    font-size: 26rpx;
+    color: #666;
+    text-align: center;
+    position: absolute;
+    bottom: 80rpx;
+    left: 0;
+    right: 0;
+}
+
+.service-view text {
+    font-size: 26rpx;
+    color: #4a90e2;
+    letter-spacing: 0;
+}

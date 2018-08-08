@@ -1,0 +1,52 @@
+<!--pages/buyer/currentCompanyInfo/currentCompanyInfo.wxml-->
+<view class='company-info-view'>
+  <view class='item-view'>
+    <text class='input-txt input-view-right'>{{clinicName}}</text>
+    <text class='left-txt'>企业名称</text>
+  </view>
+  <view class='item-view'>
+    <text wx:if="{{clinicType == 1}}" class='input-txt input-view-right'>诊所</text>
+    <text wx:elif="{{clinicType == 2}}" class='input-txt input-view-right'>诊所+药房</text>
+    <text wx:elif="{{clinicType == 3}}" class='input-txt input-view-right'>药房</text>
+    <text wx:elif="{{clinicType == 4}}" class='input-txt input-view-right'>综合诊所</text>
+    <text wx:else="{{clinicType == 5}}" class='input-txt input-view-right'>社区服务中心</text>
+    <text class='left-txt'>企业类型</text>
+  </view>
+
+  <view class='item-view'>
+    <text class='input-txt input-view-right'>{{licenceNo}}</text>
+    <text class='left-txt-after'>经营许可证编号</text>
+  </view>
+
+  <view class='item-view'>
+    <text class='input-txt input-view-right'>{{location}}</text>
+    <text class='left-txt'>所在地区</text>
+  </view>
+
+  <view class='item-view'>
+    <text class='input-txt input-view-right'>{{address}}</text>
+    <text class='left-txt-after'>详细地址</text>
+  </view>
+  <view class='item-view'>
+    <text class='input-txt input-view-right'>{{contactsPerson}}</text>
+    <text class='left-txt-after'>联系人</text>
+  </view>
+  <view class='item-view'>
+    <text class='input-txt input-view-right'>{{contactsPhone}}</text>
+    <text class='left-txt-after'>联系电话</text>
+  </view>
+
+  <!-- <view class='item-view'>
+    <input class='input-txt input-view-right' placeholder='请输入联系人姓名' placeholder-class='holder-txt'>{{contactsPerson}}</input>
+    <text class='left-txt-after'>联系人</text>
+  </view>
+
+  <view class='item-view' style='border: 0;'>
+    <input class='input-txt input-view-right' placeholder='请输入联系电话' placeholder-class='holder-txt'>{{contactsPhone}}</input>
+    <text class='left-txt-after'>联系电话</text>
+  </view> -->
+</view>
+
+<view class='service-view'>如信息变更，请联系客服：
+  <text>400-666-9196</text>
+</view>

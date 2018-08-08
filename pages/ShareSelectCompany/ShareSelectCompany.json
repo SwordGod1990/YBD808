@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "选择医药公司",
+  "navigationBarBackgroundColor": "#EE0000",
+  "navigationBarTextStyle": "white"
+}

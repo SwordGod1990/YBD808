@@ -1,0 +1,649 @@
+/* pages/WaitPriceDetail/WaitPriceDetail.wxss */
+@import "../../template/AccountUnuse.wxss";
+@import "../../template/reload/reload.wxss";
+
+page {
+    background: rgb(242, 242, 247);
+    width: 100%;
+    height: 100%;
+}
+
+.reload {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}
+
+.unusepage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: hidden;
+    background: rgb(242, 242, 247);
+}
+
+.WaitPriceDetail {
+    width: 100%;
+    height: 100%;
+}
+
+.details {
+    width: 100%;
+    background: #fff;
+    margin-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.clinic {
+    margin-left: 30rpx;
+    height: 80rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    position: relative;
+}
+
+.clinicName {
+    /* float: left; */
+    display: inline-block;
+}
+
+.clinicName image {
+    width: 32rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: 23rpx;
+}
+
+.clinicName text {
+    color: #333;
+    font-size: 30rpx;
+    margin-left: 42rpx;
+    line-height: 80rpx;
+}
+
+.time {
+    float: right;
+    margin-right: 30rpx;
+    color: #999;
+    font-size: 26rpx;
+    line-height: 82rpx;
+}
+
+.Consignee {
+    position: relative;
+    display: block;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+    margin-right: 30rpx;
+}
+
+.Consignee text {
+    font-size: 30rpx;
+}
+
+.ConsigneeName {
+    position: absolute;
+    text-align: justify;
+    display: inline-block;
+    color: #4d4d4d;
+    width: 150rpx;
+}
+
+.nameandphone {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 150rpx;
+    margin-right: 30rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.ConsigneeName2 {
+    color: #333;
+    /* margin-left:9rpx; */
+}
+
+.ConsigneeTell {
+    color: #4a90e2;
+    margin-left: 20rpx;
+}
+
+.name2 {
+    margin-left: 17rpx;
+}
+
+.address {
+    position: relative;
+    margin-top: 14rpx;
+    /* background: red; */
+}
+
+.Receiving-address {
+    display: inline-block;
+    margin-left: 30rpx;
+    width: 150rpx;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    position: absolute;
+    top: 0;
+    text-align: justify;
+}
+
+.Receiving-address2 {
+    display: inline-block;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 180rpx;
+    margin-right: 30rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.message {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    font-size: 26rpx;
+    color: #808080;
+    background: #fafafa;
+    /* opacity: 0.7; */
+    padding-left: 10rpx;
+    border-radius: 4rpx;
+    margin-top: 14rpx;
+    padding-top: 25rpx;
+    padding-bottom: 25rpx;
+}
+
+.Leaving-message {
+    top: 0;
+    bottom: 0;
+    width: 150rpx;
+    text-align: justify;
+    margin: auto 0;
+}
+
+.Leaving-message text, .Receiving-address text {
+    display: inline-block /* Opera */;
+    padding-left: 100%;
+}
+
+.Drug-details {
+    width: 100%;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.Drug {
+    margin-left: 30rpx;
+    height: 80rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    position: relative;
+}
+
+.Drug image {
+    width: 32rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.Drug text {
+    color: #4d4d4d;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    margin-left: 42rpx;
+}
+
+.DrugDetails {
+    /* margin-left: 30rpx; */
+    padding-top: 25rpx;
+    /* padding-bottom: 20rpx;  */
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.DrugDetails:last-child {
+    border: 0;
+}
+
+.DrugName2, .DrugName3 {
+    color: #333;
+    font-size: 30rpx;
+    margin-left: 30rpx;
+}
+
+.DrugName3 {
+    float: right;
+    margin-right: 30rpx;
+}
+
+.drugTotal {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+}
+
+.druglocation {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+    margin-bottom: 25rpx;
+}
+
+.append-view {
+    margin-top: 40rpx;
+    padding-bottom: 20rpx;
+}
+
+.append {
+    text-align: center;
+    font-size: 36rpx;
+    color: #eb3e2d;
+    margin-left: 30rpx;
+    /* width:89.3%; */
+    height: 80rpx;
+    margin-bottom: 20rpx;
+    border-radius: 5px;
+    line-height: 80rpx;
+    border: 1px dashed #eb3e2d;
+    margin-right: 40rpx;
+    position: relative;
+    opacity: 0.7;
+}
+
+.append image {
+    width: 36rpx;
+    height: 36rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    margin-left: -2rpx;
+}
+
+.append text {
+    margin-left: 47rpx;
+}
+
+.offerDetails, .offerDetailsShow {
+    /* width: 100%; *//* margin-bottom: 20rpx; */
+    padding-top: 28rpx;
+    position: relative;
+    background: #fafafa;
+    padding-bottom: 28rpx;
+}
+
+.offerDetails {
+    display: none;
+}
+
+.offerDetailsShow {
+    display: block;
+    padding-left: 30rpx;
+}
+
+.Validity {
+    width: 80%;
+    height: 68rpx;
+    border: 1rpx solid #979797;
+    border-radius: 4px;
+    position: relative;
+    background: #fff;
+}
+
+.Validity::after {
+    border: none;
+}
+
+.Validitys {
+    line-height: 68rpx;
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    background: #fff;
+    color: #4d4d4d;
+}
+
+.Validitytimepicker {
+    position: absolute;
+    display: inline-block;
+    right: -10rpx;
+    width: 75%;
+    height: 68rpx;
+}
+
+.Validitytime {
+    position: absolute;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    right: 30rpx;
+    text-align: right;
+    line-height: 68rpx;
+}
+
+.validity-time{
+    position: absolute;
+    font-size: 30rpx;
+    right: 30rpx;
+    text-align: right;
+    line-height: 68rpx;
+    color: #808080; 
+}
+
+.standard {
+    margin-top: 20rpx;
+    height: 70rpx;
+}
+
+.standard2 {
+    width: 34.6%;
+    height: 68rpx;
+    line-height: 68rpx;
+    border: 1rpx solid #979797;
+    border-radius: 4px;
+    position: relative;
+    float: left;
+    background: #fff;
+}
+
+.standard2 text {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    line-height: 68rpx;
+    margin-left: 20rpx;
+}
+
+.standard2 input {
+    position: absolute;
+    top: 12rpx;
+    left: 90rpx;
+    right: 10rpx;
+    text-align: right;
+    font-size: 30rpx;
+    color: #4d4d4d;
+}
+
+.ride {
+    float: left;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-left: 12rpx;
+    margin-right: 12rpx;
+    line-height: 68rpx;
+}
+
+.number {
+    float: left;
+    width: 18.6%;
+    height: 68rpx;
+    border: 1rpx solid #979797;
+    border-radius: 4px;
+    position: relative;
+    background: #fff;
+}
+
+.number input {
+    position: absolute;
+    top: 12rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #4d4d4d;
+}
+
+.Company {
+    width: 18.6%;
+    height: 68rpx;
+    border: 1rpx solid #979797;
+    border-radius: 4px;
+    line-height: 68rpx;
+    text-align: center;
+    margin-left: 20rpx;
+    float: left;
+    font-size: 30rpx;
+    color: #4d4d4d;
+}
+
+.univalent {
+    width: 80%;
+    height: 68rpx;
+    line-height: 68rpx;
+    border: 1rpx solid #979797;
+    border-radius: 4px;
+    margin-top: 20rpx;
+    position: relative;
+    background: #fff;
+}
+
+.univalent1 {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    line-height: 68rpx;
+    margin-left: 20rpx;
+}
+
+.univalent2 {
+    font-size: 30rpx;
+    color: #808080;
+    float: right;
+    line-height: 68rpx;
+    margin-right: 20rpx;
+}
+
+.univalent input {
+    position: absolute;
+    top: 12rpx;
+    left: 100rpx;
+    right: 100rpx;
+    line-height: 68rpx;
+    text-align: right;
+    font-size: 30rpx;
+    color: #808080;
+}
+
+.Cost {
+    width: 100%;
+    background: #fff;
+    /* margin-top: 20rpx; */
+}
+
+.ExpectedSales {
+    margin-left: 30rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    line-height: 100rpx;
+    color: #4d4d4d;
+    font-size: 30rpx;
+}
+
+.drug-num-view {
+    display: inline-block;
+}
+
+.drug-num-text {
+    font-size: 30rpx;
+    color: #eb3e2d;
+}
+
+.money {
+    float: right;
+    margin-right: 30rpx;
+}
+
+.money1 {
+    color: #eb3e2d;
+    font-size: 36rpx;
+}
+
+.money2 {
+    margin-left: 10rpx;
+    color: #808080;
+    font-size: 30rpx;
+}
+
+.freight {
+    height: 100rpx;
+    margin-left: 30rpx;
+    line-height: 100rpx;
+}
+
+.freight1 {
+    font-size: 30rpx;
+    color: #4d4d4d;
+    float: left;
+}
+
+.freightInput {
+    float: right;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    margin-right: 10rpx;
+    width: 230rpx;
+    /* background: red; */
+    text-align: right;
+}
+
+.freight3 {
+    font-size: 30rpx;
+    float: right;
+    margin-right: 30rpx;
+    color: #808080;
+    /* background: blue; */
+}
+
+.Leaving-a-message {
+    margin-top: 20rpx;
+    width: 100%;
+    background: #fff;
+    height: 240rpx;
+    z-index: 1;
+}
+
+.LeaveMessage {
+    margin-left: 30rpx;
+    border-bottom: 1px solid #e5e5e5;
+    height: 82rpx;
+}
+
+.LeaveMessage text {
+    font-size: 30rpx;
+    color: #4c4c4c;
+    line-height: 82rpx;
+}
+
+.LeaveMessage-textarea {
+    font-size: 30rpx;
+    color: #333;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    /* background: red; */
+    width: 92%;
+    height: 120rpx;
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+.confirmNo {
+    margin-top: 44rpx;
+    width: 90%;
+    height: 80rpx;
+    background: #ccc;
+    box-shadow: 0 4px 10px 0 rgba(204, 204, 204, 0.5);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 36rpx;
+    margin-bottom: 34rpx;
+    line-height: 80rpx;
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    z-index: 3;
+    opacity: 0.5;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+}
+
+.confirmNo::after {
+    border: none;
+}
+
+.confirm {
+    margin-top: 44rpx;
+    width: 90%;
+    height: 80rpx;
+    background: #eb3e2d;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.5);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 36rpx;
+    margin-bottom: 34rpx;
+    line-height: 80rpx;
+    left: 5%;
+    position: fixed;
+    bottom: 0;
+    opacity: 1;
+    z-index: 3;
+}
+
+.btnclick {
+    background: #e02e24;
+}
+
+.confirm::after {
+    border: none;
+}
+
+.cross {
+    position: absolute;
+    top: 30rpx;
+    padding-bottom: 104rpx;
+    padding-top: 104rpx;
+    right: 0rpx;
+    padding-left: 20rpx;
+    padding-right: 30rpx;
+}
+
+.cross image {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+/* 适配iPhone6、iPhone7 */
+
+@media screen and (min-width:375px) and (max-width:380px) {
+    .name2 {
+        margin-left: 15.99rpx;
+    }
+}
+
+/* 适配iPhone5 */
+
+@media screen and (min-width:320px) and (max-width:325px) {
+    .name2 {
+        margin-left: 20rpx;
+    }
+}
+
+.btn-view {
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    position: fixed;
+    bottom: 0;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    height: 80rpx;
+    width: 89.3%;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    color: #fff;
+    letter-spacing: 0;
+    margin-bottom: 28rpx;
+}

@@ -1,0 +1,62 @@
+<!--账号禁用页面-->
+<import src="../../template/AccountUnuse.wxml" />
+<view wx:if="{{pageNum == 1}}" class="unusepage">
+    <template is="accountunuse" />
+</view>
+
+<!--加载失败重新加载-->
+<import src="../../template/reload/reload.wxml" />
+<view wx:if="{{pageNum == 5}}" class="reload">
+    <template is="reload" />
+</view>
+
+<!--包装信息-->
+<block wx:if="{{pageNum == 2}}">
+    <view class="useWrap" style="height:{{winHeight-70}}px;overflow:scroll;">
+        <view style="height:{{winHeight-70}}px;overflow:scroll;">
+            <!--包装单位-->
+            <view class="usageBox useBox">
+                <view class="useTitle medicine_center">
+                    <text class="usage">小单位</text>
+                    <image class="xin" src="/Images/xin.jpg"></image>
+                    <text style='margin-top:-3px;'>:</text>
+                    <text class="orally">{{smUnitName}}</text>
+                </view>
+                <view>
+                    <view class="drawer_content vertical_center_left">
+                        <block wx:for="{{packageList}}">
+                            <text wx:for-index="index" data-index="{{index}}" class="view-list {{index == smUnitIndex || item.basicPackName==smUnitName ? 'active':''}}" bindtap="smallestUnit">{{item.basicPackName}}</text>
+                        </block>
+
+                    </view>
+                </view>
+            </view>
+            <!--包装信息-->
+            <view class="frequencyBox useBox">
+                <view class="useTitle medicine_center">
+                    <text class="usage">包装单位</text>
+                    <image class="xin" src="/Images/xin.jpg"></image>
+                    <text style='margin-top:-3px;'>:</text>
+                    <text class="orally">{{packUnitName}}</text>
+                </view>
+                <view>
+                    <view class="drawer_content vertical_center_left">
+                        <block wx:for="{{smUnitList}}">
+                            <text wx:for-index="index" data-index="{{index}}" class="view-list {{index == packUnitIndex||item.basicPackName==packUnitName? 'active':''}}" bindtap="packageTapClick">{{item.basicPackName}}</text>
+                        </block>
+
+                    </view>
+                </view>
+            </view>
+            <!-- 药品数量 -->
+            <view wx:if="{{jumpPage == 1}}" class='drug-quantity-view'>
+                <text class='drug-quantity-text'>换算量</text>
+                <text>:</text>
+                <input bindinput='drugQuantityInputAction' maxlength='4' type='number' placeholder-class='holder-txt' placeholder='请填写药品小单位数量' value='{{packingQuantity}}'></input>
+            </view>
+        </view>
+    </view>
+    <view class='sureBtnWrap'>
+        <button class="sureBtn" bindtap='packageSureBtn'>确定</button>
+    </view>
+</block>

@@ -1,0 +1,213 @@
+/* pages/UserCenter/UserCenter.wxss */
+@import "../../template/AccountUnuse.wxss";
+@import "../../template/areaSelector/areaSelector.wxss";
+
+page {
+    background: rgb(242, 242, 247);
+    width: 100%;
+    height: 100%;
+}
+
+.unusepage {
+    width: 100%;
+    height: 100%;
+    background: rgb(242, 242, 247);
+    position: fixed;
+    overflow-y: hidden;
+}
+
+.enterprise-name {
+    height: 100rpx;
+    background: white;
+    line-height: 100rpx;
+    padding-left: 30rpx;
+}
+
+.border-bottom-view {
+    height: 99rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.left-txt {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #4d4d4d;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.asterisk {
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #e02e24;
+    line-height: 21px;
+}
+
+.right-txt {
+    text-align: right;
+    display: inline-block;
+    font-size: 30rpx;
+    color: #333;
+    position: absolute;
+    right: 30rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    overflow: hidden;
+    width: 450rpx;
+}
+
+.right-img-txt {
+    text-align: right;
+    display: inline-block;
+    font-size: 30rpx;
+    color: #333;
+    position: absolute;
+    right: 68rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    overflow: hidden;
+    width: 500rpx;
+}
+
+.arrow-img {
+    width: 18rpx;
+    height: 36rpx;
+    position: absolute;
+    right: 30rpx;
+    margin-top: 32rpx;
+}
+
+.btn-view {
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    display: block;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-top: 204rpx;
+    margin-bottom: 20rpx;
+    color: white;
+    line-height: 80rpx;
+    background: #ccc;
+    font-size: 36rpx;
+    letter-spacing: 0;
+    opacity: 0.5;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+}
+
+.btn-view::after {
+    border: 0;
+    outline: none;
+}
+
+.btn-view-select {
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    height: 80rpx;
+    margin-top: 204rpx;
+    color: white;
+    line-height: 80rpx;
+    background: #ccc;
+    margin-bottom: 20rpx;
+    font-size: 36rpx;
+    letter-spacing: 0;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    border-radius: 30px;
+}
+
+.hover-btn {
+    background: #e02e24;
+    border-radius: 30px;
+}
+
+.time-view {
+    position: absolute;
+    bottom: -300px;
+    height: 210px;
+    background: white;
+    width: 100%;
+}
+
+.time-picker {
+    height: 170px;
+    width: 100%;
+}
+
+.picker-view-column {
+    line-height: 50px;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+
+.button-view {
+    height: 50px;
+    width: 100%;
+    background: white;
+    border-bottom: 1rpx solid #e5e5e5;
+    border-top: 1rpx solid #e5e5e5;
+}
+
+.button-cancel {
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 0px;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    color: gray;
+    background: white;
+}
+
+.choosetext {
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 0px;
+    font-size: 36rpx;
+    margin-left: 170rpx;
+    background: white;
+    font-family: PingFangSC-Regular;
+    color: #333;
+}
+
+.choosetext:after {
+    border: 0;
+    outline: none;
+}
+
+.button-cancel:after {
+    border: 0;
+    outline: none;
+}
+
+.button-sure {
+    display: inline-block;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 0px;
+    position: absolute;
+    right: 0;
+    color: #eb3e2d;
+    background: white;
+}
+
+.button-sure:after {
+    border: 0;
+    outline: none;
+}
+
+.time-picker-view-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+}
+
+.btnclick {
+    background: #0082c6;
+}

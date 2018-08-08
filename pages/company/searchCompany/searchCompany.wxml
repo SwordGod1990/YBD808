@@ -1,0 +1,8 @@
+<!--pages/company/searchCompany/searchCompany.wxml-->
+<view class='search-company-view'>
+    <input class='search-company-input' placeholder='请输入企业名称' placeholder-class='holder-input-txt'></input>
+    <image class='search-img' src='/Images/add.png'></image>
+    <text class='search-txt'>搜索</text>
+</view>
+
+

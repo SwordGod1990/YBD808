@@ -1,0 +1,52 @@
+<view class='container-area'>
+    <scroll-view scroll-y="true" class='scorll-view-left'>
+        <block wx:for="{{provinceList}}" wx:for-item="item" wx:key="item">
+            <view class='province-view {{pChecked == index ? "right-line" : "after"}}' data-idx="{{index}}" bindtap='provienceAction'>
+                <image wx:if="{{item.flag == 0}}" src='/Images/area_check_1.png' class='check-img' data-idx="{{index}}" catchtap='provinceSelectAction'></image>
+                <image wx:if="{{item.flag == 1}}" src='/Images/area_check_2.png' class='check-img' data-idx="{{index}}" catchtap='provinceSelectAction'></image>
+                <image wx:if="{{item.flag == 2}}" src='/Images/area_check_3.png' class='check-img' data-idx="{{index}}" catchtap='provinceSelectAction'></image>
+                <text wx:if="{{item.provinceName.length < 6}}" class='check-text'>{{item.provinceName}}</text>
+                <text wx:else class='check-text-ellipsis'>{{item.provinceName}}</text>
+                <text wx:if="{{item.provinceName.length < 6 && item.cityNum.length > 0}}" class='check-text-num'>({{item.cityNum.length}})</text>
+                <text wx:if="{{item.provinceName.length >= 6 && item.cityNum.length > 0}}" class='check-text-num-ellipsis'>({{item.cityNum.length}})</text>
+            </view>
+        </block>
+        <view style='height:120rpx;'></view>
+    </scroll-view>
+
+
+    <scroll-view scroll-y="true" class='scorll-view-right'>
+        <block wx:for="{{cityList}}" wx:for-item='item' wx:key="item">
+            <view class='city-view {{index != cChecked ? "city-view-line" : "bottom-line"}}' data-idx="{{index}}" bindtap='cityCheckAction'>
+                <image wx:if="{{item.flag == 0}}" catchtap='citySelectAction' data-idx="{{index}}" src='/Images/area_check_1.png' class='check-img'></image>
+                <image wx:if="{{item.flag == 1}}" catchtap='citySelectAction' data-idx="{{index}}" src='/Images/area_check_2.png' class='check-img'></image>
+                <image wx:if="{{item.flag == 2}}" catchtap='citySelectAction' data-idx="{{index}}" src='/Images/area_check_3.png' class='check-img'></image>
+                 <text wx:if="{{item.cityName == '不限'}}" class='check-text'>全选</text> 
+
+                <text wx:elif="{{item.cityName.length < 8}}" class='check-text'>{{item.cityName}}</text>
+                <text wx:else class='check-text-ellipsis'>{{item.cityName}}</text>
+
+                <text wx:if="{{item.cityName.length < 8 && item.areaNum.length > 0}}" class='check-text-num'>({{item.areaNum.length}})</text>
+                <text wx:if="{{item.cityName.length >= 8 && item.areaNum.length > 0}}" class='check-text-num-ellipsis'>({{item.areaNum.length}})</text>
+                <view wx:if="{{item.cityName != '不限'}}" class='right-down-view'>
+                    <image wx:if="{{index != cChecked}}" src='/Images/downarrow.png' class='down-img'></image>
+                    <image wx:if="{{index == cChecked}}" src='/Images/uparrow.png' class='down-img'></image>
+                </view>
+            </view>
+            <block wx:if="{{index == cChecked}}">
+                <block wx:for="{{areaList}}" wx:for-item='item1' wx:key="item1">
+                    <view wx:if="{{item1.areaName != '不限'}}" class='area-view' animation="{{animationData}}" bindtap='areaSelectAction' data-idx="{{index}}">
+                        <view class='area-view-line'>
+                            <image wx:if="{{item1.flag == 0}}" src='/Images/area_check_1.png' class='check-area-img'></image>
+                            <image wx:if="{{item1.flag == 2}}" src='/Images/area_check_3.png' class='check-area-img'></image>
+                            <text class='check-area-text'>{{item1.areaName}}</text>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </block>
+        <view style='height:120rpx;'></view>
+    </scroll-view>
+</view>
+
+<button class='btn-view' bindtap='sureAction'>确定</button>

@@ -1,0 +1,21 @@
+<view class='container'>
+
+  <view class='page_title'>—— 询价药品 ——</view>
+  <!-- wx:for="{{drugList}}"  -->
+  <view class='page_list' wx:for="{{drugList}}">
+    <view class='page_list_left'>
+      <text class='page_list_name'>{{item.medicinalName}}</text>
+      <!-- <text class='page_list_unit'>{{item.norms}} * {{item.scaler}} {{item.smallUnit}}/{{item.unit}}</text> -->
+      <!-- <text class='page_list_company'>{{item.medicinalCompanyName}}</text> -->
+    </view>
+    <view class='page_list_right'>
+      <text class='page_list_num'>x {{item.num}}</text>
+    </view>
+  </view>
+  <view wx:if="{{drugList.length > 0}}" style='height:20rpx; background:white;'></view>
+
+  <view class='page_btn'>
+    <button class='page_btn_left' bindtap='LaterOnAction'>稍后再说</button>
+    <button open-type='share' class='page_btn_right' bindtap='SendCompanyAction'>发送给医药公司</button>
+  </view>
+</view>

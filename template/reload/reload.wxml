@@ -1,0 +1,9 @@
+<template name="reload">
+    <view class='reload-view'>
+        <image class='reload-img' src='/Images/not-wifi.png'></image>
+        <view>
+            <text class='reload-text'>手机网络不太顺畅，请检查网络状况</text>
+        </view>
+        <button bindtap='reloadAction' class='reload-btn'>重新加载</button>
+    </view>
+</template>

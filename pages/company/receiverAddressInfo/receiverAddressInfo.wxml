@@ -1,0 +1,23 @@
+<!--pages/company/receiverAddressInfo/receiverAddressInfo.wxml-->
+<view class='add-user-info-container'>
+    <form bindsubmit='saveUserInfoAction'>
+        <view class='item-view'>
+            <text class='left-txt left-txt-color-zise'>收货人</text>
+            <input class='input-user-name right-color-size' placeholder-class='placeholder-text' placeholder='收货人姓名' name="userName"></input>
+        </view>
+        <view class='item-view'>
+            <text class='left-txt left-txt-color-zise'>联系电话</text>
+            <input class='input-user-name right-color-size' placeholder-class='placeholder-text' placeholder='请输入联系电话' name="userCall"></input>
+        </view>
+        <view class='item-view'>
+            <text class='left-txt left-txt-color-zise'>所在地区</text>
+            <text class='right-txt {{userLocation == "" ? "placeholder-text" : "right-color-size"}} '>{{userLocation == '' ? "请选择" : userLocation}}</text>
+            <image class='right-img' src='/Images/rightarrow.png'></image>
+        </view>
+        <view class='item-view'>
+            <text class='left-txt left-txt-color-zise'>详细地址</text>
+            <input class='input-user-name right-color-size' placeholder-class='placeholder-text' placeholder='请输入详细地址' name="userAddr"></input>
+        </view>
+        <button class='save-btn' form-type='submit'>保存</button>
+    </form>
+</view>

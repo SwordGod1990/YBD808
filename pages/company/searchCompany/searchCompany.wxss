@@ -1,0 +1,40 @@
+/* pages/company/searchCompany/searchCompany.wxss */
+
+.search-company-view {
+    position: relative;
+    margin-top: 22rpx;
+}
+
+.search-company-input {
+    background: #f7f7f7;
+    border-radius: 35px;
+    font-size: 30rpx;
+    color: #333;
+    height: 70rpx;
+    margin-left: 30rpx;
+    padding-left: 90rpx;
+    line-height: 70rpx;
+    margin-right: 110rpx;
+}
+
+.holder-input-txt {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.search-img {
+    height: 39rpx;
+    width: 42rpx;
+    background: greenyellow;
+    position: absolute;
+    top: 16rpx;
+    left: 60rpx;
+}
+
+.search-txt {
+    font-size: 30rpx;
+    color: #333;
+    position: absolute;
+    right: 30rpx;
+    top: 16rpx;
+}

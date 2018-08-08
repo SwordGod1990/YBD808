@@ -1,0 +1,71 @@
+<!--pages/company/enquiry/enquiry.wxml-->
+<import src="/template/toast/toast.wxml" />
+  <!-- <view class='toast-view' >
+    <template is="scanDrugInfo" data="{{toastContent, toastCancel, toastSure}}" />
+</view>   -->
+<view class='toast-view' hidden='{{isShowDelete}}'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}" />
+</view>
+<loading hidden="{{isLoadData}}">
+    加载中...
+</loading>
+<!-- 询价引导页 -->
+<view wx:if="{{isLoadData && enquiryList.length == 0}}">
+    <image class='guide-img' src='/Images/guide_icon_1.png'></image>
+    <image class='guide-img' src='/Images/guide_icon_2.png'></image>
+    <image class='guide-img' src='/Images/guide_icon_3.png'></image>
+    <button catchtap='startEquiryAction' class='button-view'>我要询价</button>
+</view>
+
+<block wx:if="{{isLoadData && enquiryList.length > 0}}">
+    <view bindtap='createEnquiryAction' class='create-enquiry-offer'>
+        <image src='/Images/add_yellow_icon.png'></image>
+        <text>我要询价</text>
+    </view>
+
+    <view class='enquiry-content-view'>
+        <block wx:for="{{enquiryList}}" wx:for-item="item" wx:key="item">
+            <view class='enquiry-content-item' catchtap='offerAction' id='{{index}}'>
+                <view class='item-time-view'>
+                    <text class='release-time'>发布时间: {{item.createdTime}}</text>
+                    <view catchtap='shareAction' id='{{index}}' class='item-share-view'>
+                        <image class='item-share-img' src='/Images/share_icon.png'></image>
+                        <!-- <button open-type="share" catchtap='shareAction' id='{{index}}'></button> -->
+                        <button></button>
+                    </view>
+                    <image catchtap='moreAction' id='{{index}}' class='item-more-img' src='/Images/more_icon.png'></image>
+                </view>
+                <view wx:if="{{moreIndex == index}}">
+                    <view class='more-view-box'></view>
+                    <view class='more-view'>
+                        <text class='more-edit' catchtap='editAction' id='{{index}}'>编辑</text>
+                        <text class='more-delete' catchtap='deleteAction' id='{{index}}'>删除</text>
+                    </view>
+                </view>
+                <view class='item-content-view'>
+                    <view wx:if="{{item.offerCount != 0}}" class='have-enquiry-drug-info'>
+                        <text class='drug-num'>{{item.offerCount}}</text>
+                        <text>种药品已报价</text>
+                    </view>
+                    <view wx:else class='have-enquiry-drug-info'>
+                        <text>暂无报价</text>
+                    </view>
+                    <text class='not-enquiry-drug-info'>共{{item.enquiryCount}}种询价药品</text>
+                </view>
+                <view class='item-offerer-view'>
+                    <view>
+                        <image wx:for="{{item.imgs}}" wx:for-item="item1" class='item-user-icon' src='{{item1}}'></image>
+                        <text class='company-position' style='padding-right: 30rpx;'>家商业公司报价</text>
+                        <text class='company-num company-position'>{{item.busCount}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>
+<!-- <view class='float-action-button'>
+    <text>我要\n询价</text>
+</view> -->
+
+<import src="/template/tabBar/tabBar.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />

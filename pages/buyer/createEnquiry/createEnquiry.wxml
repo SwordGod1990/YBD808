@@ -1,0 +1,84 @@
+<!--pages/company/createEnquiry/createEnquiry.wxml-->
+
+<view class='search-view'>
+    <image catchtap='searchAction' class='enquiry-search-img' src='/Images/search_icon.png'></image>
+</view>
+<view class='search-txt'>
+    <text>搜索添加询价药品</text>
+</view>
+
+<view class='scan-view'>
+    <image catchtap='scanAction' class='scan-img' src='/Images/scan_icon.png'></image>
+</view>
+<view class='search-txt'>
+    <text>扫码添加询价药品</text>
+</view>
+
+<view catchtap='manualAction' class='manual-view'>
+    <image class='add-img' src='/Images/hand_icon.png'></image>
+    <text>手动添加询价药品</text>
+</view>
+
+<view hidden='{{isShoppingClick}}'>
+    <view class='bottom-view {{drugCatList.length > 0 ? "" : "bottom-view-opacity"}}'>
+        <view class='bottom-text-view'>
+            <text wx:if="{{drugCatList.length == 0}}" class='text-content2'>未添加询价药品</text>
+            <block wx:if="{{drugCatList.length > 0}}">
+                <text class='text-content-style' style='padding-left:144rpx;'>共</text>
+                <text class='text-num-style'>{{drugCatList.length}}</text>
+                <text class='text-content-style'>种药品，共</text>
+                <text class='text-num-style'>{{drugNum}}</text>
+                <text class='text-content-style'>件</text>
+            </block>
+        </view>
+        <view bindtap='sureChooseAction' class='bottom-btn-view'>
+            <text>选好了</text>
+        </view>
+    </view>
+    <view bindtap='shoppingCatAction' class='bottom-view-cat {{drugCatList.length > 0 ? "" : "bottom-view-opacity"}}'>
+        <image wx:if="{{drugCatList.length > 0}}" class='cat-img' src='/Images/shopping_select_icon.png'></image>
+        <image wx:else class='cat-img' src='/Images/shopping_icon.png'></image>
+        <text wx:if="{{drugCatList.length > 0}}" class='cat-num-text'>{{drugCatList.length}}</text>
+    </view>
+</view>
+<view hidden='{{!isShoppingClick}}' class='cat-background' catchtap='closeWindowAction'>
+    <view class='cat-view' catchtap='catListAction'>
+        <view class='cat-list-view'>
+            <view class='cat-title-txt'>已选择的询价药品</view>
+            <scroll-view scroll-y class='cat-item'>
+                <view class='cat-item-content' wx:for="{{drugCatList}}">
+                    <view class='cat-item-drug-view'>
+                        <text class='cat-item-drug-name'>{{item.medicinalName}}</text>
+                        <text class='cat-item-drug-standard'>{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                        <text class='cat-item-drug-standard cat-item-drug-addr'>{{item.medicinalCompanyName}}</text>
+                    </view>
+                    <view class='cat-item-drug-num-edit'>
+                        <image catchtap='minusAction' id='{{index}}' class='cat-item-num-add-img' src='/Images/minus_icon.png'></image>
+                        <text class='cat-item-num-txt'>{{item.num}}</text>
+                        <image catchtap='addAction' id='{{index}}' class='cat-item-num-minus-img' src='/Images/add_icon.png'></image>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class='bottom-view {{drugCatList.length > 0 ? "" : "bottom-view-opacity"}}'>
+            <view class='bottom-text-view'>
+                <text class='text-content-style' style='padding-left:30rpx;'>已选择</text>
+                <text class='text-num-style'>{{drugCatList.length}}</text>
+                <text class='text-content-style'>种药品，共</text>
+                <text class='text-num-style'>{{drugNum}}</text>
+                <text class='text-content-style'>件</text>
+            </view>
+            <view bindtap='sureChooseAction' class='bottom-btn-view'>
+                <text>确定</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view wx:if="{{toastView == 2}}" class='toast-view'>
+    <template is="addDrug" data="{{drugName, drugSpecs, drugCompany, srarchDrugNum, cancelTxt, sureTxt}}" />
+</view>
+<import src="/template/toast/toast.wxml" />
+<view wx:if="{{toastView == 1}}" class='toast-view'>
+    <template is="deleteDrug" data="{{drugName, drugSpecs, drugCompany, drugNum}}" />
+</view>

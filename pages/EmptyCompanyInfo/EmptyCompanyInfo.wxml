@@ -1,0 +1,82 @@
+<!--pages/UserCenter/UserCenter.wxml-->
+<!--账号禁用页面-->
+<!-- <import src="../../template/AccountUnuse.wxml" />
+<view wx:if="{{pageNum == 1}}" class="unusepage">
+    <template is="accountunuse" />
+</view> -->
+<!--正常页面-->
+<view style='height:20rpx;'></view>
+<view class='enterprise-name'>
+    <view class='border-bottom-view'>
+        <text class='left-txt'>企业名称</text>
+        <text class='asterisk'>*</text>
+        <input value='{{companyName}}' bindblur='companyNameAction' maxlength='30' placeholder-style="color:#b3b3b3;font-size:30rpx" class='right-txt' type='text' placeholder='请输入企业名称'></input>
+    </view>
+</view>
+<view class='enterprise-name'>
+    <view class='border-bottom-view'>
+        <text class='left-txt'>联系人</text>
+        <text class='asterisk'>*</text>
+        <input value='{{personName}}' bindblur='personNameAction' maxlength='20' placeholder-style="color:#b3b3b3;font-size:30rpx" class='right-txt' type='text' placeholder='请输入联系人'></input>
+    </view>
+</view>
+<view class='enterprise-name'>
+    <text class='left-txt'>联系电话</text>
+    <text class='asterisk'>*</text>
+    <input value='{{phoneNumber}}' bindblur='phoneAction2' bindinput='phoneAction' maxlength='13' placeholder-style="color:#b3b3b3;font-size:30rpx" class='right-txt' type='number' placeholder='请输入联系电话'></input>
+</view>
+
+<view style='height:20rpx;'></view>
+<view class='enterprise-name'>
+    <view class='border-bottom-view'>
+        <text class='left-txt'>组织结构代码</text>
+        <input value='{{originizeCode}}' bindinput='organizeCodeAction' maxlength='30' placeholder-style="color:#b3b3b3;font-size:30rpx" class='right-txt' type='text' placeholder='请输入组织机构代码'></input>
+    </view>
+</view>
+<view bindtap='areaChooseAction' class='enterprise-name'>
+    <view class='border-bottom-view'>
+        <text class='left-txt'>所在地区</text>
+        <text class='asterisk'>*</text>
+        <text class='right-img-txt' wx:if="{{areaValue==''}}" style="font-size:30rpx;color: #B3B3B3;">请选择</text>
+        <text class='right-img-txt' wx:if="{{areaValue!=''}}">{{areaValue}}</text>
+        <image class='arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+</view>
+<view class='enterprise-name'>
+    <text class='left-txt'>详细地址</text>
+    <input value='{{detailsAddress}}' bindinput='detailsAddressAction' maxlength='50' placeholder-style="color:#b3b3b3;font-size:30rpx" class='right-txt' type='text' placeholder='街道、楼牌号等'></input>
+</view>
+
+<view style='height:20rpx;'></view>
+<view class='enterprise-name' bindtap='distributionAreaAction'>
+    <text class='left-txt'>配送区域</text>
+    <text wx:if="{{distributionValue == ''}}" style="color:#b3b3b3;font-size:30rpx" class='right-img-txt'>请选择配送地区</text>
+    <text wx:else class='right-img-txt' type='text' >{{distributionValue}}</text>
+    <image class='arrow-img' src='/Images/rightarrow.png'></image>
+</view>
+
+<button wx:if="{{disabled==false}}" class='btn-view'>保存</button>
+<button wx:if="{{disabled==true}}" bindtap='saveCompanyInfoAction' hover-class='hover-btn' class='btn-view-select'>保存</button>
+
+
+<view class='time-picker-view-bg' wx:if='{{!isDisplay}}'>
+    <view animation="{{animationData}}" class='time-view'>
+        <view class='button-view'>
+            <button class='button-cancel' bindtap='cancelAction'>取消</button>
+            <button class='choosetext'>请选择</button>
+
+            <button class='button-sure' bindtap='sureAction'>确定</button>
+        </view>
+        <picker-view indicator-style="height: 50px;" class='time-picker' bindchange="bindChange" value="{{areaItemValue}}" catchtap='blankAction'>
+            <picker-view-column>
+                <view wx:for="{{provinces}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{areas}}" class='picker-view-column'>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

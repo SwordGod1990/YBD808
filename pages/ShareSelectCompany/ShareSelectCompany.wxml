@@ -1,0 +1,42 @@
+<view class='selectCompany'>
+  <!--  微信分享 -->
+  <checkbox-group class="radio-group" bindchange="mCheckboxChange">
+    <label class="checkbox" wx:for="{{zy_items}}" wx:key="unique">
+      <view class='item-title'>{{item.title}}</view>
+      <checkbox value="{{item.value}}" hidden='true' />
+      <view class='select-view' style='width:640rpx;height:160rpx;background:#FBFBFB'>
+        <image class='wx-select-content-img' mode='widthFix' style='width:76rpx;height:76rpx;' src="/Images/weixin_2x.png"></image>
+        <view class='item-name'>
+          {{item.name}}
+        </view>
+      </view>
+      <block wx:if="{{item.checked}}">
+        <image class='select' src='/Images/jiaobiao_2x.png' style='width:106rpx;height:104rpx;'></image>
+      </block>
+      <block wx:else>
+        <image class='select' src='/Images/jiaobiao_2x.png' style='width:106rpx;height:104rpx;'></image>
+      </block>
+    </label>
+  </checkbox-group>
+  <!-- 致医商城 -->
+  <checkbox-group hidden='none' class="radio-group" bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}" wx:key="unique">
+      <view class='item-title'>{{item.title}}</view>
+      <checkbox value="{{item.value}}" hidden='true' />
+      <view class='select-view' style='width:640rpx;height:160rpx;background:#FBFBFB'>
+        <image class='wx-select-content-img' mode='widthFix' style='width:76rpx;height:76rpx;' src='{{item.urls}}'></image>
+        <view class='item-name'>
+          {{item.name}}
+        </view>
+      </view>
+      <block wx:if="{{item.checked}}">
+        <image class='zy_select' src='/Images/weixuan_2x.png' style='width:76rpx;height:76rpx;'></image>
+      </block>
+      <block wx:else>
+        <image class='zy_select' src='/Images/finish_2x.png' style='width:76rpx;height:76rpx;'></image>
+      </block>
+    </label>
+  </checkbox-group>
+  <!-- 发送 -->
+  <button class='send' open-type='share' bindtap='selectSend'>选好了，发送</button>
+</view>

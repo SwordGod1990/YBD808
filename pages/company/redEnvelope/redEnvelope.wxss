@@ -1,0 +1,247 @@
+/* pages/company/redEnvelope/redEnvelope.wxss */
+
+page {
+    width: 100%;
+    background: #f2f2f7;
+}
+
+.red-envelope-container {
+}
+
+.active-content-view {
+    position: relative;
+    z-index: 2;
+}
+
+.red-envelope-amount-view {
+    background-image: linear-gradient(-180deg, #eb3e2d 0%, #ff7353 100%);
+    height: 300rpx;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.red-envelope-amount-view text {
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+.wait-amount-text {
+    padding-top: 48rpx;
+}
+
+.amount-text {
+    margin-bottom: 16rpx;
+}
+
+.txt-small {
+    font-size: 24rpx;
+}
+
+.txt-middle {
+    font-size: 28rpx;
+}
+
+.txt-large {
+    font-size: 80rpx;
+}
+
+.active-view {
+    padding: 20rpx;
+    position: absolute;
+    top: 94rpx;
+    right: 0rpx;
+}
+
+.right-arrow-img {
+    width: 11rpx;
+    height: 22rpx;
+}
+
+.active-view text {
+    margin-right: 42rpx;
+}
+
+.active-view image {
+    position: absolute;
+    margin-top: -25rpx;
+    right: 30rpx;
+}
+
+.active-time-view {
+    position: fixed;
+    left: 50%;
+    top: 262rpx;
+    margin-left: -240rpx;
+    height: 80rpx;
+    width: 480rpx;
+    background: #fff;
+    box-shadow: 0 2px 10px 0 rgba(255, 131, 131, 0.25);
+    border-radius: 100px;
+    line-height: 80rpx;
+    color: #999;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.active-time-view image {
+    height: 28rpx;
+    width: 28rpx;
+    margin-right: 10rpx;
+    background: red;
+    border-radius: 50%;
+    margin-top: -5rpx;
+    vertical-align: middle;
+}
+
+.active-time-txt {
+    color: #2a2a2a;
+}
+
+.active-end-txt {
+    color: #333;
+}
+
+.red-envelope-content-view {
+    margin-top: 382rpx;
+    position: relative;
+    margin-bottom: 150rpx;
+    z-index: 0;
+}
+
+.red-envelope-content-title {
+    display: block;
+    font-size: 28rpx;
+    color: #333;
+    margin-left: 42rpx;
+}
+
+.red-envelope-content-title::before {
+    content: '';
+    background: #eb3e2d;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    margin-top: 15rpx;
+    margin-left: 20rpx;
+}
+
+.red-envelope-content {
+    height: 310rpx;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+}
+
+.validity-time {
+    height: 70rpx;
+    font-size: 26rpx;
+    color: #666;
+    line-height: 70rpx;
+    display: block;
+    padding-left: 30rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.red-envelope-amount {
+    height: 158rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    text-align: center;
+}
+
+.amount-txt {
+    font-size: 60rpx;
+    color: #eb3e2d;
+    display: block;
+    padding-top: 18rpx;
+    /* font-weight: bold; */
+}
+
+.get-red-envelope {
+    font-size: 24rpx;
+    color: #999;
+    display: block;
+}
+
+.total-amount-view {
+    background: #fafafa;
+    position: relative;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    /* width: 100%; 
+    display: inline-block; 
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;  */
+}
+
+.total-amount-txt {
+    line-height: 80rpx;
+    color: #999;
+    margin-left: 30rpx;
+}
+
+.total-amount-txt2 {
+    line-height: 80rpx;
+    color: #999;
+    padding-right: 30rpx;
+    float: right;
+}
+
+.order-num-txt {
+    line-height: 80rpx;
+    color: #999;
+    margin-left: 30rpx;
+    text-align: right;
+}
+
+.envelope-detail-view {
+    position: absolute;
+    display: inline-block;
+    right: 30rpx;
+    top: 10rpx;
+}
+
+.envelope-detail-view text {
+    font-size: 26rpx;
+    color: #eb3e2d;
+}
+
+.envelope-detail-view image {
+    height: 22rpx;
+    width: 12rpx;
+    margin-left: 10rpx;
+}
+
+.botton-view {
+    height: 140rpx;
+    background: white;
+    box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.08);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.botton-view button {
+    margin-top: 30rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    color: white;
+    font-size: 36rpx;
+    line-height: 80rpx;
+}
+
+.botton-view button::after{
+    border: 0;
+    outline: none;
+}

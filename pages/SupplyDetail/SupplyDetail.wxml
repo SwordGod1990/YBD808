@@ -1,0 +1,128 @@
+<!-- 0:待发货 1:已发货(待收货) 2:已收货 3:已驳回 -->
+<view class='send-out-state-view'>
+    <text wx:if='{{medicalInfo.status == 0}}' class='send-out-state-text'>待发货</text>
+    <text wx:elif='{{medicalInfo.status == 1}}' class='send-out-state-text'>待收货</text>
+    <text wx:elif='{{medicalInfo.status == 3}}' class='send-out-state-text'>已取消</text>
+    <text wx:else class='send-out-state-text'>已收货</text>
+    <image wx:if='{{medicalInfo.status == 3}}' class='turn-down-img' src='/Images/turn_down_icon.png'></image>
+    <image wx:else class='send-out-img' src='/Images/che.png'></image>
+    <image wx:if='{{isFrom == 0}}' class='active-status-img' src='/Images/active_icon.png'></image>
+</view>
+<view class='receipt-information-view'>
+    <view class='consignee-info-view'>
+        <view class='consignee-txt'>
+            <text class='consignee-txt1'>收</text>
+            <text class='consignee-txt1'>货</text>
+            <text class='consignee-txt2'>人：</text>
+        </view>
+        <text class='name'>{{medicalInfo.consigneeName}}</text>
+        <text class='mobile'>{{medicalInfo.consigneePhone}}</text>
+    </view>
+    <view class='consignee-view'>
+        <text class='consignee-addr-txt'>收货地址：</text>
+        <text class='address'>{{medicalInfo.consigneeAddress}}</text>
+    </view>
+    <view class='consignee-message-view'>
+        <view class='consignee-message-txt'>
+            <text class='consignee-message-txt1'>留</text>
+            <text class='consignee-message-txt2'>言：</text>
+        </view>
+        <text class='message'>{{medicalInfo.words}}</text>
+    </view>
+</view>
+<view class='purchase-content'>
+    <view class='purchase-item-view'>
+        <view class='company-view'>
+            <image class='company-img' src='/Images/medinice.png'></image>
+            <text>采购药品（{{medicalList.length}}）</text>
+        </view>
+        <block wx:for="{{medicalList}}">
+            <view class='durg-info-view'>
+                <view class='drug-company-view'>
+                    <view class='drug-info-view'>
+                        <text class='drug-name'>{{item.medicinalName}}</text>
+                        <!-- <text class='drug-amount'>{{item.price}}</text> -->
+                    </view>
+                    <view class='drug-size-info-view'>
+                        <text class='drug-addr'>{{item.medicinalCompanyName}}</text>
+                        <!-- <text class='drug-packge'>x{{item.num}}{{item.unit}}</text> -->
+                    </view>
+                    <text class='drug-size-txt'>规格*包装：{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                    <text class='drug-size-txt'>效期：{{item.invalidTime}}</text>
+                    <view style='margin-top: 5rpx;'>
+                        <text wx:if='{{item.activeType == 1}}' class='drug-amount'>{{item.discountPrice}}</text>
+                        <text wx:else class='drug-amount'>{{item.price}}</text>
+                        <text wx:if='{{item.activeType == 1}}' class='drug-amount2'>{{item.price}}</text>
+                        <text class='drug-packge2'>x{{item.num}}{{item.unit}}</text>
+                    </view>
+                </view>
+                <!-- activeType: 1:折扣, 2: 满赠 -->
+                <!-- giftType: 1:本品, 2: 其它药品, 3: 其它赠品 -->
+                <view wx:if='{{item.activeType == 1 || item.activeType == 2}}' class='gift-view'>
+                    <view class='drug-info-view'>
+                        <text wx:if='{{item.activeType == 1}}' class='gift-name2'>满{{item.miniNum}}{{item.giftUnit}}打{{item.discounts}}折</text>
+                        <text wx:if='{{item.activeType == 2 && item.giftType == 1}}' class='gift-name'>赠本品</text>
+                        <text wx:if='{{item.activeType == 2 && (item.giftType == 2 || item.giftType == 3)}}' class='gift-name'>{{item.giftName}}</text>
+                        <text wx:if="{{item.activeType == 2 && item.giftType == 1}}" class='drug-packge'>x{{item.giftAllNum}}{{item.unit}}</text>
+                        <text wx:if="{{item.activeType == 2 && item.giftType == 2}}" class='drug-packge'>x{{item.giftAllNum}}{{item.giftCommonUnit}}</text>
+                        <text wx:if="{{item.activeType == 2 && item.giftType == 3}}" class='drug-packge'>x{{item.giftAllNum}}{{item.giftUnit}}</text>
+                    </view>
+                    <block wx:if="{{item.activeType == 2}}">
+                         <!-- <block wx:if='{{item.giftType == 1}}'>
+                            <view class='drug-size-info-view'>
+                                <text class='drug-addr'>{{item.medicinalCompanyName}}</text>
+                            </view>
+                            <text class='drug-size-txt'>规格*包装：{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text> -->
+                            <!-- <text class='drug-size-txt'>效期：{{item.invalidTime}}</text> -->
+                        <!-- </block>  -->
+                        <block wx:if='{{item.giftType == 2}}'>
+                            <view class='drug-size-info-view'>
+                                <text class='drug-addr'>{{item.giftFactory}}</text>
+                            </view>
+                            <text class='drug-size-txt'>规格*包装：{{item.giftSpecifcations}}*{{item.giftMatrix}}{{item.giftMinUnit}}/{{item.giftCommonUnit}}</text>
+                            <!-- <text class='drug-size-txt'>效期：{{item.invalidTime}}</text> -->
+                        </block>
+                    </block>
+                </view>
+            </view>
+        </block>
+        <view class='freight-amount-view'>
+            <view class='feight-view'>
+                <text class='feight-txt'>药品金额</text>
+                <text class='feight-unit'>¥{{medicalInfo.medicinalAllPrice}}</text>
+            </view>
+            <view class='feight-view'>
+                <text class='feight-txt'>运费</text>
+                <text class='feight-unit'>¥{{medicalInfo.freight == '' ? 0 : medicalInfo.freight}}</text>
+            </view>
+            <view class='feight-view'>
+                <text class='feight-txt'>订单金额 </text>
+                <text class='feight-unit'>¥{{medicalInfo.allPrice}}</text>
+            </view>
+        </view>
+    </view>
+    <view wx:if='{{medicalInfo.status == 3}}' class='turn-down-view'>
+        <text>驳回原因：{{medicalInfo.refuseReason}}</text>
+    </view>
+    <view class='manifest-info' style='margin-top:20rpx;'>
+        <text class='order-num'>订单编号：{{medicalInfo.orderNum}}</text>
+        <text class='order-time'>采购时间：{{time}}</text>
+        <text wx:if='{{medicalInfo.status == 1 || medicalInfo.status == 2}}' class='order-time'>发货时间：{{deliveryTime}}</text>
+        <text wx:if='{{medicalInfo.status == 2}}' class='order-time'>收货时间：{{receivingTime}}</text>
+        <text wx:if='{{medicalInfo.status == 3}}' class='order-time'>取消时间：{{refuseTime}}</text>
+    </view>
+</view>
+
+<view wx:if='{{medicalInfo.status == 0}}' class='bottom-view'>
+    <button wx:if='{{medicalInfo.status == 0}}' class='reject-botton' bindtap='rejectReceiveAction'>取消订单</button>
+    <button wx:if='{{medicalInfo.status == 0}}' class='sure-botton' bindtap='sendReceiveAction'>确认发货</button>
+</view>
+
+<import src="../../template/toast/toast.wxml" />
+<view hidden='{{sureShipments}}' class='toast-view'>
+    <template is="sure" data="{{toastContent, toastCancel, toastSure}}" />
+</view>
+
+<view hidden='{{isReject}}' class='toast-view'>
+    <template is="reject" data="{{isEmptyRefuseReason}}" />
+</view>

@@ -1,0 +1,5 @@
+<!--pages/Disable/Disable.wxml-->
+<import src="../../template/error/error.wxml" />
+<view  class="unusepage">
+    <template is='error3' data="{{errorMsg, errorImg}}"></template>
+</view>

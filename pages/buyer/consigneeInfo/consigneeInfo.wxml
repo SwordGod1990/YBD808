@@ -1,0 +1,27 @@
+<!--pages/buyer/consigneeInfo/consigneeInfo.wxml-->
+<view class='add-user-info-container'>
+<text wx:if='{{isWarning}}' class='warning-txt'>请先完善所在地区信息</text>
+    <form bindsubmit='saveUserInfoAction'>
+        <view class='item-view'>
+            <text class='left-txt-after left-txt-color-zise'>收货人</text>
+            <input maxlength='10' class='input-user-name right-color-size' placeholder-class='placeholder-text' placeholder='收货人姓名' name="userName" value='{{consigneeName}}'></input>
+        </view>
+        <view class='item-view'>
+            <text class='left-txt-after left-txt-color-zise'>联系电话</text>
+            <input type='number' maxlength='11' class='input-user-name right-color-size' placeholder-class='placeholder-text' placeholder='请输入联系电话' name="userCall" value='{{consigneePhone}}'></input>
+        </view>
+        <view class='item-view' bindtap='areaChooseAction'>
+            <text class='left-txt-after left-txt-color-zise'>所在地区</text>
+            <text class='right-txt {{areaValue == "" ? "placeholder-text" : "right-color-size"}} '>{{areaValue == '' ? "请选择" : areaValue}}</text>
+            <image class='right-img' src='/Images/rightarrow.png'></image>
+        </view>
+        <view class='item-view'>
+            <text class='left-txt-after left-txt-color-zise'>详细地址</text>
+            <input maxlength='30' class='input-user-name right-color-size' placeholder-class='placeholder-text' placeholder='详细地址' name="userAddr" value='{{consigneeAddress}}'></input>
+        </view>
+        <button class='save-btn' form-type='submit'>保存</button>
+    </form>
+</view>
+
+<import src="/template/areaSelector/areaSelector.wxml" />
+<template is='areaSelector' data="{{animationData, isDisplay, areaItemValue, provinces, citys, areas}}"></template>

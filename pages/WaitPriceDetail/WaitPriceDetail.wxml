@@ -1,0 +1,121 @@
+<!--pages/WaitPriceDetail/WaitPriceDetail.wxml-->
+<!--加载失败重新加载-->
+<import src="../../template/reload/reload.wxml" />
+<view wx:if="{{pageNum == 5}}" class="reload">
+    <template is="reload" />
+</view>
+
+<!--有数据页面-->
+
+<view wx:if="{{pageNum == 2}}" class="WaitPriceDetail">
+    <view class="details">
+        <view class="clinic">
+            <view class="clinicName">
+                <image src="/Images/clinic.png"></image>
+                <text>{{orderInfo.clinicName}}</text>
+            </view>
+            <view class="time">{{orderInfo.dateCreated}}</view>
+        </view>
+        <view class="Consignee">
+            <text class="ConsigneeName" decode="{{true}}"><text class="name">收</text>
+            <text class="name2">货</text>
+            <text class="name2">人</text>：</text>
+            <view class='nameandphone'>
+                <text class="ConsigneeName2">{{orderInfo.consigneeName}}</text>
+                <text class="ConsigneeTell" catchtap="calling">{{orderInfo.consigneePhone1}}</text>
+            </view>
+        </view>
+        <view class="address">
+            <text class="Receiving-address">收货地址：<text></text></text>
+            <text class="Receiving-address2">{{orderInfo.receivingAddr}}</text>
+        </view>
+        <view class="message" wx:if="{{LeavingMessage!=''}}">
+            <text class="Leaving-message">诊所留言：{{orderInfo.words}}</text>
+        </view>
+        <view class="message" wx:if="{{LeavingMessage==''}}" style="display:none">
+            <text class="Leaving-message">诊所留言：{{orderInfo.words}}</text>
+        </view>
+    </view>
+    <view class="Drug-details">
+        <view class="Drug">
+            <image src="/Images/medinice.png"></image>
+            <text>药品（{{drugList.length}}）</text>
+        </view>
+        <view class="DrugDetails" wx:for="{{drugList}}" wx:for-item="item" wx:key="item" data-index="{{index}}" wx:for-index="index">
+            <view class="DrugName">
+                <text class="DrugName2">{{item.medicinalName}}</text>
+                <text class="DrugName3">x {{item.num}}</text>
+            </view>
+            <view class="drugTotal">{{item.norms2}}*{{item.scaler2}} {{item.smallUnit2}}/ {{item.unit2}}</view>
+            <view wx:if="{{item.norms1 == ''}}" style="display:none" class="drugTotal"></view>
+            <view class="druglocation">{{item.medicinalCompanyName}}</view>
+            <view wx:if="{{item.showView == false}}" data-index="{{index}}" class='append-view' catchtap="addDrugInforAction">
+                <view class="append">
+                    <image src="/Images/add.png"></image>
+                    <text>添加供货信息</text>
+                </view>
+            </view>
+            <view wx:if="{{item.showView}}" class='offerDetailsShow'>
+                <view class="Validity">
+                    <text class="Validitys">效期</text>
+                    <view class="Validitytimepicker">
+                        <picker data-index="{{index}}" mode="date" start="{{startDate}}" end='2050-12-31' bindchange="bindDateChange" value="{{validitydate}}">
+                            <text class="{{item.invalidTime == '请输入有效期' ? 'validity-time' : 'Validitytime'}}">{{item.invalidTime}}</text>
+                        </picker>
+                    </view>
+                </view>
+                <view class="standard">
+                    <view class="standard2">
+                        <text>规格</text>
+                        <input maxlength='50' data-index="{{index}}" cursor-spacing='20' bindblur='specificationAction' type="text" value="{{item.norms}}"></input>
+                    </view>
+                    <view class="ride">*</view>
+                    <view class="number">
+                        <input maxlength='4' data-index="{{index}}" cursor-spacing='20' bindblur='scalerAction' type="number" value="{{item.scaler}}"></input>
+                    </view>
+                    <view bindtap='unitAction' data-index="{{index}}" class="Company">{{item.smallUnit}}/ {{item.unit}}</view>
+                </view>
+                <view class="univalent">
+                    <text class="univalent1">单价</text>
+                    <input maxlength='7' data-index="{{index}}" cursor-spacing='20' bindblur='priceAction' type="digit" value="{{item.price}}" style='color: #4d4d4d; line-height: 68rpx;'></input>
+                    <text class="univalent2">元/{{item.unit}}</text>
+                </view>
+                <view data-index="{{index}}" bindtap='closeDrugInfoAction' class="cross">
+                    <image src="/Images/close.png"></image>
+                </view>
+            </view>
+            <view style='height:20rpx; width: 100%; background:rgb(242, 242, 247)'></view>
+        </view>
+    </view>
+    <view class="Cost">
+        <view class="ExpectedSales">
+            <view class="drug-num-view">
+                <!-- 需要定义变量返回报价的数量 -->
+                <text class='drug-num-text'>{{offerDrugNum}}</text>
+                <text>种药品报价</text>
+            </view>
+            <view class="money">
+                <text>预计销售额：</text>
+                <text class="money1">{{totalPrice}}</text>
+                <text class="money2">元</text>
+            </view>
+        </view>
+        <view class="freight">
+            <text class="freight1">运费</text>
+            <text class="freight3">元</text>
+
+            <input maxlength='7' type="digit" value='{{freightMoney}}' cursor-spacing='20' placeholder-style="color:#b3b3b3" placeholder="请输入运费金额" bindblur="freightAction" class='freightInput'></input>
+
+        </view>
+    </view>
+    <view class="Leaving-a-message">
+        <view class="LeaveMessage">
+            <text>留言</text>
+        </view>
+        <textarea bindinput='leaveMsgAction' cursor-spacing='20' name="evaContent" maxlength="200" value="{{LeaveMessageVal}}" class="LeaveMessage-textarea" placeholder-style="color:#B3B3B3" placeholder="如订单满300元配送，满500元免运费。" />
+        <view style=" padding-bottom: 120rpx;background:  rgb(242, 242, 247);"></view>
+    </view>
+</view>
+<button hover-class='btnclick' wx:if="{{offerDrugNum > 0}}" bindtap='confirmClick' class="confirm">确认报价</button>
+<!-- <button hover-class='btnclick'  bindtap='confirmClick' class="confirm">确认报价</button> -->
+<button wx:if="{{offerDrugNum == 0}}" class="confirmNo">确认报价</button>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "发送完成",
+  "navigationBarBackgroundColor": "#EE0000",
+  "navigationBarTextStyle": "white"
+}

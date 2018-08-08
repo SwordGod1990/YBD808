@@ -1,0 +1,198 @@
+/* pages/company/scanLogin/scanLogin.wxss */
+@import "/template/error/error.wxss";
+
+.unusepage {
+    width: 100%;
+    background: rgb(242, 242, 247);
+    overflow-y: hidden;
+}
+
+.login-view {
+    text-align: center;
+}
+
+.logo-img {
+    height: 128rpx;
+    width: 128rpx;
+    margin-top: 112rpx;
+}
+
+.logo-title {
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    display: block;
+    margin-top: 20rpx;
+}
+
+.line {
+    height: 2rpx;
+    background: #e5e5e5;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    margin-top: 50rpx;
+}
+
+.logo-describe {
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    margin-top: 25rpx;
+}
+
+.sure-login-button {
+    margin-top: 148rpx;
+    height: 80rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    background-image: linear-gradient(90deg, #e02e24 0%, #ff583e 100%);
+    box-shadow: 0 4px 10px 0 rgba(224, 46, 36, 0.50);
+    font-size: 36rpx;
+    color: #fff;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.sure-login-button::after {
+    border: 0;
+    outline: none;
+}
+
+.cancel-login-button {
+    margin-top: 40rpx;
+    height: 80rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    border: 1px solid #eb3e2d;
+    font-size: 36rpx;
+    color: #eb3e2d;
+    letter-spacing: 0;
+    text-align: center;
+    background: white;
+}
+
+.cancel-login-button::after {
+    border: 0;
+    outline: none;
+}
+
+.hover-canle-login-button{
+    background: #FFE8E5;
+}
+
+.check-in-view {
+    position: relative;
+    text-align: center;
+}
+
+.check-in-background-img {
+    height: 539rpx;
+    width: 100%;
+    z-index: 1;
+}
+
+.check-in-logo-img {
+    height: 94rpx;
+    width: 112rpx;
+    position: absolute;
+    top: 82rpx;
+    z-index: 2;
+    text-align: center;
+    left: 50%;
+    margin-left: -57rpx;
+}
+
+.check-in-logo-text {
+    margin-top: 14rpx;
+    font-size: 30rpx;
+    color: #fff;
+    position: absolute;
+    top: 180rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.check-in-title-text {
+    font-size: 50rpx;
+    color: #fff;
+    position: absolute;
+    top: 254rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.check-in-hint-text {
+    font-family: PingFang-SC-Medium;
+    font-size: 50rpx;
+    color: #fff;
+    position: absolute;
+    top: 334rpx;
+    z-index: 2;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.immediately-check-in-txt {
+    font-size: 30rpx;
+    color: #666;
+    display: block;
+    text-align: center;
+    margin-top: 109rpx;
+}
+
+.check-in-button {
+    margin-top: 30rpx;
+    height: 80rpx;
+    width: 328rpx;
+    line-height: 80rpx;
+    background-image: linear-gradient(-90deg, #ff583e 0%, #eb3e2d 100%);
+    border-radius: 40rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.check-in-button::after {
+    border: 0;
+    outline: none;
+}
+
+.btnclick {
+    background: #e02e24;
+}
+
+.login-img-1{
+    width: 415rpx;
+    height: 59rpx;
+    font-size: 50rpx;
+    color: #fff;
+    position: absolute;
+    top: 254rpx;
+    left: 50%;
+    margin-left: -208rpx;
+    z-index: 2;
+    text-align: center;
+    display: block;
+}
+
+.login-img-2{
+    width: 418rpx;
+    height: 59rpx;
+    font-size: 50rpx;
+    color: #fff;
+    position: absolute;
+    top: 334rpx;
+    left: 50%;
+    margin-left: -209rpx;
+    z-index: 2;
+    text-align: center;
+    display: block;
+}

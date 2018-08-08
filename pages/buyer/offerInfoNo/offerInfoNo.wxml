@@ -1,0 +1,24 @@
+<!--pages/company/offerInfoNo/offerInfoNo.wxml-->
+<block wx:if="{{offerInfoList.length > 0}}">
+    <view class='offer-info-no-container'>
+        <view class='top-view'>
+            <image class='img' src='/Images/error_icon.png'></image>
+            <text class='hint-txt'>还没有报价，转发到群里试试。</text>
+            <view>
+                <text class='goods-num'>{{offerInfoList.length}}件询价商品</text>
+            </view>
+        </view>
+        <view class='drug-item-view' wx:for="{{offerInfoList}}">
+            <text class='drug-name'>{{item.medicinalName}}</text>
+            <text class='drug-unit'>{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+            <text class='drug-num'>x {{item.num}}</text>
+            <text class='drug-addr'>{{item.medicinalCompanyName}}</text>
+        </view>
+    </view>
+
+    <button bindtap='transmitAction' class='botton-view'>转发</button>
+</block>
+<!-- <import src="/template/error/error.wxml" />
+<view wx:if="{{offerInfoList.length == 0}}" class="unusepage">
+    <template is='error4' data="{{errorMsg, errorImg}}"></template>
+</view> -->

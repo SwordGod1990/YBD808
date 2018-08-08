@@ -1,0 +1,36 @@
+<!--pages/company/user/user.wxml-->
+<view class='user-info-view'>
+    <image class='user-img' src='{{headImg}}'></image>
+    <view class='user-view'>
+        <text class='user-name'>{{merchandiserInfo.realName}}</text>
+        <text class='user-mobile'>{{merchandiserInfo.phone}}</text>
+    </view>
+</view>
+<view class='company-info-view'>
+    <view bindtap='companyInfoAction' class='current-company-view'>
+        <text class='left-txt'>当前企业</text>
+        <text class='right-txt company-name-txt'>{{merchandiserInfo.companyName}}</text>
+        <image class='right-arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+    <view bindtap='distributionAreaAction' class='current-company-view' style='margin-top:1rpx;'>
+        <text class='left-txt'>配送区域</text>
+        <text class='right-txt {{deliverRegion == "" ? "holder-txt":""}}'>{{deliverRegion == "" ? "请选择配送区域" : deliverRegion}}</text>
+        <image class='right-arrow-img' src='/Images/rightarrow.png'></image>
+    </view>
+
+    <view class='scan-login'>
+        <text class='scan-login-title'>扫码登录商城</text>
+        <view bindtap='loginAction' hidden='{{isLogin}}' class='scan-login-status-view'>
+            <text style='color:#EB3E2D;'>未登录</text>
+            <image src='/Images/rightarrow.png'></image>
+        </view>
+        <view hidden='{{!isLogin}}' class='scan-login-status-view'>
+            <text>已登录致医商城</text>
+        </view>
+    </view>
+    <button hidden='none' class='quite-account-btn'>退出账号</button>
+</view>
+<view class='service-tel-view'>
+    <text>客服电话：</text>
+    <text class='service-tel-txt'>400-666-9196</text>
+</view>

@@ -1,0 +1,118 @@
+<!--pages/AlreadyPriceDetail/AlreadyPriceDetail.wxml-->
+
+<!--加载失败重新加载-->
+<import src="../../template/reload/reload.wxml" />
+<view wx:if="{{pageNum == 1}}" class="reload">
+    <template is="reload" />
+</view>
+
+<view animation="{{animationData}}">
+    <view wx:if="{{pageNum == 2}}" class="AlreadyPriceDetail">
+        <view class="details">
+            <view class="clinic">
+                <view class="clinicName">
+                    <image src="/Images/clinic.png"></image>
+                    <text>{{orderInfo.clinicName}}</text>
+                </view>
+                <view class="time">{{orderInfo.dateCreated}}</view>
+            </view>
+        </view>
+        <view class='infoview'>
+            <view class="Consignee">
+                <text class="ConsigneeName" decode="{{true}}"><text class="name">收</text>
+                <text class="name2">货</text>
+                <text class="name2">人</text>：</text>
+                <text class="ConsigneeName2">{{orderInfo.consigneeName}}</text>
+                <text class="ConsigneeTell" catchtap="calling">{{orderInfo.consigneePhone1}}</text>
+            </view>
+            <view class="address">
+                <text class="Receiving-address">收货地址：<text></text></text>
+                <text class="Receiving-address2">{{orderInfo.receivingAddr}}</text>
+            </view>
+            <view class="message" wx:if="{{orderInfo.words!=''}}">
+                <text class="Leaving-message">诊所留言：<text></text></text>
+                <text class="Leaving-message2">{{orderInfo.words}}</text>
+            </view>
+            <view class="message" wx:if="{{orderInfo.words==''}}" style="display:none">
+                <text class="Leaving-message">诊所留言：<text></text></text>
+                <text class="Leaving-message2">{{orderInfo.words}}</text>
+            </view>
+        </view>
+
+    </view>
+    <view class="Drug-details">
+        <view class="Drug">
+            <image src="/Images/medinice.png"></image>
+            <text>已报价药品 （{{isOfferNum}}）</text>
+        </view>
+        <view class="DrugDetails" wx:for="{{isOfferList}}" wx:for-item="item" wx:key="item" data-index="{{index}}" wx:for-index="index">
+            <view class="DrugName">
+                <text class="DrugName2">{{item.medicinalName}}</text>
+                <text class="DrugName3">x {{item.num}}</text>
+            </view>
+              <view class="Total">{{item.oldNorms}}*{{item.oldScaler}}{{item.oldSmallUnit}}/{{item.oldUnit}} </view>  
+            <view class="location">{{item.medicinalCompanyName}}</view>
+            <view class='drug-particular-view'>
+                <view class="DrugParticulars">
+                    <text class="Validity">效期：</text>
+                    <text class="Validity2">{{item.invalidTime}}</text>
+                    <text class="univalent">{{item.price}}元/{{item.unit}}</text>
+                </view>
+                <view class="Specifications">
+                    <text>规格*包装：</text>
+                    <text>{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="Cost">
+        <view class="ExpectedSales">
+            <view class="ExpectedSales2">预计销售额</view>
+            <view class="money">
+                <text class="money1">{{totalPrice}}</text>
+                <text class="money2">元</text>
+            </view>
+        </view>
+        <view class="freight">
+            <view class="freight1">运费</view>
+            <text class="freight2">{{freightNumber}}</text>
+        </view>
+    </view>
+    <view wx:if="{{favourable!=''}}" class='leavemessage'>
+        <view class="Leavetext">
+            <text>留言</text>
+        </view>
+        <view class="Discount">
+            <text>{{favourable}}</text>
+        </view>
+    </view>
+
+    <view wx:if="{{favourable==''}}" style="display:none" class='leavemessage'>
+        <view class="Leavetext">
+            <text>留言</text>
+        </view>
+        <view class="Discount">
+            <text>{{favourable}}</text>
+        </view>
+    </view>
+    <view class="check" catchtap='isShowAciton' wx:if="{{isShowView && noOfferList!= '' }}">点击查看未报价药品
+        <image src="/Images/reddown.png"></image>
+    </view>
+    <view class="check2" catchtap='isShowAciton' wx:if="{{!isShowView && noOfferList!= '' }}">收起未报价药品
+        <image src="/Images/reduparrow.png"></image>
+    </view>
+    <view class="{{isShowView?'Not-quoted':'Not-quoted2'}}">
+        <view class="NotQuoted">
+            <image src="/Images/medinice.png"></image>
+            <text class="NotQuotedText">未报价药品 ({{noOfferNum}})</text>
+        </view>
+        <view class="NotQuoted-details" wx:for="{{noOfferList}}" wx:for-item="item" wx:key="item" data-index="{{index}}" wx:for-index="index">
+            <view class="NotQuotedName">
+                <text class="NotQuotedName1">{{item.medicinalName}}</text>
+                <text class="NotQuotedNumber">x {{item.num}}</text>
+            </view>
+            <view class="NotQuotedTotal">{{item.norms}}*{{item.scaler}}{{item.smallUnit}}/{{item.unit}}</view>
+            <view class="NotQuotedAddress">{{item.medicinalCompanyName}}</view>
+        </view>
+    </view>
+</view>
